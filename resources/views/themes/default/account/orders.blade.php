@@ -8,7 +8,7 @@
   $mobileView = str_contains($_SERVER['HTTP_USER_AGENT'], 'Mobile') ? true : false;
 @endphp
 
-<section class="dashboad_section">
+<section class="account-page-ui dashboad_section">
   <div class="container">
   <div class="row justify-content-between">
     @include(themeview().'account._sidebar')

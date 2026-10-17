@@ -186,7 +186,7 @@
       </div>
     </div>
   </div>
-
+  
   <div id="gallery_tab" class="tab-pane fade">
     <div class="form-group">
       {{ Form::label('image_id', 'Main Image', ['class' => 'required']) }}
@@ -270,7 +270,7 @@
     // Init astrologer assign UI
     initAstrologerAssignment();
   });
-
+  
   function initAstrologerAssignment() {
     var allAstrologers = @json($astrologerData);
     var selectedAstrologerIds = @json($selectedAstrologers);
@@ -363,7 +363,7 @@
     var commissionType = $('#commission_type').val();
     var label = $('#commission_label');
     var valueField = $('#commission_value');
-
+    
     if(commissionType === 'percentage') {
       label.text('Commission Value (%)');
       valueField.attr('max', '100');
@@ -373,7 +373,7 @@
       valueField.removeAttr('max');
       valueField.attr('placeholder', 'Enter fixed amount');
     }
-
+    
     // Clear value only when explicitly requested (on type change, not on initial load)
     if(clearValue) {
       valueField.val('');
@@ -406,7 +406,7 @@
     var imgSrc = $('.img-box-choice.selected img').attr('src');
     var imgSrcOriginal = $('.img-box-choice.selected img').data('original');
     var newImg = selectedImg.clone();
-
+    
     if(imageset === 'featured'){
       $('#image_id').val(mediaId);
       $('#image_src').val(imgSrc);
@@ -451,7 +451,7 @@
 
   function addGallery() {
     let imageDiv = document.getElementById('image-gallery');
-
+    
     let newSection = document.createElement('div');
     newSection.classList.add("form-group", "col-4");
     newSection.innerHTML = `

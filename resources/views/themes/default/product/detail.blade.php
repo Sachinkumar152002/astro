@@ -2214,14 +2214,14 @@ $('#thumbnail li').on('click', handleGalleries);
 var width = $('#image-slider').width();
 
 function nextImage(newIndex, parent){
-    parent.find('li').eq(newIndex).addClass('next-img').css('left', width).animate({left: 0},600);
-    parent.find('li.active-img').removeClass('active-img').css('left', '0').animate({left: -width},600);
-    parent.find('li.next-img').attr('class', 'active-img');
+	parent.find('li').eq(newIndex).addClass('next-img').css('left', width).animate({left: 0},600);
+	parent.find('li.active-img').removeClass('active-img').css('left', '0').animate({left: -width},600);
+	parent.find('li.next-img').attr('class', 'active-img');
 }
 function prevImage(newIndex, parent){
-    parent.find('li').eq(newIndex).addClass('next-img').css('left', -width).animate({left: 0},600);
-    parent.find('li.active-img').removeClass('active-img').css('left', '0').animate({left: width},600);
-    parent.find('li.next-img').attr('class', 'active-img');
+	parent.find('li').eq(newIndex).addClass('next-img').css('left', -width).animate({left: 0},600);
+	parent.find('li.active-img').removeClass('active-img').css('left', '0').animate({left: width},600);
+	parent.find('li.next-img').attr('class', 'active-img');
 }
 
 /* Thumbails */
@@ -2919,11 +2919,11 @@ function handleShareAndEarn(itemId, type) {
     toastr.error('You need a referral code to share and earn.');
     return;
   }
-
+  
   // Get product slug and type from PHP variables
   let productSlug = "{{ $product->slug ?? '' }}";
   let productType = {{ $productTypeValue ?? 1 }};
-
+  
   // Generate share URL based on product type (similar to remedies checkout format)
   let shareUrl = '';
   if(productType == 1) {
@@ -2940,12 +2940,12 @@ function handleShareAndEarn(itemId, type) {
     // Service
     shareUrl = "{{ route('product.detailservice', ['product_slug' => 'PLACEHOLDER']) }}".replace('PLACEHOLDER', productSlug);
   }
-
+  
   // Add referral code as query parameter (similar to remedies checkout)
   if(shareUrl && referralCode) {
     shareUrl += (shareUrl.includes('?') ? '&' : '?') + 'ref=' + encodeURIComponent(referralCode);
   }
-
+  
   // Copy to clipboard
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(shareUrl).then(function() {

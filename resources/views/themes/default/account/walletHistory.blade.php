@@ -3,7 +3,7 @@
 @section('title', 'Wallet Histories | '.config("app.name"))
 
 @section('content')
-  <section class="dashboad_section">
+  <section class="account-page-ui dashboad_section">
     <div class="container" id="profile-app">
       <div class="row">
        @include(themeview().'account._sidebar')

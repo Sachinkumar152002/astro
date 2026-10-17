@@ -29,6 +29,97 @@ body.kundali-route h1, body.kundali-route h2, body.kundali-route h3 { color:#211
 @media(max-width:767px) { .kundali-skeleton { padding:8px 16px 30px; }.kundali-skeleton__top { gap:10px; }.kundali-skeleton__top span { display:none; }.kundali-skeleton__top b { margin-left:auto;width:34%; }.kundali-skeleton__nav i:nth-child(n+6) { display:none; }.kundali-skeleton__nav i { width:18%; }.kundali-skeleton__banner { height:125px; }.kundali-skeleton__body { grid-template-columns:1fr; }.kundali-skeleton__side { display:none; }.kundali-skeleton__form { padding:16px;gap:14px; }.kundali-skeleton__zodiac { grid-template-columns:repeat(3,1fr);gap:9px; }.kundali-skeleton__zodiac i { height:75px; } body.kundali-route .kundli-form-box .padding-tb { padding:20px 16px; } }
 
 /* Matching route shares the Kundali palette while keeping its two-person form distinct. */
+@keyframes kundali-report-shimmer { to { background-position-x: -220%; } }
+.kundali-report-skeleton {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    overflow: auto;
+    padding: 30px max(5vw, 24px) 44px;
+    background: #fffaf6;
+    transition: opacity .3s ease;
+}
+.kundali-report-skeleton.is-dismissing { opacity: 0; pointer-events: none; }
+.kundali-report-skeleton__hero,
+.kundali-report-skeleton__tabs,
+.kundali-report-skeleton__title,
+.kundali-report-skeleton__content,
+.kundali-report-skeleton__cards { max-width: 1320px; margin-left: auto; margin-right: auto; }
+.kundali-report-skeleton__hero {
+    height: 190px;
+    margin-bottom: 24px;
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #8c341a, #e96b30 58%, #f59b58);
+}
+.kundali-report-skeleton__hero i,
+.kundali-report-skeleton__hero b,
+.kundali-report-skeleton__hero span,
+.kundali-report-skeleton__tabs i,
+.kundali-report-skeleton__title,
+.kundali-report-skeleton__main i,
+.kundali-report-skeleton__main b,
+.kundali-report-skeleton__content aside i,
+.kundali-report-skeleton__cards i {
+    display: block;
+    border-radius: 8px;
+    background: linear-gradient(100deg, #eee8e2 20%, #faf5ef 40%, #eee8e2 60%);
+    background-size: 220% 100%;
+    animation: kundali-report-shimmer 1.35s linear infinite;
+}
+.kundali-report-skeleton__hero i { width: 220px; height: 30px; background: rgba(255,255,255,.72); }
+.kundali-report-skeleton__hero b { width: 360px; max-width: 75%; height: 12px; background: rgba(255,255,255,.45); }
+.kundali-report-skeleton__hero span { width: 540px; max-width: 90%; height: 10px; background: rgba(255,255,255,.35); }
+.kundali-report-skeleton__tabs {
+    min-height: 70px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    border: 1px solid #eee7e1;
+    border-radius: 14px;
+    background: #fff;
+}
+.kundali-report-skeleton__tabs i { flex: 1 0 100px; height: 38px; border-radius: 9px; }
+.kundali-report-skeleton__title { width: 245px; height: 24px; margin-top: 28px; margin-bottom: 16px; }
+.kundali-report-skeleton__content { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 20px; }
+.kundali-report-skeleton__main,
+.kundali-report-skeleton__content aside {
+    min-height: 240px;
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    gap: 16px;
+    border: 1px solid #eee7e1;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 6px 22px rgba(41,36,58,.05);
+}
+.kundali-report-skeleton__main i { height: 66px; }
+.kundali-report-skeleton__main b { grid-column: 1 / -1; width: 160px; height: 40px; justify-self: center; border-radius: 22px; }
+.kundali-report-skeleton__content aside { grid-template-columns: 1fr; }
+.kundali-report-skeleton__content aside i { height: 42px; }
+.kundali-report-skeleton__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.kundali-report-skeleton__cards i { height: 120px; border: 1px solid #eee7e1; border-radius: 14px; background-color: #fff; }
+@media (max-width: 767px) {
+    .kundali-report-skeleton { padding: 16px; }
+    .kundali-report-skeleton__hero { height: 150px; padding: 22px; }
+    .kundali-report-skeleton__tabs { min-height: 58px; }
+    .kundali-report-skeleton__tabs i { flex-basis: 92px; }
+    .kundali-report-skeleton__content { grid-template-columns: 1fr; }
+    .kundali-report-skeleton__content aside { display: none; }
+    .kundali-report-skeleton__main { padding: 15px; gap: 12px; }
+    .kundali-report-skeleton__main i { height: 54px; }
+    .kundali-report-skeleton__cards { grid-template-columns: 1fr; }
+    .kundali-report-skeleton__cards i { height: 82px; }
+}
+
 body.kundali-matching-route { background:#fffaf5 !important; color:#211832; }
 body.kundali-matching-route .form-container { margin-bottom:10px; padding:18px; border:1px solid #eee4da; border-radius:14px; background:linear-gradient(145deg,#fff,#fff9f1); box-shadow:0 6px 18px rgba(48,25,70,.06); }
 body.kundali-matching-route .kundli-f-box { border:1px solid #eee4da; border-radius:18px; background:#fff; box-shadow:0 12px 32px rgba(48,25,70,.08); overflow:hidden; }

@@ -17,12 +17,12 @@
 
 <div class="col-lg-3 col-6 mb-4 {{\Request::routeIs('product.handle') ? '' : ''}}">
     <div class="d3-card h-100 d-flex flex-column">
-
+        
         <a href="{{ $detailRoute }}" class="d-block">
             <div class="d3-img-wrapper">
-                <img src="{{$productImage ? $productImage->image(600, 600) : '/assets/img/placeholder.jpg'}}"
+                <img src="{{$productImage ? $productImage->image(600, 600) : '/assets/img/placeholder.jpg'}}" 
                      alt="{{ $product->alt_text ?: $productTitle }}">
-
+                     
                 @if(!$isOneToOnePuja)
                     <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: #fcd34d; font-size: 11px; padding: 4px 10px; border-radius: 12px; font-weight: bold; white-space: nowrap; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
                         <i class="fa fa-calendar-alt me-1"></i> {{ date("D, d M Y", strtotime($product->expire_at)) }}
@@ -30,12 +30,12 @@
                 @endif
             </div>
         </a>
-
+        
         <div class="d3-body d-flex flex-column flex-grow-1">
             <a href="{{ $detailRoute }}" class="text-decoration-none">
                 <h4 class="d3-title">{{ $productTitle }}</h4>
             </a>
-
+            
             <div class="mt-auto">
                 @if($isOneToOnePuja)
                     <div class="d3-price-wrap">
@@ -52,7 +52,7 @@
                         <span style="color: #ef4444;">Spacer</span>
                     </div>
                 @endif
-
+                
                 @if($isOneToOnePuja || $productFormFields->count() > 0)
                     <a href="{{ $detailRoute }}" class="d3-btn">
                         <i class="fa fa-info-circle me-1"></i> Detail

@@ -66,7 +66,7 @@
   <div class="container">
     <h2 class="text-center fs-30">Daily Horoscopes</h2>
     <p class="text-center">Daily horoscopes are like a guiding light in the vast universe of possibilities.</p>
-
+  
   </div>
 </section>
 <!-- Daily Horoscopes-section-end -->

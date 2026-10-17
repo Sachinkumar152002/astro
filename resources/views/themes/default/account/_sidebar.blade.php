@@ -1,4 +1,5 @@
-<div class="col-lg-3 col-12 ps-md-0 mt-0 d-lg-block d-none sticky_top sticky-sidebar1">
+<div class="col-lg-3 col-12 ps-md-0 mt-0 account-sidebar-column">
+  <div class="mobile-account-menu-label">My Account</div>
   <div class="card border-0 user-card card-wallet">
   <div class="row align-items-center g-0">
  <div class="col-lg-3 col-3">
@@ -19,89 +20,89 @@
 </div>
 
 <div class="dashbord_card mt-3">
-<div class="sticky_top sticky-sidebar1">
+<div class="account-sidebar-inner">
 
           <div class="">
 
 
          <ul class="p-0  p-3 pb-0 sidebar_account">
             <li class="list-group-item mb-3 fs-6 border-bottom">
-             <a href="{{route('user.dashboard')}}" class="text text-black">
+             <a href="{{route('user.dashboard')}}" class="text text-black {{ request()->routeIs('user.dashboard') ? 'is-active' : '' }}" @if(request()->routeIs('user.dashboard')) aria-current="page" @endif>
             <i class="bi bi-grid"></i> Dashboard
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.profile')}}" class="text text-black">
+        <a href="{{route('user.profile')}}" class="text text-black {{ request()->routeIs('user.profile', 'user.verify.user.mobile') ? 'is-active' : '' }}" @if(request()->routeIs('user.profile', 'user.verify.user.mobile')) aria-current="page" @endif>
         <i class="bi bi-person"></i> My Profile
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.addresses')}}" class="text text-black">
+        <a href="{{route('user.addresses')}}" class="text text-black {{ request()->routeIs('user.addresses', 'user.addresses.delete') ? 'is-active' : '' }}" @if(request()->routeIs('user.addresses', 'user.addresses.delete')) aria-current="page" @endif>
         <i class="bi bi-journal-bookmark"></i> Addresses
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.purchase.item')}}" class="text text-black">
+        <a href="{{route('user.purchase.item')}}" class="text text-black {{ request()->routeIs('user.purchase.item', 'user.order.detail') ? 'is-active' : '' }}" @if(request()->routeIs('user.purchase.item', 'user.order.detail')) aria-current="page" @endif>
         <i class="bi bi-cart-check"></i> Orders
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.wishlist')}}" class="text text-black">
+        <a href="{{route('user.wishlist')}}" class="text text-black {{ request()->routeIs('user.wishlist') ? 'is-active' : '' }}" @if(request()->routeIs('user.wishlist')) aria-current="page" @endif>
         <i class="bi bi-heart"></i> Wishlist
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.recharge')}}" class="text text-black">
+        <a href="{{route('user.recharge')}}" class="text text-black {{ request()->routeIs('user.recharge') ? 'is-active' : '' }}" @if(request()->routeIs('user.recharge')) aria-current="page" @endif>
         <i class="bi bi-credit-card"></i> Wallet
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.wallethistory')}}" class="text text-black">
+        <a href="{{route('user.wallethistory')}}" class="text text-black {{ request()->routeIs('user.wallethistory') ? 'is-active' : '' }}" @if(request()->routeIs('user.wallethistory')) aria-current="page" @endif>
         <i class="bi bi-hourglass"></i> Wallet History
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.recharge-history')}}" class="text text-black">
+        <a href="{{route('user.recharge-history')}}" class="text text-black {{ request()->routeIs('user.recharge-history', 'user.recharge-print') ? 'is-active' : '' }}" @if(request()->routeIs('user.recharge-history', 'user.recharge-print')) aria-current="page" @endif>
         <i class="bi bi-receipt"></i> Recharge History
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.consultations')}}" class="text text-black">
+        <a href="{{route('user.consultations')}}" class="text text-black {{ request()->routeIs('user.consultations') ? 'is-active' : '' }}" @if(request()->routeIs('user.consultations')) aria-current="page" @endif>
         <i class="bi bi-people"></i> Consultations
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.aiconsultations')}}" class="text text-black">
+        <a href="{{route('user.aiconsultations')}}" class="text text-black {{ request()->routeIs('user.aiconsultations') ? 'is-active' : '' }}" @if(request()->routeIs('user.aiconsultations')) aria-current="page" @endif>
         <i class="bi bi-people"></i> Ai Consultations
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.suggested-remedies')}}" class="text text-black">
+        <a href="{{route('user.suggested-remedies')}}" class="text text-black {{ request()->routeIs('user.suggested-remedies') ? 'is-active' : '' }}" @if(request()->routeIs('user.suggested-remedies')) aria-current="page" @endif>
         <i class="bi bi-heart-pulse"></i> Suggested Remedies
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.booked-puja')}}" class="text text-black">
+        <a href="{{route('user.booked-puja')}}" class="text text-black {{ request()->routeIs('user.booked-puja*') ? 'is-active' : '' }}" @if(request()->routeIs('user.booked-puja*')) aria-current="page" @endif>
         <i class="bi bi-calendar-check"></i> Booked Puja
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a  href="{{ route('user.notification') }}" class="text text-black">
+          <a  href="{{ route('user.notification') }}" class="text text-black {{ request()->routeIs('user.notification') ? 'is-active' : '' }}" @if(request()->routeIs('user.notification')) aria-current="page" @endif>
         <i class="bi bi-bell"></i> Notification
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.newsletter')}}" class="text text-black">
+        <a href="{{route('user.newsletter')}}" class="text text-black {{ request()->routeIs('user.newsletter*') ? 'is-active' : '' }}" @if(request()->routeIs('user.newsletter*')) aria-current="page" @endif>
         <i class="bi bi-newspaper"></i> Newsletter
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{ route('user.support') }}" class="text text-black">
+        <a href="{{ route('user.support') }}" class="text text-black {{ request()->routeIs('user.support*') ? 'is-active' : '' }}" @if(request()->routeIs('user.support*')) aria-current="page" @endif>
         <i class="bi bi-headset"></i> Support
         </a>
       </li>
       <li class="list-group-item mb-3 fs-6 border-bottom">
-        <a href="{{route('user.refer.earn')}}" class="text text-black">
+        <a href="{{route('user.refer.earn')}}" class="text text-black {{ request()->routeIs('user.refer.earn', 'user.referral.rules', 'user.referral.listing', 'user.referrals.app', 'user.commissions*', 'user.earnings') ? 'is-active' : '' }}" @if(request()->routeIs('user.refer.earn', 'user.referral.rules', 'user.referral.listing', 'user.referrals.app', 'user.commissions*', 'user.earnings')) aria-current="page" @endif>
         <i class="bi bi-gift"></i> Refer & Earn
         </a>
       </li>

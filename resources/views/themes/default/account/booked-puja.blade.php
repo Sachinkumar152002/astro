@@ -113,7 +113,7 @@
   $user = auth()->guard('web')->user();
 @endphp
 
-<section class="dashboad_section" style="background: #ffff;">
+<section class="account-page-ui dashboad_section">
   <div class="container">
     <div class="row">
       @include(themeview().'account._sidebar')

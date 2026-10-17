@@ -13,11 +13,11 @@
       $chatSpecialPrice = $astrologer->chat_special_price;
       $astrologerType = $astrologer->type;
       $astrologerSlug = $astrologer->slug;
-
+      
       $chatStatus = (int) $astrologer->chat;
       $callStatus = (int) $astrologer->call;
       $videoStatus = (int) $astrologer->video;
-
+      
       $astrologerStatus = ($chatStatus === 3 || $callStatus === 3 || $videoStatus === 3) ? 'busy' : (($chatStatus === 1 || $callStatus === 1 || $videoStatus === 1) ? 'online' : 'offline');
       $expertise = trim(str_replace(', ,', '', $astrologer->my_expertise), " ,") ?: ($astrologer->my_language ?: 'Vedic Astrology');
     @endphp

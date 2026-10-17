@@ -144,8 +144,8 @@ class ProductController extends Controller
         $productTypeName = "Service";
       }
       $formData = $request->form_data ? $request->form_data : [];
-
-
+      
+      
       // Ensure gotra field is always captured in formdata (for both one-to-one and group puja)
       if(!is_array($formData)) {
         $formData = [];
@@ -288,7 +288,7 @@ class ProductController extends Controller
       return $this->detail($request);
     }
 
-        public function detailPuja(Request $request, $product_slug = null){ file_put_contents("debug_detailPuja.txt", "YES");
+        public function detailPuja(Request $request, $product_slug = null){ file_put_contents("debug_detailPuja.txt", "YES"); 
       $request->productTypeName = "Pooja";
       $request->productTypeValue = 2;
       if($product_slug) $request->merge(["product_slug" => $product_slug]);
@@ -374,20 +374,20 @@ class ProductController extends Controller
       return $this->detail($request);
     }
 
-    public function detail(Request $request){ file_put_contents("debug.txt", "SLUG: " . $request->product_slug . " TYPE: " . $request->productTypeValue);
+    public function detail(Request $request){ file_put_contents("debug.txt", "SLUG: " . $request->product_slug . " TYPE: " . $request->productTypeValue); 
       $productTypeName = $request->productTypeName;
       $productTypeValue = $request->productTypeValue;
       $nav = $productTypeName;
       $productSlug = $request->product_slug;
       $id = $request->id ?: 0;
       $product = null;
-
+      
       // Handle referral code from URL parameter
       $referralCode = $request->get('ref');
       if($referralCode) {
         // Store referral code in session for checkout redirect
         Session::put('product_referral_code', $referralCode);
-
+        
         // Check if user is logged in
         $user = auth()->guard('web')->user();
         if(!$user) {
@@ -395,7 +395,7 @@ class ProductController extends Controller
           Session::put('redirect_from_login', url()->full());
           return redirect()->route('login')->with('message', 'Please login to continue to checkout.');
         }
-
+        
         // User is logged in - redirect to checkout
         // Get product ID from slug or ID
         if(!$id && $productSlug) {
@@ -404,7 +404,7 @@ class ProductController extends Controller
             $id = $tempProduct->id;
           }
         }
-
+        
         if($id) {
           // Determine checkout route based on product type
           // Preserve referral code in URL for tracking
@@ -481,7 +481,7 @@ class ProductController extends Controller
       if($product->category_id){
          $category = ProductCategory::find($product->category_id);
       }
-
+      
       if(!$category){
          $productCategoryId = ProductAndCategoryId::where('product_id', $product->id)->first();
          if($productCategoryId){
@@ -1103,13 +1103,13 @@ public function showcart(Request $request)
 public function checkoutform(Request $request){
     $user=auth()->guard('web')->user();
     $user_type="user";
-
+    
     // Check for referral code in URL parameter (from Share and Earn link)
     $referralCodeFromUrl = $request->get('ref');
     if($referralCodeFromUrl) {
       Session::put('product_referral_code', $referralCodeFromUrl);
     }
-
+    
     if($user==null){
       Session::put('redirect_from_login', url()->full());
       // Preserve product referral code if present
@@ -1118,7 +1118,7 @@ public function checkoutform(Request $request){
       }
       return redirect()->route('home');
     }
-
+    
     // If user is logged in and product_referral_code exists, store it for commission processing
     // Always update used_referral_code if product_referral_code exists (for Share and Earn)
     if(Session::has('product_referral_code')) {
@@ -1217,7 +1217,7 @@ public function checkoutform(Request $request){
             ->where('id', $variationId)
             ->first();
         }
-
+        
         // If still not found, try to find parent product with this slug
         if(!$product) {
           $parentProduct = Product::where("type", $productTypeValue)
@@ -1225,14 +1225,14 @@ public function checkoutform(Request $request){
             ->where('slug', $itemSlug)
             ->where('parent_id', 0)
             ->first();
-
+          
           if($parentProduct) {
             // If parent found, check if there are any active variations
             $variationProduct = Product::where("type", $productTypeValue)
               ->where("status", 1)
               ->where('parent_id', $parentProduct->id)
               ->first();
-
+            
             if($variationProduct) {
               $product = $variationProduct;
             } else {
@@ -1311,24 +1311,24 @@ public function checkoutform(Request $request){
     }
     // return $subTotal;
     $discount=$subTotal-$total;
-
+    
     // Apply referral discount ONLY if user came from remedies checkout link
     // Session is only set in remediesCheckout method, so this ensures discount only applies for suggested remedies
     $remediesReferralDiscount = 0;
     $remediesReferralCode = null;
     if(Session::has('remedies_referral_code')){
       $remediesReferralCode = Session::get('remedies_referral_code');
-
+      
       // Check if referral code exists in astrologers table
       $referringAstrologer = \App\Model\Astrologer::where('referral_code', $remediesReferralCode)
         ->where('status', 1)
         ->where('is_verified', 1)
         ->first();
-
+      
       // Get global referral settings for product discount
       if($referringAstrologer){
         $astrologerReferralSettings = AstrologerReferral::where('status', 1)->first();
-
+        
         if($astrologerReferralSettings && $astrologerReferralSettings->product_discount > 0){
           // Calculate discount only on products (type 1) subtotal, not on reports (type 3)
           $productSubtotal = 0;
@@ -1345,11 +1345,11 @@ public function checkoutform(Request $request){
         }
       }
     }
-
+    
     // Calculate total: subtotal - referral discount, then add shipping and taxes
     $total = $total - $remediesReferralDiscount;
     $total = $total + $shippingPrice + $taxes;
-
+    
     // Show delivery address only when cart has at least one physical product (type 1). Puja (type 2) and Service (type 3) need only billing.
     $showDeliveryAddress = false;
     foreach($cartItems as $item){
@@ -2179,7 +2179,7 @@ public function placeOrder(Request $request){
         \Log::info("=== Checking Puja Assignment Condition ===");
         \Log::info("Product ID: {$product->id} | Product Name: {$product->title}");
         \Log::info("Product Type: {$product->type} | Is One-to-One Puja: " . ($product->is_one_to_one_puja ?? 'NULL') . " (Value: " . ($product->is_one_to_one_puja == 1 ? 'true' : 'false') . ")");
-
+        
         if($product->type == 2 && $product->is_one_to_one_puja == 1){
           \Log::info("Condition PASSED - Calling assignAstrologerToPuja method");
           $this->assignAstrologerToPuja($order, $orderItem, $product);
@@ -2316,7 +2316,7 @@ public function placeOrder(Request $request){
   $prefix = "$orderPrefix$orderNum";
 
   $discountAmount = $baseTotalAmount-$saleTotalAmount;
-
+  
   // Apply referral discount if remedies referral code exists - on subtotal first
   // Only apply if user came from remedies checkout link (session must exist)
   $remediesReferralDiscount = 0;
@@ -2330,11 +2330,11 @@ public function placeOrder(Request $request){
       ->where('status', 1)
       ->where('is_verified', 1)
       ->first();
-
+    
     // Get global referral settings for product discount
     if($referringAstrologer){
       $astrologerReferralSettings = AstrologerReferral::where('status', 1)->first();
-
+      
       if($astrologerReferralSettings && $astrologerReferralSettings->product_discount > 0){
         // Calculate discount only on products (type 1) subtotal, not on reports (type 3)
         $productSubtotal = 0;
@@ -2351,7 +2351,7 @@ public function placeOrder(Request $request){
       }
     }
   }
-
+  
   // Calculate total: subtotal - referral discount - coupon, then add GST and shipping
   $payableAmount = $saleTotalAmount - $remediesReferralDiscount - $couponAmount;
   $gstAmount = $igstAmount+$sgstAmount+$cgstAmount;
@@ -2378,7 +2378,7 @@ public function placeOrder(Request $request){
     $order->referral_discount = $remediesReferralDiscount;
     $order->referral_code = $remediesReferralCode;
   }
-
+  
   // Mark remedies suggestion as used if order is being placed
   $remediesSuggestionToken = Session::get('remedies_suggestion_token');
   if($remediesSuggestionToken){
@@ -2388,7 +2388,7 @@ public function placeOrder(Request $request){
       ->update(['is_used' => 1]);
     Session::forget('remedies_suggestion_token');
   }
-
+  
   // Clear referral code session after using it to prevent reuse
   if(Session::has('remedies_referral_code')){
     Session::forget('remedies_referral_code');
@@ -2510,7 +2510,7 @@ public function placeOrder(Request $request){
     }
     // Always set ashirwad_box before save to ensure it's preserved
     $order->ashirwad_box = $ashirwadBox;
-
+    
     // Save product referral code if present (from Share and Earn link)
     if(Session::has('product_referral_code')) {
       $productReferralCode = Session::get('product_referral_code');
@@ -2522,7 +2522,7 @@ public function placeOrder(Request $request){
         $order->referral_code = $productReferralCode;
       }
     }
-
+    
     $order->save();
     return response()->json([
       'success' => true,
@@ -2531,7 +2531,7 @@ public function placeOrder(Request $request){
       'next' => 'payment',
       'paymentRequestData' => $paymentRequestData
     ], 200);
-
+    
     // Note: Session will be cleared after payment verification in VerifyPaymentController
     }else{
       $order->status = 'success';
@@ -2567,7 +2567,7 @@ public function placeOrder(Request $request){
       }
     }
     $order->ashirwad_box = $existingAshirwadBox;
-
+    
     // Save product referral code if present (from Share and Earn link) for COD/zero amount orders
     if(Session::has('product_referral_code')) {
       $productReferralCode = Session::get('product_referral_code');
@@ -2579,9 +2579,9 @@ public function placeOrder(Request $request){
         $order->referral_code = $productReferralCode;
       }
     }
-
+    
     $order->save();
-
+    
     // Mark remedies suggestion as used for COD/zero amount orders
     $remediesSuggestionToken = Session::get('remedies_suggestion_token');
     if($remediesSuggestionToken){
@@ -2591,13 +2591,13 @@ public function placeOrder(Request $request){
         ->update(['is_used' => 1]);
       Session::forget('remedies_suggestion_token');
     }
-
+    
     // Clear remedies referral code session after order is placed (whether COD or zero amount)
     Session::forget('remedies_referral_code');
-
+    
     // Clear product referral code session after order is placed (whether COD or zero amount)
     Session::forget('product_referral_code');
-
+    
     if($order->item_type == 0){
       // real
       $orderStatus = new OrderStatus;
@@ -2621,7 +2621,7 @@ public function placeOrder(Request $request){
     $itemIdArray = [];
     $product_types = ['', 'product', 'pooja', 'service'];
     $product_type = 'product';
-
+    
     // Check if order contains group puja and generate reference number
     $hasGroupPuja = false;
     $groupPujaParentProduct = null;
@@ -2636,7 +2636,7 @@ public function placeOrder(Request $request){
             $product->avaibility -= $oI->quantity;
             $product->save();
           }
-
+          
           // Check if it's a group puja (type == 2 and is_one_to_one_puja != 1)
           // If product is a variation (has parent_id), check parent product instead
           $pujaProduct = $product;
@@ -2647,7 +2647,7 @@ public function placeOrder(Request $request){
               \Log::info("Variation detected - Using parent product. Variation ID: {$product->id}, Parent ID: {$parentProduct->id}");
             }
           }
-
+          
           if($pujaProduct->type == 2){
             $isOneToOne = (int)$pujaProduct->is_one_to_one_puja;
             if($isOneToOne != 1){
@@ -2661,13 +2661,13 @@ public function placeOrder(Request $request){
         }
       }
     }
-
+    
     // Generate group puja reference number and snapshot valid date if order contains group puja
     if($hasGroupPuja){
       \Log::info("Generating group puja reference for Order ID: {$order->id}");
       // Refresh order to get latest data
       $order->refresh();
-
+      
       // Only generate if not already set
       if(!$order->group_puja_reference){
         // Get the last group puja reference number
@@ -2675,7 +2675,7 @@ public function placeOrder(Request $request){
           ->where('group_puja_reference', 'like', 'FM%')
           ->orderBy('id', 'desc')
           ->first();
-
+        
         if($lastReference && $lastReference->group_puja_reference){
           // Extract number from last reference (e.g., FM0001 -> 1)
           $lastNumber = (int)substr($lastReference->group_puja_reference, 2);
@@ -2683,7 +2683,7 @@ public function placeOrder(Request $request){
         } else {
           $newNumber = 1;
         }
-
+        
         // Format as FM0001, FM0002, etc.
         $order->group_puja_reference = 'FM' . str_pad($newNumber, 4, '0', STR_PAD_LEFT);
         $order->save();
@@ -2818,7 +2818,7 @@ public function verifyPayment($id, $order_id, Request $request){
     $order_items = OrderItem::where('order_id', $order->id)->get();
     $hasGroupPuja = false;
     $groupPujaParentProduct = null;
-
+    
     foreach($order_items as $oI){
       if($oI->type == 'shop'){
         $product = $oI->product;
@@ -2833,7 +2833,7 @@ public function verifyPayment($id, $order_id, Request $request){
               \Log::info("Payment Verify - Variation detected - Using parent product. Variation ID: {$product->id}, Parent ID: {$parentProduct->id}");
             }
           }
-
+          
           if($pujaProduct->type == 2){
             $isOneToOne = (int)$pujaProduct->is_one_to_one_puja;
             if($isOneToOne != 1){
@@ -2847,12 +2847,12 @@ public function verifyPayment($id, $order_id, Request $request){
         }
       }
     }
-
+    
     // Generate group puja reference number and snapshot valid date if order contains group puja
     if($hasGroupPuja){
       \Log::info("Payment Verify - Generating group puja reference for Order ID: {$order->id}");
       $order->refresh();
-
+      
       // Only generate if not already set
       if(!$order->group_puja_reference){
         // Get the last group puja reference number
@@ -2860,7 +2860,7 @@ public function verifyPayment($id, $order_id, Request $request){
           ->where('group_puja_reference', 'like', 'FM%')
           ->orderBy('id', 'desc')
           ->first();
-
+        
         if($lastReference && $lastReference->group_puja_reference){
           // Extract number from last reference (e.g., FM0001 -> 1)
           $lastNumber = (int)substr($lastReference->group_puja_reference, 2);
@@ -2868,7 +2868,7 @@ public function verifyPayment($id, $order_id, Request $request){
         } else {
           $newNumber = 1;
         }
-
+        
         // Format as FM0001, FM0002, etc.
         $order->group_puja_reference = 'FM' . str_pad($newNumber, 4, '0', STR_PAD_LEFT);
         $order->save();
@@ -2888,7 +2888,7 @@ public function verifyPayment($id, $order_id, Request $request){
     } else {
       \Log::info("Payment Verify - No group puja found in Order ID: {$order->id}");
     }
-
+    
     $data['id'] = $order->id;
     $data['name'] = $order->full_name;
     $data['email'] = $order->email;
@@ -3658,7 +3658,7 @@ public function handleList(Request $request){
 
   /**
    * Assign astrologer to puja based on round-robin distribution system
-   * Logic:
+   * Logic: 
    * - Check if an astrologer already has an active assignment for THIS specific puja
    * - If yes, assign to another astrologer who doesn't have an active assignment for this puja
    * - When all astrologers have active assignments for this puja, cycle back to the first one
@@ -3669,29 +3669,29 @@ public function handleList(Request $request){
       \Log::info("=== Starting Puja Assignment Process ===");
       \Log::info("Product ID: {$product->id} | Product Name: {$product->title} | Type: {$product->type} | Is One-to-One: " . ($product->is_one_to_one_puja ?? 0));
       \Log::info("Order ID: {$order->id} | Order Item ID: {$orderItem->id}");
-
+      
       // Get all astrologers assigned to this puja (from puja_astrologers pivot table)
       // First check without status filter to see if any astrologers are linked at all
       $allLinkedAstrologers = \DB::table('puja_astrologers')
         ->where('product_id', $product->id)
         ->get();
-
+      
       \Log::info("Total astrologers linked to puja (any status): " . $allLinkedAstrologers->count());
       foreach($allLinkedAstrologers as $linked) {
         \Log::info("  - Linked Astrologer ID: {$linked->astrologer_id} | Status: {$linked->status} | Priority: {$linked->priority}");
       }
-
+      
       // Get active astrologers (status = 1)
       // Query directly to avoid orderByPivot conflict with relationship
       $pujaAstrologers = \App\Model\Astrologer::join('puja_astrologers', 'astrologers.id', '=', 'puja_astrologers.astrologer_id')
         ->where('puja_astrologers.product_id', $product->id)
         ->where('puja_astrologers.status', 1)
         ->whereNull('astrologers.deleted_at')
-        ->select('astrologers.*', 'puja_astrologers.priority as pivot_priority', 'puja_astrologers.status as pivot_status',
+        ->select('astrologers.*', 'puja_astrologers.priority as pivot_priority', 'puja_astrologers.status as pivot_status', 
                  'puja_astrologers.product_id as pivot_product_id', 'puja_astrologers.astrologer_id as pivot_astrologer_id')
         ->orderBy('puja_astrologers.priority', 'asc')
         ->get();
-
+      
       if($pujaAstrologers->isEmpty()){
         // No astrologers assigned to this puja
         \Log::error("=== CRITICAL: No ACTIVE astrologers found for puja ===");
@@ -3704,7 +3704,7 @@ public function handleList(Request $request){
         }
         return;
       }
-
+      
       \Log::info("Found {$pujaAstrologers->count()} astrologer(s) for this puja:");
       foreach($pujaAstrologers as $ast) {
         \Log::info("  - Astrologer ID: {$ast->id} | Name: " . ($ast->display_name ?? $ast->firstname . ' ' . $ast->lastname));
@@ -3743,7 +3743,7 @@ public function handleList(Request $request){
       // First priority: Find astrologers who don't have THIS specific puja assigned (for round-robin)
       $availableAstrologers = $pujaAstrologers->filter(function($astrologer) use ($alreadyAssignedAstrologerIds, $astrologersWithActiveAssignmentForThisPuja) {
         // Exclude if already assigned to this order item OR has active assignment for this specific puja
-        return !in_array($astrologer->id, $alreadyAssignedAstrologerIds)
+        return !in_array($astrologer->id, $alreadyAssignedAstrologerIds) 
                && !in_array($astrologer->id, $astrologersWithActiveAssignmentForThisPuja);
       });
 
@@ -3816,7 +3816,7 @@ public function handleList(Request $request){
           \Log::error("Cannot create assignment without valid user_id");
           return;
         }
-
+        
         // Verify user exists
         $user = \App\User::find($order->user_id);
         if(!$user) {
@@ -3825,7 +3825,7 @@ public function handleList(Request $request){
           \Log::error("Cannot create assignment - user does not exist");
           return;
         }
-
+        
         // Create assignment
         $assignment = new PujaAstrologerAssignment();
         $assignment->order_id = $order->id;
@@ -3835,19 +3835,19 @@ public function handleList(Request $request){
         $assignment->user_id = $order->user_id; // Set user_id from order (guaranteed to exist now)
         $assignment->status = 'assigned';
         $assignment->assigned_at = now();
-
+        
         \Log::info("Creating assignment with user_id: {$order->user_id} from order ID: {$order->id}");
-
+        
         try {
           $assignment->save();
-
+          
           // Verify the assignment was saved
           $savedAssignment = PujaAstrologerAssignment::find($assignment->id);
           if(!$savedAssignment) {
             \Log::error("Assignment was not saved! Assignment ID: {$assignment->id}");
             throw new \Exception("Assignment save failed");
           }
-
+          
           \Log::info("=== Puja Assignment Success ===");
           \Log::info("Puja ID: {$product->id} | Puja Name: {$product->title}");
           \Log::info("Astrologer ID: {$selectedAstrologer->id} | Astrologer Name: " . ($selectedAstrologer->display_name ?? $selectedAstrologer->firstname . ' ' . $selectedAstrologer->lastname));
@@ -3855,7 +3855,7 @@ public function handleList(Request $request){
           \Log::info("Assignment ID: {$assignment->id} | Status: {$assignment->status}");
           \Log::info("Assigned At: {$assignment->assigned_at}");
           \Log::info("Created At: {$assignment->created_at}");
-
+          
           // Verify assignment exists in database
           $verifyAssignment = PujaAstrologerAssignment::where('id', $assignment->id)
             ->where('astrologer_id', $selectedAstrologer->id)
@@ -3914,7 +3914,7 @@ public function handleList(Request $request){
         ->where('token', $token)
         ->where('user_id', $user->id)
         ->first();
-
+      
       if($expiredSuggestion){
         if($expiredSuggestion->is_used == 1){
           return redirect()->route('home')->with('error', 'This remedy suggestion link has already been used.');
@@ -3924,7 +3924,7 @@ public function handleList(Request $request){
       }
       return redirect()->route('home')->with('error', 'Invalid remedy suggestion link');
     }
-
+    
     // Get referral code from query parameter or suggestion
     $referralCodeFromUrl = $request->get('ref');
     $referralCode = $referralCodeFromUrl ?: $suggestion->referral_code;
@@ -3945,7 +3945,7 @@ public function handleList(Request $request){
         ->where('status', 1)
         ->where('type', 1)
         ->first();
-
+      
       if($product && $product->avaibility > 0){
         $productPrice = $product->base_price;
         $productSpecialPrice = $product->sale_price;
@@ -3975,7 +3975,7 @@ public function handleList(Request $request){
         ->where('status', 1)
         ->where('type', 3)
         ->first();
-
+      
       if($report){
         $reportPrice = $report->base_price;
         $reportSpecialPrice = $report->sale_price;
@@ -4008,7 +4008,7 @@ public function handleList(Request $request){
     } elseif($suggestion->referral_code){
       Session::put('remedies_referral_code', $suggestion->referral_code);
     }
-
+    
     // Store suggestion token in session to mark as used after successful order
     Session::put('remedies_suggestion_token', $token);
 

@@ -17,19 +17,19 @@
 
 <div class="col-lg-3 col-6 mb-4 {{\Request::routeIs('product.handle') ? '' : ''}}">
     <div class="d3-card h-100 d-flex flex-column">
-
+        
         <a href="{{ route('product.detailservice', [$productSlug]) }}" class="d-block">
             <div class="d3-img-wrapper">
-                <img src="{{$productImage ? $productImage->image(600, 600) : '/assets/img/placeholder.jpg'}}"
+                <img src="{{$productImage ? $productImage->image(600, 600) : '/assets/img/placeholder.jpg'}}" 
                      alt="{{ $product->alt_text ?: $productTitle }}">
             </div>
         </a>
-
+        
         <div class="d3-body d-flex flex-column flex-grow-1">
             <a href="{{ route('product.detailservice', [$productSlug]) }}" class="text-decoration-none">
                 <h4 class="d3-title">{{ $productTitle }}</h4>
             </a>
-
+            
             <div class="mt-auto">
                 <div class="d3-price-wrap">
                     @if($productSpecialPriceFromDate && ($productSpecialPriceFromDate <= $todayDate) && ($productSpecialPriceToDate >= $todayDate) )
@@ -39,7 +39,7 @@
                         <span style="color: #ef4444;">₹{{ $productPrice }}</span>
                     @endif
                 </div>
-
+                
                 @if($productFormFields->count() > 0)
                     <a href="{{ route('product.detailservice', [$productSlug]) }}" class="d3-btn">
                         <i class="fa fa-info-circle me-1"></i> Detail

@@ -28,10 +28,11 @@
   }
 </style>
 <link rel="stylesheet" href="{{ asset('assets/lib/material-timepicker/mdtimepicker.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/account-dashboard.css') }}?v={{ filemtime(public_path('assets/css/account-dashboard.css')) }}">
 @endpush
 
 @section('content')
-<section class="dashboad_section">
+<section class="account-page-ui account-profile-page dashboad_section">
   <div class="container">
     <div class="row">
       @include(themeview().'account._sidebar')

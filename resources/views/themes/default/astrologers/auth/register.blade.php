@@ -21,7 +21,7 @@
       padding: 10px 25px;
       border-radius: 8px;
       font-weight: 600;
-      color: #fff;
+      color: #fff; 
     }
     .form-control.image-upload {
      width: 100px;

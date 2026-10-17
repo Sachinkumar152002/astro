@@ -81,18 +81,18 @@
     gap: 12px;
 }
 
-
-
+ 
+ 
 </style>
 @endpush
 
 @section('content')
-<section class="dashboad_section earnings-section">
+<section class="account-page-ui dashboad_section earnings-section">
   <div class="container">
     <div class="row justify-content-between">
       @include(themeView().'account._sidebar')
       <div class="col-lg-9 col-12 mt-md-0 user_dash dash_b">
-
+        
         <div class="mb-4 d-flex align-items-start justify-content-between gap-2 flex-wrap">
           <div>
             <h3 class="mb-0"><i class="bi bi-graph-up"></i> Earnings Dashboard</h3>
@@ -109,11 +109,11 @@
             <div class="card earnings-card">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h5 class="card-title mb-0"><i class="bi bi-wallet2 text-primary"></i> Total Earnings</h5>
+                  <h5 class="card-title mb-0"><i class="bi bi-wallet2 text-primary"></i> Total Earnings</h5>                  
                 </div>
                 <h2 class="text-primary mb-2">₹{{ number_format((float)($totalEarnings ?? 0), 2) }}</h2>
                 <small class="text-muted">Lifetime earnings (referral + commission)</small>
-
+                
               </div>
             </div>
           </div>
@@ -122,11 +122,11 @@
             <div class="card earnings-card">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h5 class="card-title mb-0"><i class="bi bi-gift text-primary"></i> Referral Wallet</h5>
+                  <h5 class="card-title mb-0"><i class="bi bi-gift text-primary"></i> Referral Wallet</h5> 
                 </div>
-                <h2 class="text-primary mb-2">₹{{ number_format((float)($referralBalance ?? 0), 2) }}</h2>
+                <h2 class="text-primary mb-2">₹{{ number_format((float)($referralBalance ?? 0), 2) }}</h2> 
                 <div class="d-flex justify-content-between">
-                  <small class="text-muted">Lifetime: ₹{{ number_format((float)($referralLifetime ?? 0), 2) }}</small>
+                  <small class="text-muted">Lifetime: ₹{{ number_format((float)($referralLifetime ?? 0), 2) }}</small> 
                 </div>
               </div>
             </div>
@@ -135,19 +135,19 @@
             <div class="card earnings-card">
               <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h5 class="card-title mb-0"><i class="bi bi-cash-coin text-success"></i> Commission Wallet</h5>
+                  <h5 class="card-title mb-0"><i class="bi bi-cash-coin text-success"></i> Commission Wallet</h5> 
                 </div>
-                <h2 class="text-success mb-2">₹{{ number_format((float)($commissionBalance ?? 0), 2) }}</h2>
+                <h2 class="text-success mb-2">₹{{ number_format((float)($commissionBalance ?? 0), 2) }}</h2> 
                 <div class="d-flex justify-content-between">
                   <small class="text-muted">Lifetime: ₹{{ number_format((float)($commissionLifetime ?? 0), 2) }}</small>
-
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-
+      
         <!-- All Transactions (Wallet Ledger) -->
         <div class="card">
           <div class="card-header bg-white">

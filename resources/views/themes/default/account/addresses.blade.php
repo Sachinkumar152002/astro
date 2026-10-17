@@ -4,7 +4,7 @@
 @section('title', "Delivery Addresses | ".config("app.name"))
 
 @section('content')
-<section class="dashboad_section" style="background: #f2f2f2;">
+<section class="account-page-ui dashboad_section">
   <div class="container">
     <div class="row justify-content-between">
     @include(themeview().'account._sidebar')

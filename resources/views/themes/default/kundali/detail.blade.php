@@ -1,5 +1,5 @@
 @extends(themeView().'layout')
-@section('title', 'Kundali | '.config("app.name"))
+@section('title', 'Kundali Report | '.config("app.name"))
 
 @push('schema')
   <script type="application/ld+json">
@@ -8,7 +8,7 @@
     "@type":"WebPage",
     "@id":"{{ url()->current() }}#webpage",
     "url":"{{ url()->current() }}",
-    "name":"Kundali",
+    "name":"Kundali Report",
     "description":"Get your free online Kundali with accurate horoscope, birth chart, and planetary positions.",
     "inLanguage":"en-IN",
     "isPartOf":{
@@ -24,27 +24,37 @@
 @endpush
 
 @push("style")
-<link rel="stylesheet" href="{{asset('assets/css/kundali.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/css/kundali.css') }}?v={{ filemtime(public_path('assets/css/kundali.css')) }}">
+<link rel="stylesheet" href="{{ asset('assets/css/kundali-ui.css') }}?v={{ filemtime(public_path('assets/css/kundali-ui.css')) }}">
 @endpush
 @section('content')
-<section class="page-header about-page mb-md-0 kundlipage" style="background-image: url('{{asset('/media/56/1758358754.jpg')}}'); background-repeat: no-repeat; width: 100%; background-size: cover;">
+<section class="kundali-report-hero">
   <div class="container">
-    <div class="head-sec">
-      <h1 class="text-center text-white">Kundali</h1>
+    <div class="kundali-report-hero__content">
+      <span class="kundali-report-hero__eyebrow"><i class="fas fa-star"></i> YOUR VEDIC BIRTH CHART</span>
+      <h1>Kundali Report</h1>
+      <p>Explore your birth chart, planetary placements, dashas and personalized astrological insights.</p>
+      <div class="kundali-report-hero__meta">
+        <span><i class="fas fa-user"></i> Prepared for {{ $kundali->name }}</span>
         @include(themeView().'common.breadcrumb')
-      <p class="text-center text-white">Discover the secrets of the stars with our personalized astrology readings. Explore your zodiac sign, daily horoscopes, and celestial insights. Unlock the mysteries of the universe and find your true path.</p>
+      </div>
     </div>
   </div>
 </section>
-<div class="">
-  </div>
 
 <section class="kundali-report-section pb-4 pb-md-3 pb-lg-4">
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12">
-        <!-- Horizontal Tabs -->
-        <ul class="nav nav-tabs kundli-horizontal-tabs mb-4" id="kundliTabs" role="tablist">
+        <div class="kundali-report-heading">
+          <div>
+            <span class="kundali-report-heading__eyebrow">YOUR PERSONAL REPORT</span>
+            <h2>Explore your Kundali</h2>
+            <p>Choose a section to view the details that matter to you.</p>
+          </div>
+          <span class="kundali-report-heading__count"><i class="fas fa-layer-group"></i> 10 report sections</span>
+        </div>
+        <ul class="nav nav-tabs kundli-horizontal-tabs mb-4" id="kundliTabs" role="tablist" aria-label="Kundali report sections">
           <li class="nav-item">
             <a class="nav-link active" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="true">
               <i class="fas fa-th-large me-2"></i>Dashboard
@@ -57,41 +67,41 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" id="kundali-tab" data-bs-toggle="tab" data-bs-target="#kundali" type="button" role="tab" aria-controls="kundali" aria-selected="true" onclick="handleTab(this,'kundali')">
-              <i class="fas fa-star me-2"></i>Kundali
+              <i class="fas fa-sun me-2"></i>Kundali
             </a>
           </li>
           <li class="nav-item">
              <a class="nav-link" id="divisional-tab" data-bs-toggle="tab" data-bs-target="#divisional" type="button" role="tab" aria-controls="divisional" aria-selected="true" onclick="handleTab(this,'divisional')">
-              <i class="fas fa-star me-2"></i>Divisional Charts
+              <i class="fas fa-chart-pie me-2"></i>Divisional Charts
             </a>
           </li>
           <li class="nav-item">
              <a class="nav-link" id="transit-tab" data-bs-toggle="tab" data-bs-target="#transit" type="button" role="tab" aria-controls="transit" aria-selected="true" onclick="handleTab(this,'transit')">
-              <i class="fas fa-star me-2"></i>Transit (Gochar) Today</a>
+              <i class="fas fa-globe-asia me-2"></i>Transit (Gochar) Today</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="ashtakvarga-tab" data-bs-toggle="tab" data-bs-target="#ashtakvarga" type="button" role="tab" aria-controls="ashtakvarga" aria-selected="true" onclick="handleTab(this,'ashtakvarga')">
-              <i class="fas fa-star me-2"></i>Ashtakvarga</a>
+              <i class="fas fa-th me-2"></i>Ashtakvarga</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" id="dasha-tab" data-bs-toggle="tab" data-bs-target="#dasha" type="button" role="tab" aria-controls="dasha" aria-selected="true" onclick="handleTab(this,'dasha')">
-              <i class="fas fa-star me-2"></i> Dasha</a>
+              <i class="fas fa-moon me-2"></i> Dasha</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="dosha-tab" data-bs-toggle="tab" data-bs-target="#dosha" type="button" role="tab" aria-controls="dosha" aria-selected="true"  onclick="handleTab(this,'dosha')">
-              <i class="fas fa-star me-2"></i> Dosha</a>
+              <i class="fas fa-shield-alt me-2"></i> Dosha</a>
 
           </li>
 
           <li class="nav-item">
              <a class="nav-link" id="gem-tab" data-bs-toggle="tab" data-bs-target="#gem" type="button" role="tab" aria-controls="gem" aria-selected="true" onclick="handleTab(this,'gem')">
-              <i class="fas fa-star me-2"></i> Gem Suggestion</a>
+              <i class="fas fa-gem me-2"></i> Gem Suggestion</a>
 
           </li>
           <li class="nav-item">
             <a class="nav-link" id="rudraksha-tab" data-bs-toggle="tab" data-bs-target="#rudraksha" type="button" role="tab" aria-controls="rudraksha" aria-selected="true" onclick="handleTab(this,'rudraksha')">
-              <i class="fas fa-star me-2"></i> Rudraksha Suggestion</a>
+              <i class="fas fa-praying-hands me-2"></i> Rudraksha Suggestion</a>
           </li>
 
         </ul>

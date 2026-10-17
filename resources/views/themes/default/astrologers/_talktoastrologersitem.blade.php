@@ -17,10 +17,10 @@
       $astrologerSlug = $astrologer->slug;
       $callStatus = (int) $astrologer->call;
       $videoStatus = (int) $astrologer->video;
-
+      
       $astrologerStatus = ($callStatus === 3 || $videoStatus === 3) ? 'busy' : (($callStatus === 1 || $videoStatus === 1) ? 'online' : 'offline');
       $expertise = trim(str_replace(', ,', '', $astrologer->my_expertise), " ,") ?: ($astrologer->my_language ?: 'Vedic Astrology');
-
+      
       $waitingTime = "0:0 m";
       $currentTime = strtotime(date('Y-m-d H:i:s'));
       $currentAppointment = $astrologer->currentAppointment();
@@ -74,7 +74,7 @@
               @endif
             </div>
           </div>
-
+          
           <div class="d-flex align-items-center justify-content-between">
             <small class="text-muted"><i class="bi bi-camera-video"></i> Video:</small>
             <div>

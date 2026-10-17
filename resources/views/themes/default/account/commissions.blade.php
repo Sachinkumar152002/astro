@@ -24,12 +24,12 @@
 @endpush
 
 @section('content')
-<section class="dashboad_section" style="background: #f2f2f2;">
+<section class="account-page-ui dashboad_section">
   <div class="container">
     <div class="row justify-content-between">
       @include(themeView().'account._sidebar')
       <div class="col-lg-9 col-12 mt-md-0 user_dash dash_b">
-
+        
         <div class="mb-4 d-flex align-items-start justify-content-between gap-2 flex-wrap">
           <div>
             <h3 class="mb-0"><i class="bi bi-cash-coin"></i> Product Commissions</h3>

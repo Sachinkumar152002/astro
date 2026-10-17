@@ -1,0 +1,72 @@
+/* Shared palette and layout for customer account pages. */
+.account-page-ui,.account-dashboard-page { position:relative; border-top:0; box-shadow:inset 0 12px 18px -18px rgba(54,35,74,.5); }
+.account-page-ui::before,.account-dashboard-page::before { content:""; position:absolute; z-index:2; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#36234a 0%,#e89008 48%,#f4d9ad 100%); }
+.account-page-ui { min-height:70vh; padding:28px 0 56px; background:#fffaf4!important; color:#211832; }
+.account-page-ui > .container { max-width:1320px; }
+.account-page-ui .user-card,.account-page-ui .dashbord_card,.account-page-ui .all_pages > .card,
+.account-page-ui .address_page > .card,.account-page-ui .order-box,.account-page-ui .card.border-primary {
+  border:1px solid #eee6dc!important; border-radius:16px!important; background:#fff!important;
+  box-shadow:0 8px 24px rgba(33,24,50,.055);
+}
+.account-page-ui .user-card { padding:18px; }
+.account-page-ui .user-card > .row { display:flex; flex-direction:column; }
+.account-page-ui .user-card > .row > .col-lg-3,.account-page-ui .user-card > .row > .col-lg-12 { width:100%; flex:0 0 100%; }
+.account-page-ui .user-card > .row > .col-lg-3 { display:flex; justify-content:center; }
+.account-page-ui .user-card .profile-img-box { position:static!important; inset:auto!important; width:78px; height:78px; margin:0 auto 12px; border:3px solid #fff1d2; background:#fff1d2; }
+.account-page-ui .user-card .profile-img-box .user-img { display:block; width:72px; height:72px; object-fit:cover; }
+.account-page-ui .user_profile { padding-top:0; text-align:center; }
+.account-page-ui .user_profile h5,.account-page-ui h2,.account-page-ui h4,.account-page-ui h5 { color:#211832; font-weight:700; }
+.dashbord_card { position:sticky; top:104px; align-self:start; max-height:calc(100vh - 120px); overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#d8c8ad transparent; }
+.dashbord_card > .account-sidebar-inner { position:static!important; height:auto; }
+.dashbord_card .sidebar_account { list-style:none; margin:0; padding:12px 12px 8px!important; }
+.dashbord_card .sidebar_account li { margin:0 0 3px!important; padding:0 0 3px!important; border-color:#f2ede7!important; background:transparent; }
+.dashbord_card .sidebar_account a,.account-page-ui .sidebar_account a { display:flex; align-items:center; gap:10px; min-height:42px; padding:7px 8px; border-radius:8px; color:#36234a!important; text-decoration:none; transition:background .18s ease,color .18s ease; }
+.dashbord_card .sidebar_account a:hover,.account-page-ui .sidebar_account a:hover { color:#e89008!important; background:#fff6e7; }
+.dashbord_card .sidebar_account a.is-active { color:#36234a!important; background:#fff3d7; box-shadow:inset 3px 0 #e89008; font-weight:750; }
+.dashbord_card .sidebar_account a.is-active i { color:#e89008!important; }
+.account-page-ui .dash-heading,.account-page-ui .text-primary { color:#36234a!important; }
+.account-page-ui .btn:not(.btn-danger):not(.btn-close),.account-page-ui .main_button,.account-page-ui .p-add,.account-page-ui .send-icon-btn { border:1px solid transparent!important; background:linear-gradient(110deg,#36234a,#e89008)!important; color:#fff!important; }
+.account-page-ui .btn:not(.btn-danger):not(.btn-close):hover,.account-page-ui .main_button:hover,.account-page-ui .p-add:hover,.account-page-ui .send-icon-btn:hover { filter:brightness(1.06); box-shadow:0 5px 14px rgba(54,35,74,.18); }
+.account-page-ui .btn-outline-primary { border-color:#e89008!important; }
+.account-page-ui .refdash-wrap .dash-card .icon { background:#36234a!important; color:#fff!important; }
+.account-page-ui .card { border-color:#eee6dc; border-radius:14px; }
+.account-page-ui .card-header.bg-primary { border:0; background:linear-gradient(110deg,#36234a,#e89008)!important; }
+.account-page-ui .rule-icon { color:#e89008; }
+.account-page-ui .stat-card,.account-page-ui .stat-card.success,.account-page-ui .stat-card.info { border:1px solid #eee6dc; background:linear-gradient(120deg,#36234a,#644279 58%,#e89008)!important; color:#fff; }
+.account-page-ui .earnings-card,.account-page-ui .commission-card,.account-page-ui .referral-item-card { border:1px solid #eee6dc; border-radius:14px; background:#fff; box-shadow:0 7px 20px rgba(33,24,50,.06); }
+.account-page-ui .nav-tabs .nav-link.active { border-color:#e89008 #e89008 #fff!important; color:#36234a!important; font-weight:700; }
+.account-page-ui .form-control:focus,.account-page-ui .form-select:focus { border-color:#e6ad4e; box-shadow:0 0 0 .2rem rgba(232,144,8,.15); }
+.account-page-ui .address_page,.account-page-ui .all_pages { min-width:0; }
+.account-page-ui .address_hi,.account-page-ui .check-card1 { border:1px solid #eee6dc!important; border-radius:12px; background:#fffdfa; }
+.account-pages-skeleton { position:fixed; inset:0; z-index:20000; overflow:auto; padding:28px max(4vw,18px) 40px; background:#fffaf4; }
+.account-pages-skeleton__heading,.account-pages-skeleton__layout { max-width:1320px; margin:0 auto; }
+.account-pages-skeleton__heading { margin-bottom:22px; }
+.account-pages-skeleton__layout { display:grid; grid-template-columns:290px minmax(0,1fr); gap:24px; align-items:start; }
+.account-pages-skeleton__layout aside,.account-pages-skeleton__layout main { padding:22px; border:1px solid #eee6dc; border-radius:16px; background:#fff; box-shadow:0 8px 24px rgba(33,24,50,.055); }
+.account-pages-skeleton__layout aside { display:grid; gap:14px; }
+.account-pages-skeleton__layout main > div { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:18px 0; }
+.account-pages-skeleton__layout main > section { display:grid; gap:14px; }
+.account-pages-skeleton__layout i,.account-pages-skeleton__layout b,.account-pages-skeleton__layout span { display:block; height:18px; border-radius:8px; background:linear-gradient(100deg,#eee8e2 20%,#faf5ef 40%,#eee8e2 60%); background-size:220% 100%; animation:account-pages-shimmer 1.35s linear infinite; }
+.account-pages-skeleton__heading i { width:120px; height:10px; margin-bottom:10px; }
+.account-pages-skeleton__heading b { width:310px; height:28px; margin-bottom:10px; }
+.account-pages-skeleton__heading span { width:420px; height:12px; }
+.account-pages-skeleton__layout aside i { width:70px; height:70px; margin:auto; border-radius:50%; }
+.account-pages-skeleton__layout aside b { width:70%; margin:auto; }
+.account-pages-skeleton__layout main > b { width:190px; height:22px; }
+.account-pages-skeleton__layout main > div i { height:86px; border:1px solid #eee6dc; background-color:#fffdfa; }
+.account-pages-skeleton__layout main > section span { height:56px; border:1px solid #eee6dc; background-color:#fffdfa; }
+@keyframes account-pages-shimmer { to { background-position-x:-220%; } }
+.mobile-account-menu-label { display:none; }
+@media(max-width:991.98px) {
+  .account-sidebar-column { padding:0 12px!important; }
+  .account-sidebar-column > .user-card { display:none!important; }
+  .mobile-account-menu-label { display:block; margin:0 12px 6px; color:#36234a; font-size:.82rem; font-weight:750; }
+  .dashbord_card { position:static; max-height:none; margin:0 0 12px!important; padding:3px!important; overflow:visible; }
+  .dashbord_card > .account-sidebar-inner { overflow:hidden; }
+  .dashbord_card .sidebar_account { display:flex; flex-wrap:nowrap; align-items:flex-start; gap:7px; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:none; padding:2px!important; }
+  .dashbord_card .sidebar_account::-webkit-scrollbar { display:none; }
+  .dashbord_card .sidebar_account li { flex:0 0 auto; margin:0!important; padding:0!important; border:0!important; }
+  .dashbord_card .sidebar_account a,.account-page-ui .sidebar_account a { min-height:36px; padding:5px 9px; white-space:nowrap; border:1px solid #eee6dc; background:#fffdfa; }
+  .dashbord_card .sidebar_account a.is-active { border-color:#e89008!important; background:#fff3d7!important; }
+}
+@media(max-width:767.98px) { .account-page-ui { padding:16px 0 36px; } .account-pages-skeleton { padding:18px; } .account-pages-skeleton__layout { grid-template-columns:1fr; } .account-pages-skeleton__layout aside { display:none; } .account-pages-skeleton__layout main > div { grid-template-columns:1fr; } .account-pages-skeleton__layout main > div i:nth-child(n+2) { display:none; } }

@@ -62,6 +62,9 @@
         var sessionUserId = 0;
     </script>
     @stack('style')
+    @if (request()->is('account/*'))
+        <link rel="stylesheet" href="{{ asset('assets/css/account-pages-ui.css') }}?v={{ filemtime(public_path('assets/css/account-pages-ui.css')) }}">
+    @endif
     @stack('header_script')
 
 
@@ -1255,6 +1258,14 @@
             <div class="horoscope-detail-skeleton__cards"><i></i><i></i><i></i></div>
             <div class="horoscope-detail-skeleton__text"><i></i><i></i><i></i></div>
         </section>
+    @elseif(request()->is('account/profile', 'account/addresses', 'account/orders', 'account/wishlists', 'account/recharge-history', 'account/wallet-histories', 'account/consultations', 'account/ai-consultations', 'account/suggested-remedies', 'account/booked-puja', 'account/notification', 'account/newsletter', 'account/support', 'account/refer-earn', 'account/referral-rules', 'account/commissions', 'account/app-referrals', 'account/earnings'))
+        <section class="account-pages-skeleton" id="loader-web" aria-label="Loading account page" role="status">
+            <div class="account-pages-skeleton__heading"><i></i><b></b><span></span></div>
+            <div class="account-pages-skeleton__layout">
+                <aside><i></i><b></b><span></span><span></span><span></span><span></span><span></span></aside>
+                <main><b></b><div><i></i><i></i><i></i></div><section><span></span><span></span><span></span><span></span></section></main>
+            </div>
+        </section>
     @elseif(request()->is('astrologer/login'))
         <section class="astrologer-login-skeleton" id="loader-web" aria-label="Loading astrologer login" role="status">
             <div class="astrologer-login-skeleton__card"><aside><i></i><b></b><span></span><span></span></aside><div><b></b><i></i><i></i><em></em><span></span></div></div>
@@ -1300,6 +1311,51 @@
             <div class="collections-skeleton__heading"></div>
             <div class="collections-skeleton__cards">
                 @for ($i = 0; $i < 8; $i++)
+                    <i></i>
+                @endfor
+            </div>
+        </section>
+    @elseif(request()->is('account/dashboard'))
+        <section class="account-dashboard-skeleton" id="loader-web" aria-label="Loading your dashboard" role="status">
+            <div class="account-dashboard-skeleton__top"><i></i><b></b><span></span><span></span><em></em></div>
+            <div class="account-dashboard-skeleton__heading"><i></i><b></b><span></span></div>
+            <div class="account-dashboard-skeleton__layout">
+                <aside class="account-dashboard-skeleton__sidebar"><i></i><b></b><span></span><span></span><span></span><span></span><span></span></aside>
+                <div class="account-dashboard-skeleton__main">
+                    <div class="account-dashboard-skeleton__quick-links">
+                        @for ($i = 0; $i < 4; $i++)
+                            <i></i>
+                        @endfor
+                    </div>
+                    @for ($i = 0; $i < 4; $i++)
+                        <section class="account-dashboard-skeleton__panel">
+                            <b></b>
+                            <div><i></i><i></i><i></i></div>
+                        </section>
+                    @endfor
+                </div>
+            </div>
+        </section>
+    @elseif(request()->is('kundali/report'))
+        <section class="kundali-report-skeleton" id="loader-web" aria-label="Loading Kundali report" role="status">
+            <div class="kundali-report-skeleton__hero">
+                <i></i><b></b><span></span>
+            </div>
+            <div class="kundali-report-skeleton__tabs">
+                @for ($i = 0; $i < 9; $i++)
+                    <i></i>
+                @endfor
+            </div>
+            <div class="kundali-report-skeleton__title"></div>
+            <div class="kundali-report-skeleton__content">
+                <div class="kundali-report-skeleton__main">
+                    <i></i><i></i><i></i><i></i>
+                    <b></b>
+                </div>
+                <aside><i></i><i></i><i></i></aside>
+            </div>
+            <div class="kundali-report-skeleton__cards">
+                @for ($i = 0; $i < 3; $i++)
                     <i></i>
                 @endfor
             </div>
@@ -2026,7 +2082,7 @@
     <!-- mobile menu Section End  -->
     @yield('content')
     <div class="d-lg-none">
-        @if ($user)
+        @if ($user && !request()->is('account/*'))
             @include(themeView() . 'account._sidebar')
         @endif
     </div>
@@ -2480,22 +2536,30 @@
         }
 
         $(document).ready(function() {
-            if ($('#loader-web').hasClass('home-skeleton') || $('#loader-web').hasClass('panchang-skeleton') || $(
+            if ($('#loader-web').hasClass('account-pages-skeleton') || $('#loader-web').hasClass('account-dashboard-skeleton') || $('#loader-web').hasClass('kundali-report-skeleton') || $('#loader-web').hasClass('home-skeleton') || $('#loader-web').hasClass('panchang-skeleton') || $(
                     '#loader-web').hasClass('horoscopes-skeleton') || $('#loader-web').hasClass('horoscope-detail-skeleton') || $('#loader-web').hasClass(
                     'chat-astrologers-skeleton') || $('#loader-web').hasClass('collections-skeleton') || $(
                     '#loader-web').hasClass('kundali-skeleton') || $('#loader-web').hasClass(
                     'auth-register-skeleton') || $('#loader-web').hasClass('astrologer-detail-skeleton') || $(
                     '#loader-web').hasClass('articles-skeleton') || $('#loader-web').hasClass(
                     'about-page-skeleton') || $('#loader-web').hasClass('contact-page-skeleton') || $('#loader-web').hasClass('astrologer-login-skeleton')) {
+                var skeletonShownAt = Date.now();
+                var skeletonDismissed = false;
                 var dismissHomeSkeleton = function() {
-                    $('#loader-web').addClass('is-dismissing');
+                    if (skeletonDismissed) return;
+                    skeletonDismissed = true;
+                    var visibleFor = Date.now() - skeletonShownAt;
+                    var remainingVisibleTime = Math.max(0, 900 - visibleFor);
                     window.setTimeout(function() {
-                        $('#loader-web').remove();
-                    }, 350);
+                        $('#loader-web').addClass('is-dismissing');
+                        window.setTimeout(function() {
+                            $('#loader-web').remove();
+                        }, 350);
+                    }, remainingVisibleTime);
                 };
                 if (document.readyState === 'complete') dismissHomeSkeleton();
                 else $(window).one('load', dismissHomeSkeleton);
-                window.setTimeout(dismissHomeSkeleton, 2500);
+                window.setTimeout(dismissHomeSkeleton, 5000);
             } else {
                 $('#loader-web').hide();
             }

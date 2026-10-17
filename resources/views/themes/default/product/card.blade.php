@@ -40,7 +40,7 @@
         <!-- Temporarily using the premium placeholder if image is ugly/empty, but preserving original logic just in case -->
         <img class="prod-d2-img" src="{{$productImage ? $productImage->image(600, 600) : asset('assets/images/shop.png')}}" alt="{{ $product->alt_text ?: $productTitle }}">
       </a>
-
+      
       <!-- Wishlist Action -->
       @if($user)
         @if($productWishlist)
@@ -63,7 +63,7 @@
       <a href="{{ route('product.detail', [$productSlug]) }}" class="prod-d2-title" title="{{ $productTitle }}">
         {{ $productTitle }}
       </a>
-
+      
       <div class="prod-d2-price">
         @if($productSpecialPriceFromDate && ($productSpecialPriceFromDate <= $todayDate) && ($productSpecialPriceToDate >= $todayDate) )
           <span>&#8377;{{ $productSpecialPrice }}</span>

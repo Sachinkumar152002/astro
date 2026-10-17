@@ -82,7 +82,7 @@
 ﻿<!-- banner section start -->
 <section class="mt-md-0 mt-md-5 mt-lg-2 pad-ap">
   <div class="container mt-md-0 mt-4 ff">
-
+    
     <style>
       .av3-astro-banner {
           background: linear-gradient(135deg, #0a0f2c 0%, #111936 60%, #0d1530 100%);
@@ -111,11 +111,11 @@
       .av3-status-online { background: #10b981; box-shadow: 0 0 10px rgba(16,185,129,0.5); }
       .av3-status-bussy { background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
       .av3-status-offline { background: #6b7280; }
-
+      
       .av3-info h1 { font-family: 'Georgia', serif; color: white; font-size: 28px; font-weight: 700; margin-bottom: 12px; }
       .av3-info p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
       .av3-info p i { color: #f59e0b; width: 16px; text-align: center; }
-
+      
       .av3-action-btn {
           width: 100%; border-radius: 12px; padding: 12px 16px; margin-bottom: 10px;
           display: flex; align-items: center; justify-content: space-between;
@@ -131,7 +131,7 @@
       .av3-action-btn .free-price { font-size: 16px; font-weight: 800; color: #10b981; }
       .av3-action-btn .old-price { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: line-through; margin-right: 4px; }
       .av3-action-btn.active { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(217,119,6,0.05)); border-color: #f59e0b; box-shadow: 0 0 15px rgba(245,158,11,0.15); }
-
+      
       .av3-right-card {
           background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
           border-radius: 16px; padding: 18px; margin-bottom: 12px;
@@ -146,7 +146,7 @@
       .av3-right-card h6 { color: white; font-size: 16px; font-weight: 600; margin: 0 0 2px 0; }
       .av3-right-card p { color: rgba(255,255,255,0.5); font-size: 13px; margin: 0; }
       .av3-right-card .stars { color: #f59e0b; font-size: 12px; }
-
+      
       @media (max-width: 768px) {
           .av3-astro-banner { padding: 20px; }
           .av3-profile-img-wrap { width: 110px; height: 110px; margin: 0 auto 15px; }
@@ -159,7 +159,7 @@
 
     <div class="av3-astro-banner mb-4">
       <div class="row align-items-center">
-
+        
         <!-- PHP Logic setup -->
         @php
           $name = ''; $email = ''; $phone = ''; $birth_date = ''; $birth_time = ''; $birth_place = '';
@@ -176,11 +176,11 @@
           $callStatus = (int) $astrologer->call;
           $videoStatus = (int) $astrologer->video;
           $alreadyJoined = $user_id && $appointment = $astrologer->aiConsultations($user_id) ? true : false;
-
+          
           $is_busy = ($chatStatus === 3 || $callStatus === 3 || $videoStatus === 3 || $alreadyJoined);
           $is_online = ($chatStatus === 1 || $callStatus === 1 || $videoStatus === 1);
           $astrologer_status = $is_busy ? 'bussy' : ($is_online ? 'online' : 'offline');
-
+          
           $todayDate = date("Y-m-d");
           $specialPriceFromDate = $astrologer->sp_from_date;
           $specialPriceToDate = $astrologer->sp_to_date;
@@ -191,7 +191,7 @@
           $activeTabFunction = "activeTab(this)";
           $handleUserLoginModalFunction = "handleUserLoginModal('open')";
           $onClickTabFunction = $user ? $activeTabFunction : $handleUserLoginModalFunction;
-
+          
           $totalReviews = $astrologerReviews->count();
           $rating = $astrologer->rating;
         @endphp
@@ -219,12 +219,12 @@
 
         <!-- Right: Actions & Stats -->
         <div class="col-lg-6 position-relative z-1">
-
+            
             <div class="row">
                 <!-- Action Buttons Col -->
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     @if(!$loggedInAstrologer)
-
+                        
                         @if($alreadyJoined)
                             <a href="{{ route('user.startaichat', [$appointment->id]) }}" class="av3-action-btn active" style="text-decoration: none;">
                                 <div class="btn-left"><i class="fa fa-commenting"></i> Join Chat</div>
@@ -264,7 +264,7 @@
                             <p style="font-size:11px;">{{ $totalReviews }} Reviews</p>
                         </div>
                     </div>
-
+                    
                     <div class="av3-right-card p-2 px-3">
                         <div class="icon-box text-info" style="width:36px; height:36px;"><i class="bi bi-person-check-fill"></i></div>
                         <div>

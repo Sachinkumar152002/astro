@@ -53,7 +53,7 @@
 @endpush
 
 @section('content')
-<section class="dashboad_section refdash-wrap">
+<section class="account-page-ui dashboad_section refdash-wrap">
   <div class="container">
     <div class="row justify-content-between">
       @include(themeView().'account._sidebar')

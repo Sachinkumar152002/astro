@@ -22,7 +22,7 @@
         <div class="av-hero-badge mb-3"><span>⭐</span> 2M+ Happy Users</div>
         <h1 class="av-hero-title">Your Life.<br>Written in the <span class="av-highlight">Stars.</span></h1>
         <p class="av-hero-subtitle">Get accurate predictions, personalized guidance and connect with verified astrologers.</p>
-
+        
         <div class="av-trust-row">
           <div class="av-trust-item"><i class="fa fa-check-circle"></i> 100% Verified<br>Astrologers</div>
           <div class="av-trust-item"><i class="fa fa-lock"></i> Secure &<br>Private</div>

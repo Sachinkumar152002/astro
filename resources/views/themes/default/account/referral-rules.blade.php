@@ -29,12 +29,12 @@
 @endpush
 
 @section('content')
-<section class="dashboad_section" style="background: #f2f2f2;">
+<section class="account-page-ui dashboad_section">
   <div class="container">
     <div class="row justify-content-between">
       @include(themeView().'account._sidebar')
       <div class="col-lg-9 col-12 mt-md-0 user_dash dash_b">
-
+        
         <div class="mb-4 d-flex align-items-start justify-content-between gap-2 flex-wrap">
           <div>
             <h3 class="mb-0"><i class="bi bi-info-circle"></i> Referral Rules & Terms</h3>
@@ -54,23 +54,23 @@
             <div class="card-body">
               <ul class="list-unstyled">
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Fixed Rewards:</strong> App referrals use fixed amount rewards only
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Reward Triggers:</strong> Rewards are credited on signup or first purchase (as configured)
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Self-Referral:</strong> Self-referral is strictly prohibited and will be blocked
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Limits:</strong> Maximum referrals per user and total earning limits may apply
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Expiry:</strong> Rewards may expire after a certain number of days if not credited
                 </li>
               </ul>
@@ -87,27 +87,27 @@
             <div class="card-body">
               <ul class="list-unstyled">
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Category-Based:</strong> Commissions are calculated based on product categories
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Commission Mode:</strong> Either Percentage or Fixed (one mode active globally)
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Calculation:</strong> Commission = Order Amount × (Rate/100) for Percentage, or Fixed Amount
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Max Cap:</strong> Maximum commission cap may apply per category
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Credit Time:</strong> Commissions credited instantly or after order completion
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Refund Policy:</strong> If order is refunded, commission will be cancelled
                 </li>
               </ul>
@@ -124,23 +124,23 @@
             <div class="card-body">
               <ul class="list-unstyled">
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Two Wallets:</strong> Separate wallets for Referral Rewards and Product Commissions
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Referral Wallet:</strong> Contains earnings from app referrals
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Commission Wallet:</strong> Contains earnings from product commissions
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Withdrawal:</strong> Astrologers can withdraw from both wallets (subject to terms)
                 </li>
                 <li class="mb-3">
-                  <i class="bi bi-check-circle text-success"></i>
+                  <i class="bi bi-check-circle text-success"></i> 
                   <strong>Ledger:</strong> All transactions are recorded in the wallet ledger
                 </li>
               </ul>

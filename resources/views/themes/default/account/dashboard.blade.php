@@ -2,12 +2,21 @@
 
 @section('title', 'User Dashboard | ASTROVYRA')
 
+@push('style')
+<link rel="stylesheet" href="{{ asset('assets/css/account-dashboard.css') }}?v={{ filemtime(public_path('assets/css/account-dashboard.css')) }}">
+@endpush
+
 @section('content')
-<section class="dashboad_section" style="background: #f2f2f2;">
+<section class="account-dashboard-page">
   <div class="container">
     <div class="row justify-content-between">
        @include(themeview().'account._sidebar')
        <div class="col-lg-9 col-12 mt-md-0 user_dash dash_b">
+         <header class="account-dashboard-heading">
+           <span>ACCOUNT OVERVIEW</span>
+           <h1>Welcome back, {{ $user->name ?: 'there' }}</h1>
+           <p>Your recent orders, consultations and account activity in one place.</p>
+         </header>
          <div class="container mt-2 mb-2 px-1">
           <div class="row g-3 same-menu-row">
 
@@ -17,7 +26,7 @@
               <div class="col-6 col-md-3">
                 <a href="{{route('user.purchase.item')}}">
                   <div class="same-card">
-                      <div class="same-icon" style="background:#0d6efd;">
+                      <div class="same-icon same-icon--orders">
                           <img src="/assets/img/checkout.png" alt="">
                       </div>
                       <p>Order</p>
@@ -30,7 +39,7 @@
               <div class="col-6 col-md-3 ">
                 <a href="{{route('user.wallethistory')}}">
                   <div class="same-card">
-                      <div class="same-icon" style="background:#28a745;">
+                      <div class="same-icon same-icon--wallet">
                           <img src="/assets/img/redeem.png" alt="">
                       </div>
                       <p>Wallet History</p>
@@ -43,7 +52,7 @@
               <div class="col-6 col-md-3">
                 <a href="{{route('user.consultations')}}">
                   <div class="same-card">
-                      <div class="same-icon" style="background:#6f42c1;">
+                      <div class="same-icon same-icon--consultation">
                           <img src="/assets/img/talk.png" alt="">
                       </div>
                       <p>Consultation</p>
@@ -54,7 +63,7 @@
               <div class="col-6 col-md-3">
                 <a href="{{ route('user.support') }}">
                   <div class="same-card">
-                      <div class="same-icon" style="background:#d4a017;">
+                      <div class="same-icon same-icon--support">
                           <img src="/assets/img/support.png" alt="">
                       </div>
                       <p>Support</p>
@@ -155,7 +164,7 @@
 
           <div class="col-md-12">
             <!-- orders start -->
-            <div class="financial-box1 mt-4">
+            <div class="financial-box1 account-dashboard-panel mt-4">
      <h5>Orders</h5>
      <div class="mt-2">
        <div class="row">
@@ -206,7 +215,7 @@
             <!-- orders end -->
 
             <!-- consultations start -->
-            <div class="financial-box1 mt-4">
+            <div class="financial-box1 account-dashboard-panel mt-4">
               <h5>Consultation</h5>
               <div class="mt-2">
                 <div class="row">
@@ -266,7 +275,7 @@
             <!-- consultations end -->
 
             <!-- wallet history start -->
-            <div class="financial-box1 mt-4">
+            <div class="financial-box1 account-dashboard-panel mt-4">
     <h5>Wallet History</h5>
     <div class="mt-2">
       <div class="row">
@@ -312,7 +321,7 @@
             <!-- wallet history end -->
 
             <!-- support start -->
-            <div class="financial-box1 mt-4">
+            <div class="financial-box1 account-dashboard-panel mt-4">
               <h5>Support Tickets</h5>
               <div class="mt-2">
  <div class="row">

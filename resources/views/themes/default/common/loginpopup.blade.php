@@ -25,16 +25,16 @@
 
         <!-- ================= RIGHT LOGIN PANEL ================= -->
         <div class="col-md-12 col-lg-6 bg-white">
-
-
+        
+      
           <div class="modal-body">
           <button type="button"
               class="btn-close position-absolute end-0 top-0 m-3"
               onclick="handleUserLoginModal('close')"></button>
-            <div class="p-3">
+            <div class="p-3"> 
               <h5 class="mb-3 text-center">
               User Login
-            </h5>
+            </h5> 
               @php
                 $countries = countries(101);
               @endphp

@@ -21,11 +21,11 @@
     left: 69%;
     top: 37px;
 }
-
+  
 </style>
 <link rel="stylesheet" href="{{ asset('assets/lib/material-timepicker/mdtimepicker.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/css/astrovyr-home.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/css/kundali-ui.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/kundali-ui.css') }}?v={{ filemtime(public_path('assets/css/kundali-ui.css')) }}">
 @endpush
 
 @section('title', 'Kundali | '.config("app.name"))
