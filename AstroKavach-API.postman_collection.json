@@ -1,0 +1,237 @@
+{
+  "info": {
+    "name": "AstroKavach API",
+    "description": "API collection for AstroKavach. Set base_url and api_token (for protected routes) in collection variables.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "https://astrokavach.dixinfotech.in/" },
+    { "key": "api_token", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Auth & User (Public)",
+      "item": [
+        { "name": "Register User", "request": { "method": "POST", "url": "{{base_url}}/api/register/user", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"9876543210\"\n}" } } },
+        { "name": "Get OTP", "request": { "method": "POST", "url": "{{base_url}}/api/otp/user", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"phone\": \"9876543210\"\n}" } } },
+        { "name": "Verify OTP", "request": { "method": "POST", "url": "{{base_url}}/api/otp/user/verify", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"phone\": \"9876543210\",\n  \"otp\": \"654321\"\n}" } } }
+      ]
+    },
+    {
+      "name": "General",
+      "item": [
+        { "name": "Countries", "request": { "method": "POST", "url": "{{base_url}}/api/countries", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "States", "request": { "method": "POST", "url": "{{base_url}}/api/states", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Cities", "request": { "method": "POST", "url": "{{base_url}}/api/cities", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Banners", "request": { "method": "POST", "url": "{{base_url}}/api/banners", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Available Date", "request": { "method": "POST", "url": "{{base_url}}/api/available-date", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Available Time", "request": { "method": "POST", "url": "{{base_url}}/api/available-time", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Gifts", "request": { "method": "POST", "url": "{{base_url}}/api/gifts", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Payment Types", "request": { "method": "POST", "url": "{{base_url}}/api/payment-types", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Order Cancel Reasons", "request": { "method": "POST", "url": "{{base_url}}/api/order-cancel-reasons", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Order Return Reasons", "request": { "method": "POST", "url": "{{base_url}}/api/order-return-reasons", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Search", "request": { "method": "POST", "url": "{{base_url}}/api/search", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Term and Conditions", "request": { "method": "POST", "url": "{{base_url}}/api/term-and-conditions", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Social Links", "request": { "method": "POST", "url": "{{base_url}}/api/social-links", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Pages List (App)", "request": { "method": "POST", "url": "{{base_url}}/api/pages/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"app_type\": \"user\"\n}" } } },
+        { "name": "Page Detail (App)", "request": { "method": "POST", "url": "{{base_url}}/api/pages/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"slug\": \"about-us\",\n  \"app_type\": \"user\"\n}" } } },
+        { "name": "Can Order", "request": { "method": "POST", "url": "{{base_url}}/api/can-order", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Verify Payment", "request": { "method": "POST", "url": "{{base_url}}/api/verify-payment", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Packages (GET)", "request": { "method": "GET", "url": "{{base_url}}/api/packages/", "header": [{"key": "Accept", "value": "application/json"}] } },
+        { "name": "Blogs", "request": { "method": "POST", "url": "{{base_url}}/api/blogs", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Zodiac Signs", "request": { "method": "POST", "url": "{{base_url}}/api/zodiac-signs", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "FAQs", "request": { "method": "POST", "url": "{{base_url}}/api/faqs", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Ads", "request": { "method": "POST", "url": "{{base_url}}/api/ads", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Can Review", "request": { "method": "POST", "url": "{{base_url}}/api/can-review", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Get In Touch", "request": { "method": "POST", "url": "{{base_url}}/api/get-in-touch", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Astrology Detail", "request": { "method": "POST", "url": "{{base_url}}/api/astrology/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Software Detail", "request": { "method": "POST", "url": "{{base_url}}/api/software/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Kundali",
+      "item": [
+        { "name": "Kundali Index (GET)", "request": { "method": "GET", "url": "{{base_url}}/api/kundali/", "header": [{"key": "Accept", "value": "application/json"}] } },
+        { "name": "Kundali Enquiry Submit", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Kundali Report (GET)", "request": { "method": "GET", "url": "{{base_url}}/api/kundali/report", "header": [{"key": "Accept", "value": "application/json"}] } },
+        { "name": "Gem Suggestion", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/gem-suggestion", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Rudraksh Suggestion", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/rudraksh-suggestion", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Ashtakvarga", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/ashtakvarga", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Chart", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/chart", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Basic Details", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/basic", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Jaimini Karakas", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/jaimini-karakas", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Transit Dates", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/transit-dates", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Transit Chart", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/transit-chart", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dosha Manglik", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dosha/manglik", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dosha Kalsarpa", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dosha/kalsarpa", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dosha Sadesati", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dosha/sadesati", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dosha Mangal", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dosha/mangal", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dasha Current Mahadasha", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dasha/current-mahadasha", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dasha Antardasha", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dasha/antardasha", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dasha Mahadasha", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dasha/mahadasha", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Dasha Yogini", "request": { "method": "POST", "url": "{{base_url}}/api/kundali/dasha/yogini", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Panchang (GET)", "request": { "method": "GET", "url": "{{base_url}}/api/panchang", "header": [{"key": "Accept", "value": "application/json"}] } }
+      ]
+    },
+    {
+      "name": "User (Protected)",
+      "item": [
+        { "name": "User Data", "request": { "method": "POST", "url": "{{base_url}}/api/user/data", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "User Data Save", "request": { "method": "POST", "url": "{{base_url}}/api/user/data/save", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Addresses", "request": { "method": "POST", "url": "{{base_url}}/api/user/addresses", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Addresses Submit", "request": { "method": "POST", "url": "{{base_url}}/api/user/addresses-submit", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Addresses Delete", "request": { "method": "POST", "url": "{{base_url}}/api/user/addresses-delete", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Book Consultation", "request": { "method": "POST", "url": "{{base_url}}/api/user/book-consultaion", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Book AI Consultation", "request": { "method": "POST", "url": "{{base_url}}/api/user/book-ai-consultaion", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Can Chat", "request": { "method": "POST", "url": "{{base_url}}/api/user/can-chat", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Chat Logs", "request": { "method": "POST", "url": "{{base_url}}/api/user/chat-logs", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Send Message", "request": { "method": "POST", "url": "{{base_url}}/api/user/send-message", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Can Phone Call", "request": { "method": "POST", "url": "{{base_url}}/api/user/can-phone-call", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Update Phone Call Status", "request": { "method": "POST", "url": "{{base_url}}/api/user/update-phone-call-status", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Can Video Call", "request": { "method": "POST", "url": "{{base_url}}/api/user/can-video-call", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Update Video Call Status", "request": { "method": "POST", "url": "{{base_url}}/api/user/update-video-call-status", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Consultations", "request": { "method": "POST", "url": "{{base_url}}/api/user/consultations", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "AI Chat Logs", "request": { "method": "POST", "url": "{{base_url}}/api/user/chat-logs-ai", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Send Message AI", "request": { "method": "POST", "url": "{{base_url}}/api/user/send-message-ai", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Update AI Chat Time", "request": { "method": "POST", "url": "{{base_url}}/api/user/update-chat-time-ai", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "AI Consultations", "request": { "method": "POST", "url": "{{base_url}}/api/user/ai-consultations", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Apply Coupon", "request": { "method": "POST", "url": "{{base_url}}/api/user/coupon", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Recharge Plans", "request": { "method": "POST", "url": "{{base_url}}/api/user/recharge-plans", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Recharge", "request": { "method": "POST", "url": "{{base_url}}/api/user/recharge", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Recharge Histories", "request": { "method": "POST", "url": "{{base_url}}/api/user/recharge-histories", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Wallet Transition History", "request": { "method": "POST", "url": "{{base_url}}/api/user/wallet-transition-history", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Wishlist List", "request": { "method": "POST", "url": "{{base_url}}/api/user/wishlist/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Wishlist Add", "request": { "method": "POST", "url": "{{base_url}}/api/user/wishlist/add", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Wishlist Remove", "request": { "method": "POST", "url": "{{base_url}}/api/user/wishlist/remove", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Checkout", "request": { "method": "POST", "url": "{{base_url}}/api/user/checkout", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Place Order", "request": { "method": "POST", "url": "{{base_url}}/api/user/place-order", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Orders", "request": { "method": "POST", "url": "{{base_url}}/api/user/orders", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Order Detail", "request": { "method": "POST", "url": "{{base_url}}/api/user/order-detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Order Request", "request": { "method": "POST", "url": "{{base_url}}/api/user/order-request", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Support Types", "request": { "method": "POST", "url": "{{base_url}}/api/user/support/types", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Support List", "request": { "method": "POST", "url": "{{base_url}}/api/user/support/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Support Submit Ticket", "request": { "method": "POST", "url": "{{base_url}}/api/user/support/submit-ticket", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Support Messages", "request": { "method": "POST", "url": "{{base_url}}/api/user/support/messages", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Support Submit Message", "request": { "method": "POST", "url": "{{base_url}}/api/user/support/submit-message", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Live Astrologers", "request": { "method": "POST", "url": "{{base_url}}/api/user/live/astrologers", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Join Live Astrologer", "request": { "method": "POST", "url": "{{base_url}}/api/user/join/live/astrologer", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Update Joined User", "request": { "method": "POST", "url": "{{base_url}}/api/user/update/joined/user", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Send Gift", "request": { "method": "POST", "url": "{{base_url}}/api/user/gifts/send", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Live Chat Send", "request": { "method": "POST", "url": "{{base_url}}/api/user/live-chat/send", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Notify User Save", "request": { "method": "POST", "url": "{{base_url}}/api/user/notify-user/save", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Notifications", "request": { "method": "POST", "url": "{{base_url}}/api/user/notifications", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Submit Review", "request": { "method": "POST", "url": "{{base_url}}/api/user/submit-review", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Logout", "request": { "method": "POST", "url": "{{base_url}}/api/user/logout", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } }
+      ]
+    },
+    {
+      "name": "Astrologer",
+      "item": [
+        { "name": "Types", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/types", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Experiences", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/experiences", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Prices", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/prices", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Ratings", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/ratings", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Services", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/services", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Languages", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/languages", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Sort By", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/sort-by", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "List", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Update Status", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/update-status", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Review", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/review", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Verify Astrologer Mobile", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/verify-astrologer-mobile-number", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Verify Astrologer OTP", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/verify-astrologer-otp", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Register", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/register", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "OTP", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/otp", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Verify OTP", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/verify-otp", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Data", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/data", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Puja", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/puja", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Booked Puja", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/booked-puja", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Puja Earnings", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/puja-earnings", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Referral Listing", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/referral-listing", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Logout", "request": { "method": "POST", "url": "{{base_url}}/api/astrologer/logout", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        { "name": "Categories", "request": { "method": "POST", "url": "{{base_url}}/api/product/categories", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Types", "request": { "method": "POST", "url": "{{base_url}}/api/product/types", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Subtypes", "request": { "method": "POST", "url": "{{base_url}}/api/product/subtypes", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Sort By", "request": { "method": "POST", "url": "{{base_url}}/api/product/sortby", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "List", "request": { "method": "POST", "url": "{{base_url}}/api/product/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/product/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Review", "request": { "method": "POST", "url": "{{base_url}}/api/product/review", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        { "name": "List", "request": { "method": "POST", "url": "{{base_url}}/api/cart/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Add", "request": { "method": "POST", "url": "{{base_url}}/api/cart/add", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Update", "request": { "method": "POST", "url": "{{base_url}}/api/cart/update", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Remove", "request": { "method": "POST", "url": "{{base_url}}/api/cart/remove", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Increase", "request": { "method": "POST", "url": "{{base_url}}/api/cart/increase", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } },
+        { "name": "Decrease", "request": { "method": "POST", "url": "{{base_url}}/api/cart/decrease", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{\n  \"api_token\": \"{{api_token}}\"\n}" } } }
+      ]
+    },
+    {
+      "name": "Blog",
+      "item": [
+        { "name": "Categories", "request": { "method": "POST", "url": "{{base_url}}/api/blog/categories", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "List", "request": { "method": "POST", "url": "{{base_url}}/api/blog/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/blog/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Zodiac",
+      "item": [
+        { "name": "List", "request": { "method": "POST", "url": "{{base_url}}/api/zodiac/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Time Frames", "request": { "method": "POST", "url": "{{base_url}}/api/zodiac/time-frames", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/zodiac/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Panchang",
+      "item": [
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/panchang/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Location",
+      "item": [
+        { "name": "Locations", "request": { "method": "POST", "url": "{{base_url}}/api/location/", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Kundali Matching",
+      "item": [
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/kundali-matching/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Course",
+      "item": [
+        { "name": "Categories", "request": { "method": "POST", "url": "{{base_url}}/api/course/categories", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Types", "request": { "method": "POST", "url": "{{base_url}}/api/course/types", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Package Types", "request": { "method": "POST", "url": "{{base_url}}/api/course/package-types", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Sort By", "request": { "method": "POST", "url": "{{base_url}}/api/course/sortby", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "List", "request": { "method": "POST", "url": "{{base_url}}/api/course/list", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/course/detail/:slug", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Testimonials",
+      "item": [
+        { "name": "Text", "request": { "method": "POST", "url": "{{base_url}}/api/testimonials/text", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Video", "request": { "method": "POST", "url": "{{base_url}}/api/testimonials/video", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    },
+    {
+      "name": "Vastu",
+      "item": [
+        { "name": "Detail", "request": { "method": "POST", "url": "{{base_url}}/api/vastu/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } },
+        { "name": "Service Detail", "request": { "method": "POST", "url": "{{base_url}}/api/vastu/service/detail", "header": [{"key": "Accept", "value": "application/json"}, {"key": "Content-Type", "value": "application/json"}], "body": { "mode": "raw", "raw": "{}" } } }
+      ]
+    }
+  ]
+}

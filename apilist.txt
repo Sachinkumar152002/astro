@@ -1,0 +1,834 @@
+register api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/register/user
+body parameters:-
+name: string
+email: email
+phone: 10 digits
+
+otp api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/otp/user
+body parameters:-
+phone: 10 digits
+
+otp verify api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/otp/user/verify
+body parameters:-
+phone: 10 digits
+otp: 6 digits
+
+user data api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/data
+authorization required
+
+user data save api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/data/save
+authorization required
+body parameters:-
+name: string
+gender_id: integer (1:male, 2:female, 3:other)
+country_id: integer
+state_id: integer
+city_id: integer
+pincode: 6 digits
+address: string
+image: file (jpg, jpeg, png, webp)
+
+countries api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/countries
+
+states api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/states
+body parameters:-
+country_id: integer
+
+cities api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/cities
+body parameters:-
+state_id: integer
+
+banners api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/banners
+body parameters:-
+type: string (home, astrologers, products) (Default: home)
+
+addresses api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/addresses
+authorization required
+
+add edit addresses api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/addresses-submit
+authorization required
+body parameters:-
+id: integer (For Adding a new use 0, for editing get from addresses api)
+name: string
+email: email
+phone: 10 digits
+country_id: integer
+state_id: integer
+city_id: integer
+zipcode: 6 digits
+address: string
+
+delete addresses api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/addresses-delete
+authorization required
+body parameters:-
+id: integer (get from addresses api)
+
+services api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/services
+
+experiences api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/experiences
+
+prices api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/prices
+
+languages api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/languages
+
+ratings api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/ratings
+
+sort by api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/sort-by
+
+astrologer list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/list
+body parameters:-
+except: string (if don't want a specific astrologer in the list) (optional)
+name: string (optional)
+city: string (optional)
+services: array (integer) (optional)
+experiences: array (integer) (optional)
+prices: array (integer) (optional)
+languages: array (integer) (optional)
+rating: array (integer) (optional)
+sort_by: string (optional)
+
+astrologer detail api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/detail
+body parameters:-
+slug: string required
+
+available dates api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/available-date
+body parameters:-
+id: integer required (fetch from astrologer list or detail api)
+
+available times api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/available-time
+body parameters:-
+id: integer required (fetch from astrologer list or detail api)
+
+book consultation api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/book-consultaion
+Authorization required
+body parameters:-
+id: integer required (fetch from astrologer list or detail api)
+mode: string required (chat, call, video)
+when: string required (now, later)
+name: string required
+email: string required
+mobile: string required
+gender: integer optional
+maritial_status: string optional
+occupation: string optional
+when is equall to later
+time_slot: integer required (15, 30)
+scheduled_date: date required
+scheduled_time_slot: time required
+
+consultation list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/consultations
+Authorization required
+body parameters:-
+type: string required (chat, call, video)
+
+can chat api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/can-chat
+Authorization required
+body parameters:-
+consultation_id: integer required
+
+fetch chats api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/chat-logs
+Authorization required
+body parameters:-
+consultation_id: integer required
+chat_id: integer required
+
+send message api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/send-message
+Authorization required
+body parameters:-
+chat_id: integer required
+message: string required
+
+can phone call api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/can-phone-call
+Authorization required
+body parameters:-
+consultation_id: integer required
+
+update phone call status and time api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/update-phone-call-status
+Authorization required
+body parameters:-
+consultation_id: integer required
+
+can video call api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/can-video-call
+Authorization required
+body parameters:-
+consultation_id: integer required
+
+update video call status and time api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/update-video-call-status
+Authorization required
+body parameters:-
+consultation_id: integer required
+
+book ai consultation api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/book-ai-consultaion
+Authorization required
+body parameters:-
+astrologer_id: integer required (fetch from ai astrologer list)
+
+fetch ai chat logs api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/send-message-ai
+Authorization required
+body parameters:-
+consultation_id: integer required (fetch from book ai consultation api)
+
+send message to ai api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/chat-logs-ai
+Authorization required
+body parameters:-
+consultation_id: integer|required (fetch from book ai consultation api)
+message: string|required
+
+update ai chat time api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/update-chat-time-ai
+Authorization required
+body parameters:-
+consultation_id: integer required
+
+ai astrologer consultations list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/ai-consultations
+Authorization required
+body parameters:-
+
+recharge plans api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/recharge-plans
+Authorization required
+
+recharge api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/recharge
+Authorization required
+body parameters:-
+plan_id: integer required
+
+coupon api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/coupon
+Authorization required
+body parameters:-
+page: string required (order, recharge)
+coupon_code: string required
+if page is equall to recharge
+plan_id: integer required
+
+make recharge api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/recharge
+Authorization required
+body parameters:-
+plan_id: integer required
+if coupon applied
+coupon_code: string
+
+verify recharge payment api
+type: POST
+url: get from make recharge api response key is "callback_url"
+Authorization required
+
+recharge history api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/recharge-histories
+Authorization required
+
+product categories api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/product/categories
+body parameters:-
+type: required | string (product, service, pooja)
+
+product types api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/product/types
+
+product sort by api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/product/sortby
+
+product list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/product/list
+body parameters:-
+type: required | string (product, service, pooja)
+except_id: optional | integer (if don't want a specific product in the list)
+category_id: required | integer (default : 0 for all)
+priceFrom: required | numeric (0)
+priceTo: required | numeric (0)
+sortBy: required | string  (a_to_z)
+page: required | integer (1)
+limit: required | integer  (9)
+
+product detail api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/product/detail
+body parameters:-
+id: integer required (get from product list api)
+api_token: string
+
+cart list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/cart/list
+body parameters:-
+api_token: string required
+
+add item to cart api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/cart/add
+body parameters:-
+api_token: string required
+item_type: string required (shop)
+item_slug: string required
+form_data: json string (optional)
+
+update cart item api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/cart/update
+body parameters:-
+item_id: integer required (fetch from cart item list api)
+form_data: array required
+
+remove item from cart api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/cart/remove
+body parameters:-
+item_id: integer required
+
+increase cart item api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/cart/increase
+body parameters:-
+item_id: integer required
+
+decrease cart item api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/cart/decrease
+body parameters:-
+item_id: integer required
+
+whislist add/remove api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/wishlist/add
+authorization required
+body parameters:-
+slug: sting required (product slug)
+action: sting required (add/remove)
+
+whislist list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/wishlist
+authorization required
+
+checkout api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/checkout
+authorization required
+
+place order api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/place-order
+authorization required
+body parameters:-
+address_id: integer required
+
+verify order payment api
+type: POST
+url: get from place order api response key is "callback_url"
+Authorization required
+
+blog categories api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/blog/categories
+
+blog list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/blog/list
+body parameters:-
+categoryId: integer required
+expectId: integer optional
+limit: integer optional
+page: integer required (for pagination)
+
+blog detail api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/blog/detail
+body parameters:-
+id: integer required
+
+Zodiac list Api
+url: https://astrokavach.dixinfotech.in/api/zodiac/list
+type: POST
+Authorization token required: No
+
+Zodiac detail Api
+url: https://astrokavach.dixinfotech.in/api/zodiac/detail
+type: Post
+Authorization token required: No
+Body Parameters
+zodiacId:Required Integer
+timeFrame: Required String
+
+Panchang detail Api
+url: https://astrokavach.dixinfotech.in/api/panchang/detail
+type: Post
+Authorization token required: No
+Body Parameters
+date:Required String (Format YYYY-mm-dd)
+
+Location Api
+url: https://astrokavach.dixinfotech.in/api/location
+type: Post
+Authorization token required: No
+Body Parameters
+searchPlace:Required String
+
+kundali detail Api
+url: https://astrokavach.dixinfotech.in/api/kundali/detail
+type: Post
+Authorization token required: No
+Body Parameters
+name:Required String
+gender:Required String
+date:Required String (Format YYYY-mm-dd)
+time:Required String (Format HH-ii)
+city:Required String
+
+kundali tab Api
+url: https://astrokavach.dixinfotech.in/api/kundali/kundali
+type: Post
+Authorization token required: No
+Body Parameters
+planet_id:Required integer (get from kundali detail api)
+
+kp tab Api
+url: https://astrokavach.dixinfotech.in/api/kundali/kp
+type: Post
+Authorization token required: No
+Body Parameters
+planet_id:Required integer (get from kundali detail api)
+
+ashtakvarga tab Api
+url: https://astrokavach.dixinfotech.in/api/kundali/ashtakvarga
+type: Post
+Authorization token required: No
+Body Parameters
+planet_id:Required integer (get from kundali detail api)
+
+charts tab Api
+url: https://astrokavach.dixinfotech.in/api/kundali/charts
+type: Post
+Authorization token required: No
+Body Parameters
+planet_id:Required integer (get from kundali detail api)
+
+dasha tab Api
+url: https://astrokavach.dixinfotech.in/api/kundali/dasha
+type: Post
+Authorization token required: No
+Body Parameters
+planet_id:Required integer (get from kundali detail api)
+
+report general tab Api
+url: https://astrokavach.dixinfotech.in/api/kundali/report/general
+type: Post
+Authorization token required: No
+Body Parameters
+planet_id:Required integer (get from kundali detail api)
+
+report dosha tab Api
+url: https://astrokavach.dixinfotech.in/api/kundali/report/dosha
+type: Post
+Authorization token required: No
+Body Parameters
+planet_id:Required integer (get from kundali detail api)
+
+verify astrologer mobile number
+url: https://astrokavach.dixinfotech.in/api/astrologer/verify-astrologer-mobile-number
+type: Post
+Authorization token required: No
+Body Parameters
+phone_code : Required String (+91)
+phone : Required Numeric
+
+verify astrologer mobile number
+url: https://astrokavach.dixinfotech.in/api/astrologer/verify-astrologer-otp
+type: Post
+Authorization token required: No
+Body Parameters
+phone : Required Numeric
+otp : Required Numeric
+
+Astrologer Register Api
+url: https://astrokavach.dixinfotech.in/api/astrologer/register
+type: Post
+Authorization token required: No
+Body Parameters
+profile_image:Required|file|mimes:jpg,jpeg,png,webp|max:1024kb
+first_name:Required|string
+last_name:Required|string
+email:Required|email
+phone_code:Required (+91)
+phone:Required|digit
+gender:Required|integer (1->male,2->female,3->others)
+dob:Required|date (YYYY-mm-dd)
+job_start_year:Required|digit (0 to 50)
+languages:Required Array (get from languages api)
+services:Required Array (get from services api)
+country_id:Required|integer (default->101)
+state_id:Required|integer (get from states api)
+city_id:Required|integer (get from cities api)
+address:Required|string
+landmark:Required|string
+pincode:Required|string
+about:Required|string
+pancard:Required|file|mimes:jpg,jpeg,png,webp|max:1024kb
+aadharcard:Required|file|mimes:jpg,jpeg,png,webp|max:1024kb
+short_bio:Required string
+has_website:Required|integer (0 or 1)
+if has_website is equall to 1
+website_url:Required|max:255
+associate_with_temple:Required|integer (0 or 1)
+if associate_with_temple is equall to 1
+temple_name:Required|max:255
+terms_and_conditions:Required|integer (1)
+
+astrologer otp api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/otp
+body parameters:-
+phone: 10 digits
+
+astrologer verify api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/verify-otp
+body parameters:-
+phone: 10 digits
+otp: 6 digits
+
+astrologer data api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/data
+body parameters:-
+id: integer required (get from astrologer verify api)
+
+support api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/support/types
+
+support types api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/support/types
+Authorization token required: Yes
+
+support list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/support/list
+Authorization token required: Yes
+
+support submit ticket api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/support/submit-ticket
+Authorization token required: Yes
+body parameters:-
+subject: string required
+type: string required
+message: string required
+document: binary (Accept:mimes:pdf,jpg,jpeg,png) (optional)
+
+support messages api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/support/messages
+Authorization token required: Yes
+body parameters:-
+ticket_id: integer required (fetch from list)
+
+support submit message api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/support/submit-message
+Authorization token required: Yes
+body parameters:-
+ticket_id: integer required (fetch from list)
+message: string required
+
+live astrologers list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/live/astrologers
+Authorization token required: Yes
+
+join live astrologer api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/join/live/astrologer
+Authorization token required: Yes
+body parameters:-
+live_id: integer required (fetch from live astrologers api)
+
+update joined user api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/update/joined/user
+Authorization token required: Yes
+
+ai astrologers list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/list/AI
+Authorization token required: No
+
+gifts api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/gifts
+Authorization token required: No
+
+send gifts api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/gifts/send
+Authorization token required: Yes
+body parameters:-
+gift_id: integer required (fetch from gifts api)
+astrologer_id: integer required
+
+user live chat api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/live-chat/send
+Authorization token required: Yes
+body parameters:-
+astrologer_live_user_id: integer required (fetch from join live astrologer api)
+message: integer
+
+orders list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/orders
+Authorization token required: Yes
+
+orders list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/order-detail
+Authorization token required: Yes
+body parameters:-
+order_id: integer required (fetch from orders list api)
+
+ads api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/ads
+body parameters:-
+page: required|string (astrologer, blog, home, product)
+
+user logout api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/logout
+Authorization token required: Yes
+
+astrologer logout api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/logout
+body parameters:-
+api_token: required|string (fetch from verify astrologer otp api)
+
+can review api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/can-review
+body parameters:-
+api_token: required|string
+page: required|string (astrologer, shop)
+id: required|integer (product's id, astroger's id)
+Note: if success is true than show review form else not
+
+submit user review api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/submit-review
+Authorization token required: Yes
+body parameters:-
+page: required|string (astrologer, shop)
+id: required|integer (product's id, astroger's id)
+rating: required|integer (1 to 5)
+review: required
+
+product reviews api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/product/review
+body parameters:-
+id: required|integer (product's id)
+
+astrologer reviews api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/astrologer/review
+body parameters:-
+id: required|integer (astroger's id)
+
+wishlist list api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/wishlist/lists
+Authorization required
+
+wishlist add/remove api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/wishlist/add
+Authorization required
+body parameters:-
+item_id: required|integer (product's id)
+item_id: required|string (add, remove)
+
+wallet history api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/user/wallet-transition-history
+Authorization required
+body parameters:-
+page: required|integer (for pagination)
+
+payment types api
+type: POST
+url: https://astrokavach.dixinfotech.in/api/payment-types
+body parameters:-
+item_type: required|integer
+
+kundali matching detail Api
+url: https://astrokavach.dixinfotech.in/api/kundali-matching/detail
+type: Post
+Authorization token required: No
+Body Parameters
+boy_name:Required String
+boy_birth_date:Required String (Format YYYY-mm-dd)
+boy_birth_time:Required String (Format HH-ii)
+boy_birth_place:Required String
+girl_name:Required String
+girl_birth_date:Required String (Format YYYY-mm-dd)
+girl_birth_time:Required String (Format HH-ii)
+girl_birth_place:Required String
+
+text testimonial Api
+url: https://astrokavach.dixinfotech.in/api/testimonials/text
+type: Post
+Authorization token required: No
+Body Parameters
+page : Optional String (astrologer, product, puja, service)
+
+video testimonial Api
+url: https://astrokavach.dixinfotech.in/api/testimonials/video
+type: Post
+Authorization token required: No
+Body Parameters
+page : Optional String (astrologer, product, puja, service)
+
+faqs Api
+url: https://astrokavach.dixinfotech.in/api/faqs
+type: Post
+Authorization token required: No
+Body Parameters
+page : Optional String (product, puja, service, astrologer, ai)
+
+Order cancel reasons Api
+url: https://astrokavach.dixinfotech.in/api/order-cancel-reasons
+type: Post
+Authorization token required: No
+
+Order return reasons Api
+url: https://astrokavach.dixinfotech.in/api/order-return-reasons
+type: Post
+Authorization token required: No
+
+order request Api
+url: https://astrokavach.dixinfotech.in/api/user/order-request
+type: Post
+Authorization token required: Yes
+Body Parameters
+request_type : Required String (cancel, return)
+order_id : Required Integer
+reason : Required Integer
+if reason is equall to Other
+message : Required String
+if request_type is equall to return
+item_ids : Required Array (array of item ids)
+
+search Api
+url: https://astrokavach.dixinfotech.in/api/search
+type: Post
+Authorization token required: No
+Body Parameters
+name : Required String
+
+user notification save Api
+url: https://astrokavach.dixinfotech.in/api/user/notify-user/save
+type: Post
+Authorization token required: Yes
+Body Parameters
+astrologer_id : Required|Integer
+type : Required|String ("astrologer-online", "astrologer-live")
+
+user notifications Api
+url: https://astrokavach.dixinfotech.in/api/user/notifications
+type: Post
+Authorization token required: Yes
+
+
+redirect to from push notification on user app
+wallet_history, consultation_history, order_history, home, astrologer_detail, astrologer_online, astrologer_live
+
+redirect to from push notification on astrologer app
+consultation_history, dashboard
+
+peding api:
+order cancel
+order return
+kundali matching

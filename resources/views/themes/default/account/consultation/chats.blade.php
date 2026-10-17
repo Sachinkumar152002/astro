@@ -1,0 +1,118 @@
+<style>
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-user-bubble {
+  max-width: 75%;
+  background-color:#6040ff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-top-right-radius: 0;
+  color: white;
+}
+
+.chat-astro-bubble {
+  max-width: 75%;
+  background-color:#6c757d;
+  padding: 10px 15px;
+  border-radius: 15px;
+    color: white;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-top-left-radius: 0;
+}
+
+.justify-content-start .chat-bubble {
+  border-top-left-radius: 0;
+}
+
+.justify-content-end .chat-bubble {
+  border-top-right-radius: 0;
+}
+.c-cardd{
+  background: transparent;
+}
+</style>
+
+@php
+ $astrologer = $appointment->astrologer;
+ $astrologerImage = $astrologer->image ? $astrologer->image->image(100, 100) : asset('assets/images/profile-n.png');
+ $user = $appointment->user;
+ $userImage = $user->image ? $user->image->image(100, 100) : asset('assets/images/user-n.png');
+@endphp
+
+  <div class="card border-0 my-3 user-bb c-cardd">
+    <div class="d-flex justify-content-end align-items-start">
+      <div class="chat-user-bubble text-start">
+            <ul style="list-style-type:none" class="m-0 p-0">
+              <li>Hi,</li>
+              <li>Name: {{$appointment->name}}</li>
+              @if($appointment->gender)
+              <li>Gender: {{$appointment->gender}}</li>
+              @endif
+              @if($appointment->dateofbirth)
+              <li>Birth Date: {{date('d-m-Y', strtotime($appointment->dateofbirth))}}</li>
+              @endif
+              @if($appointment->birthtime)
+              <li>Birth Time: {{date('h:i a', strtotime($appointment->birthtime))}}</li>
+              @endif
+              @if($appointment->birthplace)
+              <li>Birth Place: {{ $appointment->birthplace }}</li>
+              @endif
+              @if($appointment->occupation)
+              <li>Occupation: {{$appointment->occupation}}</li>
+              @endif
+              @if($appointment->maritial_status)
+              <li>Maritial Status: {{$appointment->maritial_status}}</li>
+              @endif
+            </ul>
+          </div>
+          <img src="{{ $userImage }}" class="chat-avatar ms-2" alt="You">
+        </div>
+      </div>
+
+      {{--<div class="card border-0 my-2 c-cardd">
+        <div class="d-flex justify-content-start align-items-start">
+        <div class="chat-astro-bubble text-start">
+            This is an automated message to confirm that chat has started
+          </div>
+        </div>
+      </div>--}}
+
+@foreach($results as $key => $row)
+    @if($row->message_by == 'astrologer')
+      <div class="card border-0 my-2 c-cardd">
+        <div class="d-flex justify-content-start align-items-start">
+          <img src="{{ $astrologerImage }}" class="chat-avatar me-2">
+          <div class="chat-astro-bubble text-start">
+            <div class="">
+              {!! nl2br($row->message) !!}
+            </div>
+            <div class="chat-time text-end">{{ date('h:i A', strtotime($row->created_at)) }}</div>
+          </div>
+        </div>
+      </div>
+    @else
+      <div class="card border-0 my-2 c-cardd">
+        <div class="d-flex justify-content-end align-items-start">
+          <div class="chat-user-bubble text-start">
+            <div class="">
+              {!! nl2br($row->message) !!}
+            </div>
+            <div class="chat-time text-end">{{ date('h:i A', strtotime($row->created_at)) }}</div>
+          </div>
+          <img src="{{ $userImage }}" class="chat-avatar ms-2">
+        </div>
+      </div>
+    @endif
+@endforeach

@@ -1,0 +1,257 @@
+<!-- banner section start -->
+<section class="mt-md-0 mt-md-5 mt-lg-2 pad-ap">
+  <div class="container mt-md-0 mt-4 ff">
+
+    <style>
+      .av3-astro-banner {
+          background: linear-gradient(135deg, #0a0f2c 0%, #111936 60%, #0d1530 100%);
+          border-radius: 20px;
+          padding: 30px;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+          border: 1px solid rgba(255,255,255,0.05);
+      }
+      .av3-astro-banner::before {
+          content: ''; position: absolute; width: 400px; height: 400px;
+          background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, rgba(245,158,11,0) 70%);
+          top: -150px; right: -150px; border-radius: 50%; pointer-events: none;
+      }
+      .av3-profile-img-wrap {
+          width: 150px; height: 150px; border-radius: 50%; padding: 4px;
+          background: linear-gradient(135deg, #f59e0b, #d97706);
+          position: relative; margin: 0 auto;
+      }
+      .av3-profile-img-wrap img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 4px solid #111936; background: #fff; }
+      .av3-status-badge {
+          position: absolute; bottom: 8px; right: 12px; width: 22px; height: 22px; border-radius: 50%;
+          border: 4px solid #111936;
+      }
+      .av3-status-online { background: #10b981; box-shadow: 0 0 10px rgba(16,185,129,0.5); }
+      .av3-status-bussy { background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+      .av3-status-offline { background: #6b7280; }
+
+      .av3-info h1 { font-family: 'Georgia', serif; color: white; font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+      .av3-info p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+      .av3-info p i { color: #f59e0b; width: 16px; text-align: center; }
+
+      .av3-action-btn {
+          width: 100%; border-radius: 12px; padding: 12px 16px; margin-bottom: 10px;
+          display: flex; align-items: center; justify-content: space-between;
+          transition: all 0.3s; border: none; cursor: pointer;
+          background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      }
+      .av3-action-btn:hover:not(:disabled) { background: rgba(255,255,255,0.12); transform: translateY(-2px); border-color: rgba(245,158,11,0.4); }
+      .av3-action-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+      .av3-action-btn .btn-left { display: flex; align-items: center; gap: 12px; color: white; font-weight: 600; font-size: 15px; }
+      .av3-action-btn .btn-left i { font-size: 18px; color: #10b981; }
+      .av3-action-btn .btn-left i.fa-volume-control-phone { color: #8b5cf6; }
+      .av3-action-btn .btn-left i.bi-camera-video-fill { color: #ec4899; }
+      .av3-action-btn .btn-right { text-align: right; line-height: 1.2; }
+      .av3-action-btn .price { font-size: 16px; font-weight: 800; color: #f59e0b; }
+      .av3-action-btn .free-price { font-size: 16px; font-weight: 800; color: #10b981; }
+      .av3-action-btn .old-price { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: line-through; margin-right: 4px; }
+      .av3-action-btn.active { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(217,119,6,0.05)); border-color: #f59e0b; box-shadow: 0 0 15px rgba(245,158,11,0.15); }
+
+      .av3-right-card {
+          background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+          border-radius: 16px; padding: 18px; margin-bottom: 12px;
+          display: flex; align-items: center; gap: 16px; backdrop-filter: blur(10px);
+          transition: all 0.3s;
+      }
+      .av3-right-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(245,158,11,0.3); }
+      .av3-right-card .icon-box {
+          width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+          background: rgba(255,255,255,0.05); font-size: 20px;
+      }
+      .av3-right-card h6 { color: white; font-size: 16px; font-weight: 600; margin: 0 0 2px 0; }
+      .av3-right-card p { color: rgba(255,255,255,0.5); font-size: 13px; margin: 0; }
+      .av3-right-card .stars { color: #f59e0b; font-size: 12px; }
+
+      .av3-notify-btn {
+          background: transparent; border: 1px solid #f59e0b; color: #f59e0b; border-radius: 50px;
+          padding: 6px 16px; font-size: 13px; font-weight: 600; transition: all 0.3s;
+          display: inline-flex; align-items: center; gap: 6px;
+      }
+      .av3-notify-btn:hover { background: #f59e0b; color: white; }
+
+      @media (max-width: 768px) {
+          .av3-astro-banner { padding: 20px; }
+          .av3-profile-img-wrap { width: 110px; height: 110px; margin: 0 auto 15px; }
+          .av3-info { text-align: center; }
+          .av3-info h1 { font-size: 22px; }
+          .av3-info p { justify-content: center; }
+          .av3-right-card { padding: 14px; gap: 12px; }
+      }
+    </style>
+
+    <div class="av3-astro-banner mb-4">
+      <div class="row align-items-center">
+
+        <!-- PHP Logic setup (identical to original) -->
+        @php
+          $name = ''; $email = ''; $phone = ''; $birth_date = ''; $birth_time = ''; $birth_place = '';
+          $gender = ''; $maritial_status = ''; $occupation = ''; $consult_type = "now"; $slot_time = '5';
+          if($user){
+              $user_id = $user->id; $name = $user->name; $email = $user->email; $phone = $user->phone;
+              $birth_date = $user->birth_date; $birth_time = $user->birth_time; $birth_place = $user->birth_place;
+              if($user->gender == 1) $gender = "male";
+              elseif($user->gender == 2) $gender = "female";
+              elseif($user->gender == 3) $gender = "other";
+          }
+          $chatStatus = (int) $astrologer->chat;
+          $callStatus = (int) $astrologer->call;
+          $videoStatus = (int) $astrologer->video;
+          $is_busy = ($chatStatus === 3 || $callStatus === 3 || $videoStatus === 3 || $diffInSeconds > 0);
+          $is_online = ($chatStatus === 1 || $callStatus === 1 || $videoStatus === 1);
+          $astrologer_status = $is_busy ? 'bussy' : ($is_online ? 'online' : 'offline');
+          $show_notify = ($astrologer_status === 'offline');
+
+          $todayDate = date("Y-m-d");
+          $specialPriceFromDate = $astrologer->sp_from_date;
+          $specialPriceToDate = $astrologer->sp_to_date;
+          $hasSpecialPrice = false;
+          if($specialPriceFromDate && ($specialPriceFromDate <= $todayDate) && ($specialPriceToDate >= $todayDate)){
+            $hasSpecialPrice = true;
+          }
+          $activeTabFunction = "activeTab(this)";
+          $handleUserLoginModalFunction = "handleUserLoginModal('open')";
+          $onClickTabFunction = $user ? $activeTabFunction : $handleUserLoginModalFunction;
+
+          $totalReviews = $astrologerReviews->count();
+          $rating = $astrologer->rating;
+        @endphp
+
+        <!-- Left: Image & Info -->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <div class="av3-profile-img-wrap">
+                        <img src="{{ $astrologer->image ? $astrologer->image->image(300) : no_image() }}" alt="{{ $astrologer->display_name }}">
+                        <div class="av3-status-badge av3-status-{{ $astrologer_status }}" title="{{ ucfirst($astrologer_status) }}"></div>
+                    </div>
+                </div>
+                <div class="col-md-8 av3-info">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3 mb-1">
+                        <h1 class="mb-0">{{ $astrologer->display_name }}</h1>
+                        <a class="a2a_dd text-white" href="https://www.addtoany.com/share" style="opacity: 0.6; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6"><i class="bi bi-share"></i></a>
+                    </div>
+                    <p><i class="bi bi-award"></i> {{ $astrologer->my_expertise_full }}</p>
+                    <p><i class="bi bi-translate"></i> {{ $astrologer->my_language }}</p>
+                    <p><i class="bi bi-mortarboard"></i> {{ $astrologer->year_exp }} Years Experience</p>
+
+                    @if($show_notify)
+                    <div class="mt-3 text-center text-md-start">
+                        <button class="av3-notify-btn" onclick="handleNotifyMe(this,'{{ $astrologer->id }}','astrologer-online')">
+                            <i class="fa fa-bell"></i> Notify Me When Online
+                        </button>
+                    </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Actions & Stats -->
+        <div class="col-lg-6 position-relative z-1">
+
+            <div class="row">
+                <!-- Action Buttons Col -->
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    @if(!$loggedInAstrologer && $diffInSeconds <= 0)
+
+                        <!-- Chat Button -->
+                        @if($chatStatus === 1)
+                            @php $chatSpecialPrice = $astrologer->chat_special_price; $chatPrice = $astrologer->chat_price; @endphp
+                            <button {{ $bookNow || $takeBooking ? "" : "disabled" }} class="select-type-btn book_nowbut av3-action-btn {{$type=='chat'?'active':''}}" data-type="chat" data-price="{{ $hasSpecialPrice ? $chatSpecialPrice : $chatPrice }}" onclick="{{ $onClickTabFunction }}" id="chattab">
+                                <div class="btn-left"><i class="fa fa-commenting"></i> Chat</div>
+                                <div class="btn-right">
+                                    @if($hasSpecialPrice)
+                                        @if($astrologer->first_chat_free && $takeConsultation == false)
+                                            <div><strike class="old-price">&#8377;{{ $chatSpecialPrice }}</strike> <span class="free-price">FREE</span></div>
+                                        @else
+                                            <div><strike class="old-price">&#8377;{{ $chatPrice }}</strike> <span class="price">&#8377;{{ $chatSpecialPrice }}/min</span></div>
+                                        @endif
+                                    @else
+                                        @if($astrologer->first_chat_free && $takeConsultation == false)
+                                            <div><strike class="old-price">&#8377;{{ $chatPrice }}</strike> <span class="free-price">FREE</span></div>
+                                        @else
+                                            <div><span class="price">&#8377;{{ $chatPrice }}/min</span></div>
+                                        @endif
+                                    @endif
+                                </div>
+                            </button>
+                        @endif
+
+                        <!-- Call Button -->
+                        @if($callStatus === 1)
+                            @php $callSpecialPrice = $astrologer->call_special_price; $callPrice = $astrologer->call_price; @endphp
+                            <button {{ $bookNow || $takeBooking ? "" : "disabled" }} class="select-type-btn book_nowbut av3-action-btn {{$type=='call'?'active':''}}" data-type="call" data-price="{{ $hasSpecialPrice ? $callSpecialPrice : $callPrice }}" onclick="{{ $onClickTabFunction }}" id="calltab">
+                                <div class="btn-left"><i class="fa fa-volume-control-phone"></i> Call</div>
+                                <div class="btn-right">
+                                    @if($hasSpecialPrice)
+                                        <div><strike class="old-price">&#8377;{{ $callPrice }}</strike> <span class="price">&#8377;{{ $callSpecialPrice }}/min</span></div>
+                                    @else
+                                        <div><span class="price">&#8377;{{ $callPrice }}/min</span></div>
+                                    @endif
+                                </div>
+                            </button>
+                        @endif
+
+                        <!-- Video Button -->
+                        @if($videoStatus === 1)
+                            @php $videoSpecialPrice = $astrologer->special_price; $videoPrice = $astrologer->price; @endphp
+                            <button {{ $bookNow || $takeBooking ? "" : "disabled" }} class="select-type-btn book_nowbut av3-action-btn {{$type=='video'?'active':''}}" data-type="video" data-price="{{ $hasSpecialPrice ? $videoSpecialPrice : $videoPrice }}" onclick="{{ $onClickTabFunction }}" id="videotab">
+                                <div class="btn-left"><i class="bi bi-camera-video-fill"></i> Video</div>
+                                <div class="btn-right">
+                                    @if($hasSpecialPrice)
+                                        <div><strike class="old-price">&#8377;{{ $videoPrice }}</strike> <span class="price">&#8377;{{ $videoSpecialPrice }}/min</span></div>
+                                    @else
+                                        <div><span class="price">&#8377;{{ $videoPrice }}/min</span></div>
+                                    @endif
+                                </div>
+                            </button>
+                        @endif
+
+                    @else
+                        <!-- Waiting time -->
+                        <button class="av3-action-btn border border-warning" id="waittab" disabled>
+                            <div class="btn-left text-warning"><i class="fa fa-clock-o"></i> Wait Time</div>
+                            <div class="btn-right"><span class="price text-warning" id="waitingP">{{ $waitingTime }}</span></div>
+                        </button>
+                    @endif
+                </div>
+
+                <!-- Info Cards Col -->
+                <div class="col-sm-6">
+                    <div class="av3-right-card p-2 px-3">
+                        <div class="icon-box text-warning" style="width:36px; height:36px;"><i class="bi bi-star-fill"></i></div>
+                        <div>
+                            <h6 style="font-size:14px;">{{ $rating > 0 ? $rating : 'New' }} <span class="stars" style="font-size:10px;">@for($i=1;$i<=$rating;$i++)<i class="bi bi-star-fill"></i>@endfor</span></h6>
+                            <p style="font-size:11px;">{{ $totalReviews }} Reviews</p>
+                        </div>
+                    </div>
+
+                    <div class="av3-right-card p-2 px-3">
+                        <div class="icon-box text-info" style="width:36px; height:36px;"><i class="bi bi-person-check-fill"></i></div>
+                        <div>
+                            <h6 style="font-size:14px;">Verified Expert</h6>
+                            <p style="font-size:11px;">AstroVyra Certified</p>
+                        </div>
+                    </div>
+
+                    <div class="av3-right-card p-2 px-3 mb-0">
+                        <div class="icon-box text-success" style="width:36px; height:36px;"><i class="bi bi-shield-lock-fill"></i></div>
+                        <div>
+                            <h6 style="font-size:14px;">100% Secure</h6>
+                            <p style="font-size:11px;">Safe Payments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Astrologer detail section start -->

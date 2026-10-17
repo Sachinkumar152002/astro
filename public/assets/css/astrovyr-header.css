@@ -1,0 +1,45 @@
+/* Shared light AstroVyra header treatment for every public page. */
+header:not(.mobile),.header:not(.mobile),nav.navbar,nav.navbar.navbar-light,.navbar.bg-dark {
+  background:#fffaf4!important;
+  color:#24143a!important;
+  border-color:#f0a10c!important;
+}
+header:not(.mobile) a,header:not(.mobile) .fa,header:not(.mobile) .bi,
+nav.navbar a,nav.navbar .nav-link { color:#36234a!important; }
+nav.navbar .nav-link:hover,nav.navbar .nav-link.active { color:#e89008!important; }
+
+@media (min-width:992px) {
+  :root { --av-head:#fffaf4; --av-head-gold:#f59b08; }
+  header.header.desktop { height:88px; padding:0!important; background:var(--av-head)!important; color:#24143a; }
+  header.header.desktop>.container,header.header.desktop .row,header.header.desktop .header-list-m { height:100%; }
+  header.header.desktop .header-list-m { width:100%; margin-left:0!important; padding:0 4px; }
+  header.header.desktop .navbar-brand { display:flex; align-items:center; margin:0; }
+  header.header.desktop .navbar-brand a { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  header.header.desktop .navbar-brand img { display:block; width:52px!important; height:52px!important; max-width:52px; object-fit:cover; border:2px solid #f0dfc8; border-radius:50%; background:#fff; }
+  .av-desktop-brand { display:flex; flex-direction:column; color:#26163d; line-height:1; }.av-desktop-brand strong { font-family:Georgia,serif; font-size:24px; letter-spacing:.5px; color:#26163d; }.av-desktop-brand strong span { color:var(--av-head-gold); }.av-desktop-brand small { margin-top:5px; color:#6b6076; font-size:10px; letter-spacing:2px; font-style:italic; }
+  header.header.desktop .h-search { width:500px; } header.header.desktop .h-search .form-control { height:44px; padding-left:20px; border:1px solid #e9deef; border-radius:999px 0 0 999px; background:#fff; color:#31213e!important; caret-color:#31213e; font-size:13px; } header.header.desktop .h-search .form-control::placeholder { color:#777080!important; opacity:1; } header.header.desktop .h-search .input-group-text { display:flex; width:49px; height:44px; align-items:center; justify-content:center; border:0; border-radius:0 999px 999px 0; background:#4c176f; color:#fff; }
+  html body header.header.desktop input#searchInput.form-control { color:#31213e!important; }
+  html body header.header.desktop input#searchInput.form-control::placeholder,
+  html body header.header.desktop input#searchInput.form-control::-webkit-input-placeholder { color:#777080!important; opacity:1!important; }
+  header.header.desktop .icon_list { align-items:center; gap:10px; margin:0; } header.header.desktop .icon_list li { margin:0; } header.header.desktop .icon_list .log { display:flex; align-items:center; gap:10px; }
+  header.header.desktop .icon_list .wallet { display:flex; align-items:center; justify-content:center; width:42px; min-width:42px!important; height:42px!important; border:1px solid #d9cee4!important; border-radius:8px; background:#fff!important; }
+  header.header.desktop .icon_list .wallet .k_cart { position:relative; display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+  header.header.desktop .icon_list .wallet .k_cart i { color:#4c176f!important; font-size:21px!important; }
+  header.header.desktop .icon_list .wallet .count { position:absolute; top:-7px; right:-8px; display:grid; place-items:center; width:19px; height:19px; border:2px solid var(--av-head); border-radius:50%; background:#e75a70; color:#fff; font-size:10px; line-height:1; }
+  .av-header-login,.av-header-signup { height:38px; padding:0 18px; border-radius:999px; font-size:12px; font-weight:700; cursor:pointer; }.av-header-login { border:1px solid #cbb8d9; background:#fff; color:#4c176f; }.av-header-signup { border:0; background:linear-gradient(135deg,#ffb20c,#ef8700); color:#fff; box-shadow:0 5px 14px rgba(255,159,0,.28); }
+  section.header-top.desktop { width:100%; margin:0; padding:0!important; background:var(--av-head)!important; border-top:1px solid #f3eadf; border-bottom:2px solid var(--av-head-gold); } section.header-top.desktop>.container { width:100%; max-width:none; padding:0 28px; } section.header-top.desktop .row,section.header-top.desktop .row>div { width:100%; margin:0; padding:0!important; }
+  #header-nav { width:100%; min-height:45px; border:0!important; background:transparent!important; } #header-nav .container-fluid { width:100%; max-width:1280px; padding:0; } #header-nav .navbar-collapse { display:flex!important; justify-content:center; } #header-nav .navbar-nav { width:100%; justify-content:space-between; } #header-nav .nav-item { padding:0!important; position:relative; } #header-nav .nav-link { padding:13px 10px!important; color:#36234a!important; font-size:12px!important; font-weight:600; line-height:1; white-space:nowrap; } #header-nav .nav-link:hover,#header-nav .nav-link.active { color:var(--av-head-gold)!important; } #header-nav .menu-new-badge { top:-2px; font-size:7px; }
+  #header-nav .dropdown-menu { top:100%; left:0; z-index:10020; min-width:185px; margin:0; padding:7px; border:1px solid #ece8f2; border-radius:0 0 10px 10px; background:#fff; box-shadow:0 12px 24px rgba(16,8,38,.2); } #header-nav .dropdown-menu .dropdown-item { display:block; padding:9px 11px; border-radius:6px; color:#26163e!important; font-size:12px; font-weight:600; white-space:nowrap; } #header-nav .dropdown-menu .dropdown-item:hover { background:#f5edff; color:#8c4900!important; } #header-nav .dropdown:hover>.dropdown-menu { display:block; } #header-nav .dropdown:last-child .dropdown-menu { right:0; left:auto; }
+}
+
+/* Mobile search controls remain readable on the light compact header. */
+@media (max-width:991px) {
+  body { padding-top:20px!important; }
+  header.header.mobile { top:0!important; padding-bottom:0!important; background:#fff!important; box-shadow:0 2px 9px rgba(25,12,48,.1); }
+  header.header.mobile .icon_list { align-items:center; }
+  header.header.mobile .icon_list li { display:flex; align-items:center; justify-content:center; border:1px solid #d8d1e5!important; border-radius:7px; background:#f0edfa!important; }
+  header.header.mobile .icon_list li i,header.header.mobile .icon_list li a i { color:#211239!important; }
+  header.header.mobile .search-input { z-index:10020; border:1px solid #d8d1e5; border-radius:8px; background:#fff; box-shadow:0 8px 18px rgba(25,12,48,.14); padding:6px; }
+  header.header.mobile .search-input .search-bar { width:100%; border:0; color:#17121f!important; background:#fff!important; }
+  header.header.mobile .search-input .search-bar::placeholder { color:#5d5865!important; opacity:1; }
+}

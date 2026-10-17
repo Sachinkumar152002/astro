@@ -1,0 +1,25 @@
+﻿/* Registration page styling in the shared AstroVyra theme. */
+body.user-register-route { background:#fffaf5 !important; color:#211832; }
+body.user-register-route .login-left { border-radius:18px 0 0 18px; background:linear-gradient(145deg,#ffe2c1,#fff1dc); }
+body.user-register-route .login-left-inner h4, body.user-register-route .login-left-inner h3 { color:#211832; }
+body.user-register-route .login-left-inner h3 { font-family:Georgia,serif; }
+body.user-register-route .mx-600 { max-width:850px; margin:28px auto 52px; border:1px solid #eee4da; border-radius:18px; background:#fff; box-shadow:0 14px 36px rgba(48,25,70,.1); overflow:hidden; }
+body.user-register-route .mx-600 > .row { border:0 !important; border-radius:18px; }
+body.user-register-route .login-boxx h5 { color:#211832; font-weight:700; }
+body.user-register-route .login-boxx .form-control, body.user-register-route .login-boxx select { min-height:44px; border-color:#e5dce9; border-radius:10px; box-shadow:none; }
+body.user-register-route .login-boxx .form-control:focus, body.user-register-route .login-boxx select:focus { border-color:#9d78bd; box-shadow:0 0 0 3px rgba(91,42,135,.1); }
+body.user-register-route .main_button { border:0; border-radius:24px; background:linear-gradient(135deg,#ffb20c,#ef8700); color:#291743; box-shadow:0 6px 16px rgba(239,135,0,.2); }
+body.user-register-route .text-primary-n { color:#4b1a70 !important; }
+.auth-register-skeleton { position:fixed; inset:0; z-index:20000; overflow:auto; padding:12px max(5vw,24px) 40px; background:#fffaf5; transition:opacity .3s ease; }
+.auth-register-skeleton.is-dismissing { opacity:0; pointer-events:none; }
+.auth-register-skeleton__top,.auth-register-skeleton__nav,.auth-register-skeleton__card { max-width:1280px; margin-left:auto; margin-right:auto; }
+.auth-register-skeleton__top { height:64px; display:flex; align-items:center; gap:22px; }
+.auth-register-skeleton__top i,.auth-register-skeleton__top b,.auth-register-skeleton__top span,.auth-register-skeleton__top em,.auth-register-skeleton__nav i,.auth-register-skeleton__card i,.auth-register-skeleton__card b,.auth-register-skeleton__card span,.auth-register-skeleton__card em { display:block; border-radius:9px; background:linear-gradient(100deg,#eee8e2 20%,#faf5ef 40%,#eee8e2 60%); background-size:220% 100%; animation:auth-register-shimmer 1.35s linear infinite; }
+@keyframes auth-register-shimmer { to { background-position-x:-220%; } }
+.auth-register-skeleton__top i { width:140px;height:34px; }.auth-register-skeleton__top b { width:32%;height:35px;border-radius:24px;margin-left:8%; }.auth-register-skeleton__top span { width:65px;height:14px; }.auth-register-skeleton__top em { width:80px;height:32px;border-radius:20px;margin-left:auto; }
+.auth-register-skeleton__nav { height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px; }.auth-register-skeleton__nav i { width:9%;height:13px; }
+.auth-register-skeleton__card { min-height:360px; margin-top:44px; display:grid; grid-template-columns:1fr 1fr; overflow:hidden; border:1px solid #eee4da; border-radius:18px; background:#fff; box-shadow:0 12px 32px rgba(48,25,70,.08); }
+.auth-register-skeleton__card aside { padding:48px 32px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(145deg,#ffe2c1,#fff1dc); }
+.auth-register-skeleton__card aside i { width:115px;height:115px;border-radius:50%;margin-bottom:24px; }.auth-register-skeleton__card aside b { width:80%;height:20px;margin-bottom:12px; }.auth-register-skeleton__card aside span { width:65%;height:12px;margin:6px; }
+.auth-register-skeleton__card>div { padding:48px 36px; display:flex; flex-direction:column; justify-content:center; gap:15px; }.auth-register-skeleton__card>div b { width:65%;height:23px;align-self:center;margin-bottom:14px; }.auth-register-skeleton__card>div i { height:45px; }.auth-register-skeleton__card>div em { width:48%;height:42px;align-self:center;border-radius:24px;margin-top:8px; }.auth-register-skeleton__card>div span { width:70%;height:12px;align-self:center; }
+@media(max-width:767px) { .auth-register-skeleton { padding:8px 16px 30px; }.auth-register-skeleton__top { gap:10px; }.auth-register-skeleton__top span { display:none; }.auth-register-skeleton__top b { margin-left:auto;width:34%; }.auth-register-skeleton__nav i:nth-child(n+6) { display:none; }.auth-register-skeleton__nav i { width:18%; }.auth-register-skeleton__card { grid-template-columns:1fr;margin-top:25px; }.auth-register-skeleton__card aside { display:none; }.auth-register-skeleton__card>div { padding:32px 20px; } body.user-register-route .mx-600 { margin:20px 14px 36px; } }

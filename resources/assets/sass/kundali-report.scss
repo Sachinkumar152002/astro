@@ -1,0 +1,89 @@
+// Report page palette follows the site's saffron accent and warm neutral surfaces.
+$kundali-accent: #f15a24;
+$kundali-accent-dark: #d94716;
+$kundali-ink: #29243a;
+$kundali-muted: #716d78;
+$kundali-border: #eee7e1;
+$kundali-surface: #fff;
+$kundali-page: #fffaf6;
+
+.kundali-report-section {
+  --kundali-accent: #{$kundali-accent};
+  --kundali-accent-dark: #{$kundali-accent-dark};
+  --kundali-ink: #{$kundali-ink};
+  --kundali-muted: #{$kundali-muted};
+  --kundali-border: #{$kundali-border};
+  --kundali-surface: #{$kundali-surface};
+  --kundali-page: #{$kundali-page};
+}
+
+.kundali-report-section {
+  background: $kundali-page;
+}
+
+.kundali-report-section .container-fluid {
+  max-width: 1480px;
+}
+
+.kundli-horizontal-tabs {
+  gap: 7px;
+  padding: 12px;
+  border: 1px solid $kundali-border;
+  border-radius: 14px;
+  background: $kundali-surface;
+  box-shadow: 0 8px 26px rgba(41, 36, 58, .06);
+}
+
+.kundli-horizontal-tabs .nav-link {
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: $kundali-muted;
+  font-weight: 600;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+
+  i, .fas { color: inherit; }
+
+  &:hover, &:focus-visible {
+    color: $kundali-accent-dark;
+    background: #fff4ed;
+    border-color: #f8d7c8;
+    transform: none;
+    box-shadow: none;
+  }
+
+  &.active {
+    color: #fff;
+    border-color: $kundali-accent;
+    background: $kundali-accent;
+    box-shadow: 0 5px 14px rgba(241, 90, 36, .22);
+
+    i, .fas { color: #fff; }
+
+    &::before { display: none; }
+  }
+}
+
+#kundliTabContent {
+  color: $kundali-ink;
+
+  .card, .kundali-card, .dashboard-service-card {
+    border-color: $kundali-border;
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(41, 36, 58, .05);
+  }
+
+  a:not(.btn) { color: $kundali-accent-dark; }
+}
+
+@media (max-width: 767.98px) {
+  .kundali-report-section .container-fluid { padding: 1rem !important; }
+  .kundli-horizontal-tabs {
+    gap: 5px;
+    padding: 8px;
+    border-radius: 11px;
+  }
+  .kundli-horizontal-tabs .nav-link {
+    padding: 9px 12px;
+    font-size: .82rem;
+  }
+}

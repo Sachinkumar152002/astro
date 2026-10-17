@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('products', function (Blueprint $table) {
+          $table->integer('sub_type')->default(0)->nullable();
+          $table->dateTime('expire_at')->nullable();
+          $table->string('video_call_url')->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('products', function (Blueprint $table) {
+          $table->dropColumn('sub_type');
+          $table->dropColumn('expire_at');
+          $table->dropColumn('video_call_url');
+        });
+    }
+};

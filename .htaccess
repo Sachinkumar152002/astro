@@ -1,0 +1,35 @@
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    # ---------------------------------------------------
+    # Remove /public from browser URL
+    # /public/... -> /...
+    # ---------------------------------------------------
+    RewriteCond %{THE_REQUEST} \s/+public(?:[/?\s]) [NC]
+    RewriteRule ^public(?:/(.*))?$ /$1 [R=301,L,NE]
+
+    # ---------------------------------------------------
+    # Authorization header
+    # ---------------------------------------------------
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # ---------------------------------------------------
+    # Serve files/directories from Laravel public folder
+    #
+    # /assets/css/style.css
+    #        ↓
+    # /public/assets/css/style.css
+    # ---------------------------------------------------
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/public/$1 -d
+    RewriteRule ^(.+)$ public/$1 [L]
+
+    # ---------------------------------------------------
+    # Laravel application
+    # ---------------------------------------------------
+    RewriteRule ^$ public/index.php [L]
+    RewriteRule ^(.+)$ public/index.php [L]
+
+</IfModule>

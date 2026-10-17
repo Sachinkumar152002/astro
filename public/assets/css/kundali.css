@@ -1,0 +1,1327 @@
+/* Improved Horizontal Tabs Design */
+.kundli-horizontal-tabs {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 10px 10px 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-bottom: 2px solid #e9ecef;
+    flex-wrap: nowrap;
+    margin-bottom: 25px !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+}
+
+.kundli-horizontal-tabs .nav-item {
+    margin-bottom: 0;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.kundli-horizontal-tabs .nav-link {
+    border: 1px solid #e9ecef;
+    background: #ffffff;
+    color: #555;
+    padding: 12px 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.kundli-horizontal-tabs .nav-link i,
+.kundli-horizontal-tabs .nav-link .fas {
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-right: 6px;
+    margin-left: 0 !important;
+}
+
+.kundli-horizontal-tabs .nav-link:hover {
+    background: rgba(107, 63, 160, 0.08);
+    color: #6b3fa0;
+    border-color: rgba(107, 63, 160, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 63, 160, 0.15);
+}
+
+.kundli-horizontal-tabs .nav-link:hover i {
+    transform: scale(1.1);
+    color: #6b3fa0;
+}
+
+.kundli-horizontal-tabs .nav-link.active {
+    background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);
+    color: #ffffff;
+    font-weight: 600;
+    border-color: #6b3fa0;
+    box-shadow: 0 4px 15px rgba(107, 63, 160, 0.3);
+    position: relative;
+}
+
+.kundli-horizontal-tabs .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #4a2c6d;
+    border-radius: 8px 0 0 8px;
+}
+
+.kundli-horizontal-tabs .nav-link.active i {
+    color: #6b3fa0;
+}
+
+.astrology-sidebar .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #8b5fbf 0%, #6b3fa0 100%);
+}
+
+/* Improved Content Tabs (Horizontal) */
+.nav-tabs {
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 25px;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -2px;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #666;
+    padding: 12px 24px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: transparent;
+    border-radius: 8px 8px 0 0;
+    margin-right: 5px;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #6b3fa0;
+    background: rgba(107, 63, 160, 0.05);
+    border-bottom-color: rgba(107, 63, 160, 0.3);
+}
+
+.nav-tabs .nav-link.active {
+    color: #6b3fa0;
+    background: rgba(107, 63, 160, 0.08);
+    border-bottom-color: #6b3fa0;
+    font-weight: 600;
+}
+
+/* Improved Card Designs */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background: #ffffff;
+    color: #333;
+    font-weight: 600;
+    padding: 16px 20px;
+    border-bottom: 2px solid #e9ecef;
+    font-size: 1.1rem;
+}
+
+.card-header-main {
+  background: #ffffff;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #6b3fa0;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #e8d5ff;
+    position: relative;
+}
+
+.card-header-main::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6b3fa0 0%, #8b5fbf 100%);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Improved Kundli Details Styling */
+.kundli-section .card {
+    background: #ffffff;
+}
+
+.kundli-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.kundli-value {
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.kundli-section .row {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease;
+}
+
+.kundli-section .row:hover {
+    background: rgba(107, 63, 160, 0.03);
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.kundli-section .row:last-child {
+    border-bottom: none;
+}
+
+/* Current Dasha Cards Styling */
+.current-dasha-cards {
+    margin-bottom: 30px;
+}
+
+.current-dasha-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.current-dasha-card:hover {
+    box-shadow: 0 4px 16px rgba(107, 63, 160, 0.15);
+    transform: translateY(-2px);
+}
+
+.current-dasha-card .card-header {
+    background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-bottom: none;
+}
+
+.current-dasha-card .card-body {
+    padding: 20px;
+}
+
+.dasha-planet-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6b3fa0;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px;
+    background: rgba(107, 63, 160, 0.1);
+    border-radius: 8px;
+}
+
+.dasha-date-label {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.dasha-date-value {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Vimshottari Maha Dasha Table Styling */
+#maha-dasha-table {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#maha-dasha-table thead {
+    background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);
+    color: #ffffff;
+}
+
+#maha-dasha-table thead th {
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: left;
+    border: none;
+}
+
+#maha-dasha-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s ease;
+}
+
+#maha-dasha-table tbody tr:hover {
+    background: rgba(107, 63, 160, 0.05);
+}
+
+#maha-dasha-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+#maha-dasha-table tbody td {
+    padding: 12px 20px;
+    color: #333;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+#maha-dasha-table tbody td:first-child {
+    font-weight: 600;
+    color: #6b3fa0;
+    width: 30%;
+}
+
+#maha-dasha-table tbody td:nth-child(2),
+#maha-dasha-table tbody td:nth-child(3) {
+    color: #666;
+    width: 35%;
+}
+
+/* Vimshottari Dasha Styling */
+.vimshottari-dasha-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.vimshottari-dasha-container > table,
+.vimshottari-dasha-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    border: 1px solid #e9ecef;
+}
+
+.vimshottari-dasha-container > table:last-child,
+.vimshottari-dasha-container table:last-child {
+    margin-bottom: 0;
+}
+
+.vimshottari-dasha-container table thead {
+    background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);
+    color: #ffffff;
+}
+
+.vimshottari-dasha-container table thead th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    text-transform: capitalize;
+}
+
+.vimshottari-dasha-container table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s ease;
+}
+
+.vimshottari-dasha-container table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.vimshottari-dasha-container table tbody tr:hover {
+    background: rgba(107, 63, 160, 0.03);
+}
+
+.vimshottari-dasha-container table tbody td {
+    padding: 12px 20px;
+    color: #333;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.vimshottari-dasha-container table tbody td:first-child {
+    font-weight: 500;
+    color: #6b3fa0;
+    width: 40%;
+}
+
+.vimshottari-dasha-container table tbody td:last-child {
+    color: #666;
+    width: 60%;
+}
+
+/* Style for period header rows (start/end dates) - rows with colspan */
+.vimshottari-dasha-container table tbody tr td[colspan="2"] {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #6b3fa0;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Style separator rows - rows with dashed borders */
+.vimshottari-dasha-container table tbody tr[style*="border"] {
+    border-top: 2px dashed #dee2e6 !important;
+    border-bottom: 2px dashed #dee2e6 !important;
+    height: 1px;
+}
+
+.vimshottari-dasha-container table tbody tr[style*="border"] td {
+    padding: 0 !important;
+    height: 1px;
+    line-height: 1px;
+    border: none !important;
+}
+
+/* Alternative: style rows that appear to be separators */
+.vimshottari-dasha-container table tbody tr:empty,
+.vimshottari-dasha-container table tbody tr td:empty {
+    border-top: 2px dashed #dee2e6;
+    border-bottom: 2px dashed #dee2e6;
+    height: 1px;
+    padding: 0;
+}
+
+/* Responsive for Vimshottari Dasha */
+@media (max-width: 768px) {
+    .vimshottari-dasha-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .vimshottari-dasha-container table thead th,
+    .vimshottari-dasha-container table tbody td {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Dosha Cards Styling */
+.dosha-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.dosha-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.dosha-card:hover {
+    box-shadow: 0 8px 24px rgba(107, 63, 160, 0.15);
+    transform: translateY(-2px);
+    border-color: rgba(107, 63, 160, 0.3);
+}
+
+.dosha-card .card-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    color: #6b3fa0;
+    border-bottom: 2px solid #e9ecef;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.dosha-card .card-header i {
+    color: #6b3fa0;
+    font-size: 1.1rem;
+}
+
+.dosha-card .card-body {
+    padding: 25px;
+}
+
+.dosha-card .description {
+    line-height: 1.8;
+    color: #555;
+}
+
+.dosha-card .description p {
+    margin-bottom: 15px;
+}
+
+.dosha-card .description h1,
+.dosha-card .description h2,
+.dosha-card .description h3,
+.dosha-card .description h4,
+.dosha-card .description h5,
+.dosha-card .description h6 {
+    color: #6b3fa0;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.dosha-card:first-child {
+    margin-top: 0;
+}
+
+.dosha-card:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Improved Table Styling */
+.table-responsive {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+    width: 100%;
+    min-width: 600px;
+}
+
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    table-layout: auto;
+}
+
+.table thead {
+    background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);
+    color: #ffffff;
+}
+
+.table thead th {
+    border: none;
+    padding: 14px 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+    background: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.table tbody tr:hover {
+    background: rgba(107, 63, 160, 0.08) !important;
+    transform: scale(1.005);
+    box-shadow: 0 2px 8px rgba(107, 63, 160, 0.15);
+}
+
+.table tbody td {
+    padding: 12px;
+    border-color: #e9ecef;
+    vertical-align: middle;
+    color: #333;
+}
+
+.table-bordered {
+    border: 1px solid #e9ecef;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid #e9ecef;
+}
+
+.table-sm thead th,
+.table-sm tbody td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+}
+
+/* Improved Tab Content Area */
+.tab-content {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    min-height: 400px;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure tab content area doesn't overflow */
+.tab-content,
+.tab-pane {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure tables are contained */
+.tab-content .table-responsive {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.tab-pane {
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Improved Section Container */
+section.pb-4 {
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    padding-top: 30px !important;
+}
+
+/* Better spacing for rows - handled by Bootstrap defaults */
+
+/* Improved image styling in cards */
+.card img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.02);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improved Nav Pills (for nested tabs) */
+.nav-pills {
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.nav-pills .nav-link {
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-pills .nav-link:hover {
+    background: rgba(107, 63, 160, 0.1);
+    color: #6b3fa0;
+    border-color: rgba(107, 63, 160, 0.2);
+}
+
+.nav-pills .nav-link.active {
+    background: linear-gradient(135deg, #6b3fa0 0%, #8b5fbf 100%);
+    color: #ffffff;
+    border-color: #6b3fa0;
+    box-shadow: 0 4px 12px rgba(107, 63, 160, 0.3);
+}
+
+/* Improved Description Sections */
+.description {
+    line-height: 1.8;
+    color: #555;
+}
+
+.description p {
+    margin-bottom: 15px;
+}
+
+.description h5, .description h6 {
+    color: #6b3fa0;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Improved Section Spacing */
+.mt-4 {
+    margin-top: 2rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 2rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Responsive improvements for tabs */
+@media (max-width: 991px) {
+    .kundli-horizontal-tabs {
+        padding: 8px 0;
+        overflow-x: auto;
+    }
+
+    .kundli-horizontal-tabs .nav-link {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .kundli-horizontal-tabs .nav-link i {
+        font-size: 0.85rem;
+        margin-right: 4px;
+    }
+
+    .tab-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kundli-horizontal-tabs {
+        flex-wrap: nowrap;
+        padding: 8px 0;
+        overflow-x: auto;
+    }
+
+    .kundli-horizontal-tabs .nav-item {
+        margin-right: 3px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .kundli-horizontal-tabs .nav-link {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .kundli-horizontal-tabs .nav-link i {
+        font-size: 0.8rem;
+        margin-right: 3px;
+    }
+
+    .card-header-main {
+        font-size: 1.4rem;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 8px 6px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-responsive table {
+        min-width: 800px;
+    }
+}
+
+@media (max-width: 576px) {
+    .kundli-horizontal-tabs .nav-link {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+
+    .kundli-horizontal-tabs .nav-link i {
+        display: none;
+    }
+
+    .tab-content {
+        padding: 15px;
+    }
+}
+
+/* Kundli Insights Dashboard Styles */
+.kundli-dashboard-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f0ff 0%, #ffffff 100%);
+    padding: 20px;
+    color: #333;
+}
+
+.kundli-dashboard-container .dashboard-header {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+.kundli-dashboard-container .dashboard-main-title {
+    font-size: 2.5rem;
+    color: #6b3fa0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 700;
+}
+
+.kundli-dashboard-container .dashboard-main-title i {
+    color: #8b5fbf;
+    font-size: 2rem;
+}
+
+.kundli-dashboard-container .dashboard-subtitle {
+    font-size: 1.1rem;
+    color: #8b5fbf;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Services Grid */
+.kundli-dashboard-container .dashboard-services-section {
+    padding: 30px 20px;
+}
+
+.kundli-dashboard-container .dashboard-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.kundli-dashboard-container .dashboard-service-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.kundli-dashboard-container .dashboard-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Background Colors */
+.kundli-dashboard-container .dashboard-card-1 {
+    background: linear-gradient(135deg, #e8d5ff 0%, #f0e5ff 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-2 {
+    background: linear-gradient(135deg, #ffe5f0 0%, #fff0f5 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-3 {
+    background: linear-gradient(135deg, #e5f0ff 0%, #f0f5ff 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-4 {
+    background: linear-gradient(135deg, #e5ffe5 0%, #f0fff0 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-5 {
+    background: linear-gradient(135deg, #fff9e5 0%, #fffef0 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-6 {
+    background: linear-gradient(135deg, #e5f0ff 0%, #f0f5ff 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-7 {
+    background: linear-gradient(135deg, #e5ffff 0%, #f0ffff 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-8 {
+    background: linear-gradient(135deg, #ffe5f0 0%, #fff0f5 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-9 {
+    background: linear-gradient(135deg, #e5ffe5 0%, #f0fff0 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-10 {
+    background: linear-gradient(135deg, #fff4e5 0%, #fff8f0 100%);
+}
+
+.kundli-dashboard-container .dashboard-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kundli-dashboard-container .dashboard-card-1 .dashboard-card-icon i {
+    color: #6b3fa0;
+}
+
+.kundli-dashboard-container .dashboard-card-2 .dashboard-card-icon i {
+    color: #d63384;
+}
+
+.kundli-dashboard-container .dashboard-card-3 .dashboard-card-icon i {
+    color: #0d6efd;
+}
+
+.kundli-dashboard-container .dashboard-card-4 .dashboard-card-icon i {
+    color: #198754;
+}
+
+.kundli-dashboard-container .dashboard-card-5 .dashboard-card-icon i {
+    color: #ffc107;
+}
+
+.kundli-dashboard-container .dashboard-card-6 .dashboard-card-icon i {
+    color: #0d6efd;
+}
+
+.kundli-dashboard-container .dashboard-card-7 .dashboard-card-icon i {
+    color: #0dcaf0;
+}
+
+.kundli-dashboard-container .dashboard-card-8 .dashboard-card-icon i {
+    color: #d63384;
+}
+
+.kundli-dashboard-container .dashboard-card-9 .dashboard-card-icon i {
+    color: #198754;
+}
+
+.kundli-dashboard-container .dashboard-card-10 .dashboard-card-icon i {
+    color: #fd7e14;
+}
+
+.kundli-dashboard-container .dashboard-card-title {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.kundli-dashboard-container .dashboard-card-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Footer CTA Section */
+.kundli-dashboard-container .dashboard-footer-cta {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.kundli-dashboard-container .dashboard-cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.kundli-dashboard-container .dashboard-cta-title {
+    font-size: 2.2rem;
+    color: #6b3fa0;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.kundli-dashboard-container .dashboard-cta-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.kundli-dashboard-container .dashboard-cta-button {
+    background: linear-gradient(135deg, #8b5fbf 0%, #d63384 100%);
+    color: white;
+    border: none;
+    padding: 16px 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 95, 191, 0.3);
+}
+
+.kundli-dashboard-container .dashboard-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 95, 191, 0.4);
+}
+
+.kundli-dashboard-container .dashboard-cta-button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .kundli-dashboard-container .dashboard-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .kundli-dashboard-container .dashboard-main-title {
+        font-size: 2rem;
+    }
+
+    .kundli-dashboard-container .dashboard-main-title i {
+        font-size: 1.8rem;
+    }
+
+    .kundli-dashboard-container .dashboard-subtitle {
+        font-size: 1rem;
+    }
+
+    .kundli-dashboard-container .dashboard-cta-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .kundli-dashboard-container .dashboard-services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .kundli-dashboard-container .dashboard-header {
+        padding: 30px 15px 20px;
+    }
+
+    .kundli-dashboard-container .dashboard-main-title {
+        font-size: 1.75rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .kundli-dashboard-container .dashboard-main-title i {
+        font-size: 1.5rem;
+    }
+
+    .kundli-dashboard-container .dashboard-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .kundli-dashboard-container .dashboard-services-section {
+        padding: 20px 15px;
+    }
+
+    .kundli-dashboard-container .dashboard-service-card {
+        padding: 25px 20px;
+    }
+
+    .kundli-dashboard-container .dashboard-card-title {
+        font-size: 1.2rem;
+    }
+
+    .kundli-dashboard-container .dashboard-card-description {
+        font-size: 0.9rem;
+    }
+
+    .kundli-dashboard-container .dashboard-footer-cta {
+        padding: 30px 15px;
+    }
+
+    .kundli-dashboard-container .dashboard-cta-title {
+        font-size: 1.5rem;
+    }
+
+    .kundli-dashboard-container .dashboard-cta-subtitle {
+        font-size: 1rem;
+    }
+
+    .kundli-dashboard-container .dashboard-cta-button {
+        padding: 14px 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .kundli-dashboard-container {
+        padding: 10px;
+    }
+
+    .kundli-dashboard-container .dashboard-main-title {
+        font-size: 1.5rem;
+    }
+
+    .kundli-dashboard-container .dashboard-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .kundli-dashboard-container .dashboard-card-icon {
+        font-size: 2rem;
+    }
+
+    .kundli-dashboard-container .dashboard-cta-title {
+        font-size: 1.3rem;
+    }
+
+    .kundli-dashboard-container .dashboard-cta-button {
+        padding: 12px 35px;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Rudraksha Suggestion Styling */
+.rudraksha-suggestion-container {
+    padding: 20px 0;
+}
+
+.rudraksha-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rudraksha-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #6b3fa0;
+    margin-bottom: 12px;
+}
+
+.rudraksha-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+    font-weight: 400;
+}
+
+.rudraksha-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .rudraksha-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.rudraksha-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 2px solid;
+    min-height: 120px;
+    position: relative;
+}
+
+.rudraksha-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.rudraksha-card-full {
+    grid-column: 1 / -1;
+}
+
+.rudraksha-card-purple {
+    border-color: #d8b4fe;
+    background: #ffffff;
+}
+
+.rudraksha-card-green {
+    border-color: #86efac;
+    background: #ffffff;
+}
+
+.rudraksha-card-yellow {
+    border-color: #fde047;
+    background: #ffffff;
+}
+
+.rudraksha-card-blue {
+    border-color: #93c5fd;
+    background: #ffffff;
+}
+
+.rudraksha-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.rudraksha-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.rudraksha-card-content {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.rudraksha-card-content p {
+    margin: 0;
+    color: #333;
+}
+
+.rudraksha-card-content .text-muted {
+    color: #999 !important;
+    font-weight: 400;
+}
+
+.rudraksha-icon-purple {
+    color: #6b3fa0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.rudraksha-icon-green {
+    color: #10b981;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.rudraksha-icon-yellow {
+    color: #f59e0b;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.rudraksha-icon-blue {
+    color: #3b82f6;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Responsive Design for Rudraksha Cards */
+@media (max-width: 768px) {
+    .rudraksha-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .rudraksha-card-full {
+        grid-column: 1;
+    }
+
+    .rudraksha-title {
+        font-size: 1.6rem;
+    }
+
+    .rudraksha-subtitle {
+        font-size: 1rem;
+    }
+
+    .rudraksha-card {
+        padding: 15px;
+    }
+}
+/* Compiled from resources/assets/sass/kundali-report.scss */
+.kundali-report-section {
+    --kundali-accent: #f15a24;
+    --kundali-accent-dark: #d94716;
+    --kundali-ink: #29243a;
+    --kundali-muted: #716d78;
+    --kundali-border: #eee7e1;
+    --kundali-surface: #fff;
+    --kundali-page: #fffaf6;
+}
+.kundali-report-section { background: #fffaf6; }
+.kundali-report-section .container-fluid { max-width: 1480px; }
+.kundli-horizontal-tabs {
+    gap: 7px;
+    padding: 12px;
+    border: 1px solid #eee7e1;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 8px 26px rgba(41, 36, 58, .06);
+}
+.kundli-horizontal-tabs .nav-link {
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: #716d78;
+    font-weight: 600;
+    transition: color .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.kundli-horizontal-tabs .nav-link i,
+.kundli-horizontal-tabs .nav-link .fas { color: inherit; }
+.kundli-horizontal-tabs .nav-link:hover,
+.kundli-horizontal-tabs .nav-link:focus-visible {
+    color: #d94716;
+    background: #fff4ed;
+    border-color: #f8d7c8;
+    transform: none;
+    box-shadow: none;
+}
+.kundli-horizontal-tabs .nav-link.active {
+    color: #fff;
+    border-color: #f15a24;
+    background: #f15a24;
+    box-shadow: 0 5px 14px rgba(241, 90, 36, .22);
+}
+.kundli-horizontal-tabs .nav-link.active i,
+.kundli-horizontal-tabs .nav-link.active .fas { color: #fff; }
+.kundli-horizontal-tabs .nav-link.active::before { display: none; }
+#kundliTabContent { color: #29243a; }
+#kundliTabContent .card,
+#kundliTabContent .kundali-card,
+#kundliTabContent .dashboard-service-card {
+    border-color: #eee7e1;
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(41, 36, 58, .05);
+}
+#kundliTabContent a:not(.btn) { color: #d94716; }
+@media (max-width: 767.98px) {
+    .kundali-report-section .container-fluid { padding: 1rem !important; }
+    .kundli-horizontal-tabs { gap: 5px; padding: 8px; border-radius: 11px; }
+    .kundli-horizontal-tabs .nav-link { padding: 9px 12px; font-size: .82rem; }
+}

@@ -1,0 +1,49 @@
+﻿/* AstroVyra theme for the Kundali form and its page skeleton. */
+body.kundali-route { background:#fffaf5 !important; color:#211832; }
+body.kundali-route section.pb-5 { background:#fffaf5 !important; }
+body.kundali-route .kundli-form-box { background:#fff; border:1px solid #eee4da; border-radius:18px; box-shadow:0 12px 32px rgba(48,25,70,.08); overflow:hidden; }
+body.kundali-route .kundli-form-box .padding-tb { padding:26px 30px; }
+body.kundali-route .kundli-form-box .form-label { color:#34244c; font-weight:600; }
+body.kundali-route .kundli-form-box .form-control,
+body.kundali-route .kundli-form-box .form-select { min-height:46px; border:1px solid #e5dce9; border-radius:10px; background-color:#fff; color:#2c223c; box-shadow:none; }
+body.kundali-route .kundli-form-box .form-control:focus,
+body.kundali-route .kundli-form-box .form-select:focus { border-color:#9d78bd; box-shadow:0 0 0 3px rgba(91,42,135,.1); }
+body.kundali-route .kundli-btn, body.kundali-route .kundli-btn:hover { border:0; border-radius:24px; background:linear-gradient(135deg,#ffb20c,#ef8700); color:#291743; box-shadow:0 6px 16px rgba(239,135,0,.22); }
+body.kundali-route .kundli-banner-top img { max-width:100%; height:auto; }
+body.kundali-route .hor-b { border:1px solid #eee5ed; border-radius:14px; background:linear-gradient(145deg,#fff,#fff8ed); box-shadow:0 6px 18px rgba(48,25,70,.06); }
+body.kundali-route h1, body.kundali-route h2, body.kundali-route h3 { color:#211832; }
+.kundali-skeleton { position:fixed; inset:0; z-index:20000; overflow:auto; padding:12px max(5vw,24px) 40px; background:#fffaf5; transition:opacity .3s ease; }
+.kundali-skeleton.is-dismissing { opacity:0; pointer-events:none; }
+.kundali-skeleton__top,.kundali-skeleton__nav,.kundali-skeleton__banner,.kundali-skeleton__heading,.kundali-skeleton__body,.kundali-skeleton__zodiac { max-width:1280px; margin-left:auto; margin-right:auto; }
+.kundali-skeleton__top { height:64px; display:flex; align-items:center; gap:22px; }
+.kundali-skeleton__top i,.kundali-skeleton__top b,.kundali-skeleton__top span,.kundali-skeleton__top em,.kundali-skeleton__nav i,.kundali-skeleton__banner,.kundali-skeleton__heading,.kundali-skeleton__form i,.kundali-skeleton__form b,.kundali-skeleton__side,.kundali-skeleton__zodiac i { display:block; border-radius:9px; background:linear-gradient(100deg,#eee8e2 20%,#faf5ef 40%,#eee8e2 60%); background-size:220% 100%; animation:home-shimmer 1.35s linear infinite; }
+.kundali-skeleton__top i { width:140px;height:34px; }.kundali-skeleton__top b { width:32%;height:35px;border-radius:24px;margin-left:8%; }.kundali-skeleton__top span { width:65px;height:14px; }.kundali-skeleton__top em { width:80px;height:32px;border-radius:20px;margin-left:auto; }
+.kundali-skeleton__nav { height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px; }.kundali-skeleton__nav i { width:9%;height:13px; }
+.kundali-skeleton__banner { height:175px;margin-top:20px;border-radius:18px;background-color:#f7edff; }
+.kundali-skeleton__heading { width:240px;height:25px;margin-top:28px;margin-bottom:16px; }
+.kundali-skeleton__body { display:grid;grid-template-columns:minmax(0,2fr) minmax(220px,1fr);gap:22px; }
+.kundali-skeleton__form { padding:25px;display:grid;grid-template-columns:1fr 1fr;gap:22px;background:#fff;border:1px solid #eee4da;border-radius:18px;box-shadow:0 8px 24px rgba(48,25,70,.06); }
+.kundali-skeleton__form i { height:62px; }.kundali-skeleton__form b { height:42px;width:150px;grid-column:1/-1;justify-self:center;border-radius:24px; }
+.kundali-skeleton__side { min-height:300px;border-radius:16px; }.kundali-skeleton__heading--small { margin-top:32px; }
+.kundali-skeleton__zodiac { display:grid;grid-template-columns:repeat(6,1fr);gap:14px; }.kundali-skeleton__zodiac i { height:95px;border-radius:14px;background-color:#fff; }
+@media(max-width:767px) { .kundali-skeleton { padding:8px 16px 30px; }.kundali-skeleton__top { gap:10px; }.kundali-skeleton__top span { display:none; }.kundali-skeleton__top b { margin-left:auto;width:34%; }.kundali-skeleton__nav i:nth-child(n+6) { display:none; }.kundali-skeleton__nav i { width:18%; }.kundali-skeleton__banner { height:125px; }.kundali-skeleton__body { grid-template-columns:1fr; }.kundali-skeleton__side { display:none; }.kundali-skeleton__form { padding:16px;gap:14px; }.kundali-skeleton__zodiac { grid-template-columns:repeat(3,1fr);gap:9px; }.kundali-skeleton__zodiac i { height:75px; } body.kundali-route .kundli-form-box .padding-tb { padding:20px 16px; } }
+
+/* Matching route shares the Kundali palette while keeping its two-person form distinct. */
+body.kundali-matching-route { background:#fffaf5 !important; color:#211832; }
+body.kundali-matching-route .form-container { margin-bottom:10px; padding:18px; border:1px solid #eee4da; border-radius:14px; background:linear-gradient(145deg,#fff,#fff9f1); box-shadow:0 6px 18px rgba(48,25,70,.06); }
+body.kundali-matching-route .kundli-f-box { border:1px solid #eee4da; border-radius:18px; background:#fff; box-shadow:0 12px 32px rgba(48,25,70,.08); overflow:hidden; }
+body.kundali-matching-route .form-subheading, body.kundali-matching-route .form-label { color:#34244c; font-weight:600; }
+body.kundali-matching-route .kundli-f-box .form-control, body.kundali-matching-route .kundli-f-box .form-select { min-height:44px; border:1px solid #e5dce9; border-radius:10px; box-shadow:none; }
+body.kundali-matching-route .kundli-f-box .form-control:focus, body.kundali-matching-route .kundli-f-box .form-select:focus { border-color:#9d78bd; box-shadow:0 0 0 3px rgba(91,42,135,.1); }
+body.kundali-matching-route .kundli-f-box .main_button { border:0; border-radius:24px; background:linear-gradient(135deg,#ffb20c,#ef8700); color:#291743; box-shadow:0 6px 16px rgba(239,135,0,.22); }
+body.kundali-matching-route .kundli-right-banner { width:100%; height:auto; border-radius:16px; box-shadow:0 8px 24px rgba(48,25,70,.08); }
+body.kundali-matching-route .ax-connect-card { border:1px solid #eee4da; border-radius:18px; background:linear-gradient(110deg,#fff7eb,#f5effa); }
+.kundali-skeleton__form--match { grid-template-columns:1fr 1fr; }
+.kundali-skeleton__form--match section { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:16px; border:1px solid #eee4da; border-radius:14px; background:#fffaf5; }
+.kundali-skeleton__form--match section:first-child { grid-row:1; grid-column:1; }
+.kundali-skeleton__form--match section:nth-child(2) { grid-row:1; grid-column:2; }
+.kundali-skeleton__form--match section i { height:54px; }
+.kundali-skeleton__form--match > i { height:54px; }
+.kundali-skeleton__form--match > b { grid-column:2; justify-self:start; }
+.kundali-matching-skeleton .kundali-skeleton__zodiac { grid-template-columns:repeat(4,1fr); }
+@media(max-width:767px) { .kundali-skeleton__form--match { grid-template-columns:1fr; }.kundali-skeleton__form--match section:first-child,.kundali-skeleton__form--match section:nth-child(2) { grid-column:1; }.kundali-skeleton__form--match section:nth-child(2) { grid-row:2; }.kundali-skeleton__form--match > i { grid-row:3; }.kundali-skeleton__form--match > b { grid-row:4;grid-column:1;justify-self:center; }.kundali-matching-skeleton .kundali-skeleton__zodiac { grid-template-columns:repeat(2,1fr); } }

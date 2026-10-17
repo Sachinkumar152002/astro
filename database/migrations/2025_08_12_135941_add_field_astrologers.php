@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('astrologers', function (Blueprint $table){
+          $table->integer("user_id")->default(0);
+          $table->string("user_agent")->nullable();
+          $table->integer("can_go_live")->default(0);
+        });
+        Schema::table('users', function (Blueprint $table){
+          $table->string("user_agent")->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('astrologers', function (Blueprint $table){
+          $table->dropColumn("user_id");
+          $table->dropColumn("user_agent");
+          $table->dropColumn("can_go_live");
+        });
+        Schema::table('users', function (Blueprint $table){
+          $table->dropColumn("user_agent");
+        });
+    }
+};

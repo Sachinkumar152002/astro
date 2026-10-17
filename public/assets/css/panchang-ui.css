@@ -1,0 +1,114 @@
+/* Panchang page palette and shared desktop header. */
+body.panchang-route { background:#fff !important; color:#211b3d; }
+body.panchang-route header.header.desktop { height:84px !important; padding:0 !important; background:#fffaf4 !important; color:#251844 !important; box-shadow:0 1px 8px rgba(43,27,67,.08); }
+body.panchang-route header.header.desktop>.container,body.panchang-route header.header.desktop .row,body.panchang-route header.header.desktop .header-list-m { height:100%; }
+body.panchang-route header.header.desktop .header-list-m { width:100%; margin-left:0!important; padding:0 4px; }
+body.panchang-route header.header.desktop .navbar-brand { display:flex; align-items:center; margin:0; }
+body.panchang-route header.header.desktop .navbar-brand a { display:flex; align-items:center; gap:9px; text-decoration:none; }
+body.panchang-route header.header.desktop .navbar-brand img { display:block; width:62px!important; height:62px!important; max-width:62px; object-fit:cover; border:0; border-radius:50%; }
+body.panchang-route .av-desktop-brand { display:flex; flex-direction:column; color:#21183e!important; line-height:1; }
+body.panchang-route .av-desktop-brand strong { color:#21183e!important; font-family:Georgia,serif; font-size:27px; letter-spacing:.5px; }
+body.panchang-route .av-desktop-brand strong span { color:#e89200!important; }
+body.panchang-route .av-desktop-brand small { margin-top:3px; color:#514867; font-size:9px; letter-spacing:.3px; font-style:italic; }
+body.panchang-route header.header.desktop .h-search { width:min(36vw,460px); }
+body.panchang-route header.header.desktop .h-search .form-control { height:42px; padding-left:18px; border:1px solid #e8dfeb; border-radius:24px 0 0 24px; background:#fff; color:#29223a!important; font-size:13px; }
+body.panchang-route header.header.desktop .h-search .form-control::placeholder { color:#898394!important; opacity:1; }
+body.panchang-route header.header.desktop .h-search .input-group-text { display:flex; width:44px; height:42px; align-items:center; justify-content:center; border:0; border-radius:0 24px 24px 0; background:#3f1264; color:#fff; }
+body.panchang-route header.header.desktop .h-search .input-group-text i,body.panchang-route header.header.desktop .h-search .input-group-text .bi { color:#fff!important; }
+body.panchang-route header.header.desktop .icon_list { display:flex; align-items:center; gap:8px; margin:0; padding:0; }
+body.panchang-route header.header.desktop .icon_list>li { display:flex; flex:0 0 auto; align-items:center; justify-content:center; width:auto; min-width:0!important; height:40px!important; margin:0; padding:0 5px!important; color:#392653!important; }
+body.panchang-route header.header.desktop .icon_list>li i { color:#51366d!important; }
+body.panchang-route header.header.desktop .icon_list>li.header-language-control { flex:0 0 56px; width:56px; min-width:56px!important; height:32px!important; padding:0!important; overflow:hidden; }
+body.panchang-route header.header.desktop #google_translate_element { display:flex; width:56px!important; min-width:56px!important; max-width:56px!important; height:30px; align-items:center; overflow:hidden; border:1px solid #eadff0; border-radius:18px; background:#fff; }
+body.panchang-route header.header.desktop #google_translate_element .goog-te-gadget-simple { display:flex; width:56px!important; min-width:56px!important; max-width:56px!important; align-items:center; overflow:hidden; padding:4px; border:0; background:transparent; font-size:10px; white-space:nowrap; }
+body.panchang-route header.header.desktop #google_translate_element .goog-te-gadget-simple img { display:none; }
+body.panchang-route header.header.desktop #google_translate_element .goog-te-gadget-simple span { color:#392653; font-size:10px; }
+body.panchang-route header.header.desktop #google_translate_element .goog-te-gadget-simple:before { margin-right:4px; content:"🇬🇧"; font-size:11px; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet:not(.custom-ci) { width:36px; min-width:36px!important; height:36px!important; padding:0!important; border:1px solid #e7ddec!important; border-radius:50%; background:#fff!important; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet .k_cart { padding:0; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet .k_cart i { color:#4c286e!important; font-size:15px!important; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet .count { top:-5px; right:-4px; width:16px; height:16px; font-size:9px; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet.custom-ci { width:auto; min-width:0!important; height:36px!important; padding:0 9px!important; border:1px solid #e7ddec!important; border-radius:20px; background:#fff!important; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet.custom-ci>a { display:flex; align-items:center; gap:3px; white-space:nowrap; text-decoration:none; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet.custom-ci>a>i:first-child,body.panchang-route header.header.desktop .icon_list>li.pointer.wallet.custom-ci .circle2 { display:none; }
+body.panchang-route header.header.desktop .icon_list>li.pointer.wallet.custom-ci .text-green { color:#51366d!important; font-size:12px; font-weight:700; }
+body.panchang-route header.header.desktop .icon_list>li.nav-item.log { width:42px; min-width:42px!important; height:42px!important; padding:0!important; }
+body.panchang-route header.header.desktop .icon_list>li.nav-item.log>img { width:40px!important; height:40px!important; object-fit:cover; border:1px solid #e7ddec; border-radius:50%; }
+body.panchang-route header.header.desktop .icon_list>li.header-auth-controls { flex:0 0 155px!important; width:155px!important; min-width:155px!important; height:40px!important; gap:7px; margin-left:8px; padding:0!important; white-space:nowrap; }
+body.panchang-route .header-auth-controls .av-header-login,body.panchang-route .header-auth-controls .av-header-signup { display:inline-flex; flex:0 0 74px; width:74px; min-width:74px; height:37px; align-items:center; justify-content:center; padding:0 8px; border-radius:22px; font-size:12px; font-weight:700; line-height:1; white-space:nowrap; }
+body.panchang-route .header-auth-controls .av-header-login { border:1px solid #bcb1cc; background:transparent; color:#291743; }
+body.panchang-route .header-auth-controls .av-header-signup { border:0; background:linear-gradient(135deg,#ffb20c,#ef8700); color:#fff; }
+body.panchang-route section.header-top.desktop { height:48px!important; margin:0; padding:0!important; border-top:1px solid #f0e8de!important; border-bottom:1px solid #eee4d9!important; background:#fffaf4!important; }
+body.panchang-route section.header-top.desktop>.container { width:100%; max-width:none; height:100%; padding:0 12px; }
+body.panchang-route section.header-top.desktop .row,body.panchang-route section.header-top.desktop .row>div { width:100%; height:100%; margin:0; padding:0!important; }
+body.panchang-route #header-nav { width:100%; height:47px; min-height:47px; border:0!important; background:transparent!important; }
+body.panchang-route #header-nav .container-fluid,body.panchang-route #header-nav .navbar-collapse,body.panchang-route #header-nav .navbar-nav { height:100%; }
+body.panchang-route #header-nav .container-fluid { width:100%; max-width:1280px; padding:0; }
+body.panchang-route #header-nav .navbar-collapse { display:flex!important; justify-content:center; }
+body.panchang-route #header-nav .navbar-nav { width:100%; max-width:1280px; justify-content:space-between; margin:auto; }
+body.panchang-route #header-nav .nav-item { position:relative; padding:0!important; }
+body.panchang-route #header-nav .nav-link { padding:14px 10px!important; color:#34244c!important; font-size:13px!important; font-weight:600; line-height:1; white-space:nowrap; }
+body.panchang-route #header-nav .nav-link:hover,body.panchang-route #header-nav .nav-link.active { color:#dc8500!important; }
+body.panchang-route #header-nav .nav-link.active:after { position:absolute; right:10px; bottom:0; left:10px; height:2px; background:#f3a008; content:""; }
+body.panchang-route #header-nav .menu-new-badge { top:0; right:-3px; padding:1px 4px; border-radius:8px; background:#df2464; color:#fff; font-size:7px; line-height:1.2; }
+
+/* Clean up Panchang content backgrounds and cards. */
+body.panchang-route .panchang-mobile-page { background:#fff; color:#211b3d; }
+body.panchang-route .panchang-mobile-page>section { background:transparent; }
+body.panchang-route .panchang-mobile-page .banner-second { display:block; max-height:270px; object-fit:cover; border:1px solid #f0e8f1; box-shadow:0 8px 24px rgba(39,24,67,.08); }
+body.panchang-route .panchang-mobile-page .input-custom,body.panchang-route .panchang-mobile-page .form-control,body.panchang-route .panchang-mobile-page .form-select { min-height:44px; border:1px solid #e4dbea; border-radius:9px; background:#fff; color:#302747; box-shadow:none; }
+body.panchang-route .panchang-mobile-page .input-custom:focus,body.panchang-route .panchang-mobile-page .form-control:focus,body.panchang-route .panchang-mobile-page .form-select:focus { border-color:#9a72ba; box-shadow:0 0 0 3px rgba(112,65,152,.1); }
+body.panchang-route .panchang-mobile-page .form-row { margin:0; padding:20px; border:1px solid #f0e8f1; border-radius:16px; background:linear-gradient(135deg,#fffaf2,#faf6ff); box-shadow:0 8px 24px rgba(39,24,67,.07); }
+body.panchang-route .panchang-mobile-page .btn-custom { display:inline-flex; align-items:center; justify-content:center; min-height:44px; border:0; border-radius:9px; background:linear-gradient(110deg,#f6a20b,#eb8300)!important; color:#fff!important; box-shadow:0 5px 13px rgba(231,136,0,.18); }
+body.panchang-route .astro-info { gap:14px; padding:20px 0; }
+body.panchang-route .astro-card-2 { min-height:94px; padding:14px 16px; border:1px solid #eee8f2; border-radius:14px; background:linear-gradient(135deg,#fff9ee,#fff); box-shadow:0 5px 16px rgba(39,24,67,.07); }
+body.panchang-route .astro-text h4 { color:#211b3d; font-size:16px; }
+body.panchang-route .astro-text p { color:#6d6678; font-size:13px; }
+body.panchang-route .astro-icon img { width:52px; height:52px; padding:7px; border-radius:50%; background:#fff0d8; }
+body.panchang-route .hc-title,body.panchang-route .panchang-mobile-page h2,body.panchang-route .panchang-mobile-page h3 { color:#211b3d; }
+body.panchang-route .panchang-mobile-page .card.astro-card,body.panchang-route .panchang-mobile-page .as-c,body.panchang-route .panchang-mobile-page .card { overflow:hidden; border:1px solid #eee8f2; border-radius:14px; background:#fff; box-shadow:0 5px 16px rgba(39,24,67,.07); }
+body.panchang-route .panchang-mobile-page .panchang_line_img1 { opacity:.12; }
+
+/* Panchang skeleton while the document and banner images load. */
+.panchang-skeleton { position:fixed; inset:0; z-index:20000; overflow:hidden; padding:10px max(4vw,20px); background:#fffaf5; transition:opacity .3s ease; }
+.panchang-skeleton.is-dismissing { opacity:0; pointer-events:none; }
+.panchang-skeleton__top,.panchang-skeleton__nav,.panchang-skeleton__filters,.panchang-skeleton__cards { display:flex; align-items:center; max-width:1280px; gap:18px; margin:0 auto; }
+.panchang-skeleton__top { height:78px; }
+.panchang-skeleton__nav { height:46px; justify-content:space-between; border-top:1px solid #f1e9df; border-bottom:1px solid #f1e9df; }
+.panchang-skeleton__top i,.panchang-skeleton__top b,.panchang-skeleton__top span,.panchang-skeleton__top em,.panchang-skeleton__nav i,.panchang-skeleton__banner,.panchang-skeleton__filters i,.panchang-skeleton__cards i { display:block; border-radius:8px; background:linear-gradient(100deg,#eee8e2 20%,#faf5ef 40%,#eee8e2 60%); background-size:220% 100%; animation:panchang-shimmer 1.35s linear infinite; }
+.panchang-skeleton__top i { width:185px; height:45px; }.panchang-skeleton__top b { width:35%; height:36px; margin-left:12%; border-radius:22px; }.panchang-skeleton__top span { width:65px; height:14px; }.panchang-skeleton__top em { width:90px; height:34px; margin-left:auto; }
+.panchang-skeleton__nav i { width:8%; height:12px; }
+.panchang-skeleton__banner { max-width:1280px; height:210px; margin:24px auto; border-radius:16px; background-color:#f4eff7; }
+.panchang-skeleton__filters { justify-content:center; margin-top:24px; }
+.panchang-skeleton__filters i { width:23%; height:46px; border-radius:10px; }
+.panchang-skeleton__cards { display:grid; grid-template-columns:repeat(4,1fr); margin-top:22px; }
+.panchang-skeleton__cards i { height:100px; border-radius:14px; }
+@keyframes panchang-shimmer { to { background-position-x:-220%; } }
+@media(max-width:991px) {
+  body.panchang-route header.header.mobile { background:#fffaf4!important; box-shadow:0 2px 9px rgba(25,12,48,.1); }
+  body.panchang-route header.header.mobile .icon_list li { border-color:#e4dbea!important; background:#fff!important; }
+  body.panchang-route header.header.mobile .icon_list li i,body.panchang-route header.header.mobile .icon_list li a i { color:#392653!important; }
+  body.panchang-route .panchang-mobile-page .banner-second { max-height:210px; }
+}
+@media(max-width:767px) {
+  body.panchang-route .panchang-mobile-page { padding-top:72px; }
+  body.panchang-route .astro-info { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  body.panchang-route .astro-card-2 { min-height:82px; padding:10px; }
+  body.panchang-route .astro-text h4 { font-size:14px; }
+  body.panchang-route .astro-text p { font-size:12px; }
+  body.panchang-route .astro-icon img { width:40px; height:40px; }
+  body.panchang-route .panchang-mobile-page .form-row { padding:14px 10px; }
+  .panchang-skeleton { padding:8px 14px; }
+  .panchang-skeleton__top { height:60px; gap:8px; }
+  .panchang-skeleton__top i { width:110px; height:34px; }
+  .panchang-skeleton__top b { width:30%; height:31px; margin-left:auto; }
+  .panchang-skeleton__top span { display:none; }
+  .panchang-skeleton__top em { width:55px; height:30px; margin-left:0; }
+  .panchang-skeleton__nav { height:38px; gap:10px; overflow:hidden; }
+  .panchang-skeleton__nav i { flex:0 0 65px; }
+  .panchang-skeleton__banner { height:140px; margin:18px 0; }
+  .panchang-skeleton__filters { flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .panchang-skeleton__filters i { width:calc(50% - 4px); height:40px; }
+  .panchang-skeleton__cards { grid-template-columns:repeat(2,1fr); gap:10px; margin-top:18px; }
+  .panchang-skeleton__cards i { height:78px; }
+}

@@ -1,0 +1,31 @@
+﻿/* Articles listing theme and loader. */
+body.articles-route { background:#fffaf5 !important; color:#211832; }
+body.articles-route .articles-hero { min-height:190px; display:flex; align-items:center; background:linear-gradient(120deg,#fff0dc 0%,#faf3fb 54%,#eee8fb 100%) !important; }
+body.articles-route .articles-hero .head-sec { padding:34px 0; }
+body.articles-route .articles-hero h1 { margin:0 0 8px; color:#211832 !important; font-family:Georgia,serif; font-size:34px; font-weight:700; }
+body.articles-route .articles-hero .breadcrumb, body.articles-route .articles-hero .breadcrumb a { color:#695c78 !important; }
+body.articles-route .side-bar { margin-top:22px !important; margin-bottom:38px; }
+body.articles-route .blog_card { height:100%; overflow:hidden; border:1px solid #eee5ec !important; border-radius:14px !important; background:#fff !important; box-shadow:0 5px 16px rgba(48,25,70,.07) !important; transition:transform .2s,box-shadow .2s; }
+body.articles-route .blog_card:hover { transform:translateY(-3px); box-shadow:0 10px 22px rgba(48,25,70,.12) !important; }
+body.articles-route .blog_card > a:first-child { display:block; overflow:hidden; }
+body.articles-route .blog_card .card-img-top { width:100%; height:190px; object-fit:cover; transition:transform .3s; }
+body.articles-route .blog_card:hover .card-img-top { transform:scale(1.03); }
+body.articles-route .blog_card .card-body { padding:13px !important; }
+body.articles-route .blog_card .blog-he { min-width:0; margin:0 10px 0 0; font-size:14px; font-weight:700; line-height:1.4; }
+body.articles-route .blog_card .blog-he a { color:#2b2038; text-decoration:none; }
+body.articles-route .blog_card .res_btn { border:0; border-radius:999px; padding:7px 13px; background:linear-gradient(135deg,#ffb20c,#ef8700); color:#291743; font-size:11px; font-weight:700; white-space:nowrap; }
+body.articles-route .pagination { justify-content:center; margin-top:12px; }
+body.articles-route .pagination .page-link { color:#592584; }
+body.articles-route .pagination .active .page-link { background:#592584 !important; border-color:#592584 !important; color:#fff !important; }
+.articles-skeleton { position:fixed; inset:0; z-index:20000; overflow:auto; padding:12px max(5vw,24px) 40px; background:#fffaf5; transition:opacity .3s ease; }
+.articles-skeleton.is-dismissing { opacity:0; pointer-events:none; }
+.articles-skeleton__top,.articles-skeleton__nav,.articles-skeleton__hero,.articles-skeleton__heading,.articles-skeleton__grid { max-width:1280px; margin-left:auto; margin-right:auto; }
+.articles-skeleton__top { height:64px; display:flex; align-items:center; gap:22px; }
+.articles-skeleton__top i,.articles-skeleton__top b,.articles-skeleton__top span,.articles-skeleton__top em,.articles-skeleton__nav i,.articles-skeleton__hero,.articles-skeleton__heading,.articles-skeleton__grid i { display:block; border-radius:9px; background:linear-gradient(100deg,#eee8e2 20%,#faf5ef 40%,#eee8e2 60%); background-size:220% 100%; animation:home-shimmer 1.35s linear infinite; }
+.articles-skeleton__top i { width:140px;height:34px; }.articles-skeleton__top b { width:32%;height:35px;border-radius:24px;margin-left:8%; }.articles-skeleton__top span { width:65px;height:14px; }.articles-skeleton__top em { width:80px;height:32px;border-radius:20px;margin-left:auto; }
+.articles-skeleton__nav { height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px; }.articles-skeleton__nav i { width:9%;height:13px; }
+.articles-skeleton__hero { height:150px;margin-top:20px;border-radius:18px;background-color:#f7edff; }
+.articles-skeleton__heading { width:230px;height:24px;margin-top:28px;margin-bottom:16px; }
+.articles-skeleton__grid { display:grid;grid-template-columns:repeat(3,1fr);gap:18px; }.articles-skeleton__grid i { height:250px;border-radius:14px;background-color:#fff;box-shadow:0 5px 16px rgba(48,25,70,.06); }
+@media(max-width:767px) { body.articles-route .articles-hero { min-height:145px; } body.articles-route .articles-hero .head-sec { padding:24px 0; } body.articles-route .articles-hero h1 { font-size:28px; } body.articles-route .side-bar { margin-top:14px !important; } body.articles-route .blog_card .card-img-top { height:200px; }.articles-skeleton { padding:8px 16px 30px; }.articles-skeleton__top { gap:10px; }.articles-skeleton__top span { display:none; }.articles-skeleton__top b { margin-left:auto;width:34%; }.articles-skeleton__nav i:nth-child(n+6) { display:none; }.articles-skeleton__nav i { width:18%; }.articles-skeleton__hero { height:110px; }.articles-skeleton__grid { grid-template-columns:repeat(2,1fr);gap:10px; }.articles-skeleton__grid i { height:190px; } }
+@media(max-width:575px) { body.articles-route .blog_card .card-img-top { height:190px; }.articles-skeleton__grid { grid-template-columns:1fr; }.articles-skeleton__grid i:nth-child(n+5) { display:none; } }
