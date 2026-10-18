@@ -4,6 +4,74 @@
 
 @push('style')
 <style media="screen">
+.ast_dash { --astro-purple:#4c176f; --astro-gold:#e89008; --astro-ink:#21183e; }
+.ast_dash .astro-profile-card,.ast_dash .astro-time-box,.ast_dash .astro-revenue-stats,.ast_dash .tab-scroll-wrapper { border:1px solid #eee4d8 !important; border-radius:14px; box-shadow:0 5px 18px rgba(43,27,67,.08); }
+.ast_dash .astro-profile-card { padding:20px; border-top:3px solid var(--astro-gold) !important; }
+.ast_dash .astro-profile-card > .text-center.mt-2.position-relative { margin-top:16px !important; min-height:42px; }
+.ast_dash .astro-revenue-stats { background:linear-gradient(115deg,#fff 0%,#fff8eb 100%); flex-wrap:wrap; margin-top:14px; padding:14px 8px; }
+.ast_dash .astro-revenue-box { flex:1; text-align:center; padding:8px 6px; border-right:1px solid #eee4d8; }
+.ast_dash .astro-revenue-box:last-child { border:0; }
+.ast_dash .astro-amount { color:var(--astro-purple); font-weight:700; }
+.ast_dash .astro-label,.ast_dash .astro-time-title { color:#514867; font-weight:600; }
+.ast_dash .astro-time-box { padding:16px 8px; background:#fff; }
+.ast_dash .astro-time-value { color:var(--astro-purple); }
+.ast_dash .astro-time-container { margin-top:18px; gap:14px; }
+.ast_dash .astro-revenue-btn { position:relative; left:auto; padding:10px 24px; background:var(--astro-purple); color:#fff; border:0 !important; border-bottom:3px solid var(--astro-gold) !important; border-radius:10px; box-shadow:0 5px 14px rgba(76,23,111,.2); }
+.ast_dash .status-tab li .nav-link.active { background:var(--astro-purple) !important; }
+.dashboad_section { background:linear-gradient(145deg,#fffaf4 0%,#f8f3eb 52%,#fffaf4 100%) !important; padding:34px 0 48px; min-height:calc(100vh - 150px); }
+.dashboad_section .dashbord_card { background:#fff; border:1px solid #eee4d8; border-radius:14px; box-shadow:0 5px 18px rgba(43,27,67,.08); overflow:hidden; }
+.dashboad_section .astro-list ul { padding:12px 16px 4px !important; }
+.dashboad_section .astro-list .list-group-item { border-color:#f0e8df !important; margin:0 !important; padding:12px 8px !important; transition:background .2s ease; }
+.dashboad_section .astro-list .list-group-item:hover { background:#fff8eb; }
+.dashboad_section .astro-list .list-group-item a { color:#36234a !important; font-weight:500; text-decoration:none; }
+.ast_dash .mt-3.border-n.radius { border:1px solid #eee4d8; border-radius:14px; overflow:hidden; background:#fff; box-shadow:0 5px 18px rgba(43,27,67,.08); }
+.ast_dash .tab-scroll-wrapper { border:0 !important; border-radius:0; padding:18px 16px 0; }
+.ast_dash .tab-scroll-wrapper h4 { color:var(--astro-ink); font-weight:700; }
+.ast_dash .astro-account-tab { gap:8px; margin:0 !important; }
+.ast_dash .astro-account-tab .nav-link { border:1px solid #eee4d8; border-radius:9px 9px 0 0; color:#514867; font-weight:700; padding:10px 16px; }
+.ast_dash .status-tab li .nav-link.active { color:#fff !important; }
+.ast_dash .status-list { padding:10px 16px; background:#fff !important; }
+.ast_dash .status-item { border:1px solid #f0e8df; border-radius:10px; margin:7px 0; padding:13px 15px; color:#36234a; transition:background .2s ease,border-color .2s ease; }
+.ast_dash .status-item:hover { background:#fffaf1; border-color:#efd39c; }
+.ast_dash .status-dot { flex:0 0 18px; }
+.ast_dash .live-card,.ast_dash .policy-box { border:1px solid #e8e1f0 !important; border-radius:14px; box-shadow:0 5px 18px rgba(47,32,71,.08); padding:18px; }
+.ast_dash .same-card { height:100%; border:1px solid #e8e1f0 !important; border-radius:14px; box-shadow:0 4px 14px rgba(47,32,71,.07); transition:transform .2s ease,box-shadow .2s ease; }
+.ast_dash .same-card:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(47,32,71,.12); }
+.ast_dash .same-card p { color:#393148; }
+.ast_dash .same-icon { background:linear-gradient(135deg,var(--astro-purple),var(--astro-gold)) !important; }
+.ast_dash .same-icon img { filter:brightness(0) invert(1); }
+.ast_dash .astro-revenue-box { min-width:145px; }
+.ast_dash .mt-3.border-n.radius { margin-top:20px !important; }
+.ast_dash .same-menu-box>a { display:block; height:100%; text-decoration:none; }
+.astrologer-dashboard-skeleton { position:fixed; inset:0; z-index:20000; overflow:auto; background:#fffaf4; transition:opacity .3s ease; }
+.astrologer-dashboard-skeleton.is-dismissing { opacity:0; pointer-events:none; }
+.astro-dashboard-skeleton__header { height:84px; padding:0 max(4vw,24px); display:flex; align-items:center; gap:12px; background:#fffaf4; border-bottom:1px solid #eee4d8; }
+.astro-dashboard-skeleton__header>div { display:flex; align-items:center; gap:12px; margin-left:auto; }
+.astro-dashboard-skeleton__layout { max-width:1320px; margin:34px auto; padding:0 18px; display:grid; grid-template-columns:288px minmax(0,1fr); gap:24px; align-items:start; }
+.astro-dashboard-skeleton__sidebar,.astro-dashboard-skeleton__profile,.astro-dashboard-skeleton__revenue,.astro-dashboard-skeleton__times>i,.astro-dashboard-skeleton__availability { border:1px solid #eee4d8; border-radius:14px; background:#fff; box-shadow:0 5px 18px rgba(43,27,67,.06); }
+.astro-dashboard-skeleton__sidebar { min-height:500px; padding:24px 18px; display:grid; align-content:start; gap:18px; }
+.astro-dashboard-skeleton__main { min-width:0; display:grid; gap:16px; }
+.astro-dashboard-skeleton__profile { min-height:145px; padding:20px; display:flex; align-items:center; gap:16px; }
+.astro-dashboard-skeleton__profile>div { flex:1; display:grid; gap:12px; }
+.astro-dashboard-skeleton__revenue { min-height:84px; display:grid; grid-template-columns:repeat(4,1fr); align-items:center; padding:14px; }
+.astro-dashboard-skeleton__times { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.astro-dashboard-skeleton__times>i { height:90px; }
+.astro-dashboard-skeleton__availability { min-height:180px; padding:20px; display:grid; grid-template-columns:repeat(3,1fr); align-content:start; gap:14px; }
+.astro-dashboard-skeleton__availability>b { grid-column:1/-1; width:45%; height:22px !important; margin-bottom:6px; }
+.astrologer-dashboard-skeleton i,.astrologer-dashboard-skeleton b,.astrologer-dashboard-skeleton span { display:block; height:14px; border-radius:8px; background:linear-gradient(100deg,#eee8e2 20%,#fff7e9 40%,#eee8e2 60%); background-size:220% 100%; animation:astro-dashboard-shimmer 1.35s linear infinite; }
+.astro-dashboard-skeleton__logo { width:205px; height:52px !important; object-fit:contain; background:none !important; animation:none !important; }
+.astro-dashboard-skeleton__header>div i { width:42px; height:42px; border-radius:50%; }
+.astro-dashboard-skeleton__header>div b { width:72px; height:34px; border-radius:20px; }
+.astro-dashboard-skeleton__profile>i { flex:0 0 84px; width:84px; height:84px; border-radius:12px; }
+.astro-dashboard-skeleton__profile b { width:180px; height:18px; }
+.astro-dashboard-skeleton__profile span:nth-child(2) { width:35%; }
+.astro-dashboard-skeleton__profile span:nth-child(3) { width:48%; }
+.astro-dashboard-skeleton__sidebar i { height:18px; }
+.astro-dashboard-skeleton__revenue i { width:65%; height:18px; justify-self:center; }
+@keyframes astro-dashboard-shimmer { to { background-position-x:-220%; } }
+@media(max-width:767.98px){ .dashboad_section { padding:22px 0 32px; } .ast_dash .astro-revenue-box { flex:1 1 50%; min-width:50%; } .ast_dash .astro-revenue-box:nth-child(2) { border-right:0; } }
+@media(max-width:575.98px){ .ast_dash .astro-time-container { display:grid; grid-template-columns:1fr; } .ast_dash .astro-revenue-box { min-width:50%; } }
+@media(max-width:767.98px){ .astro-dashboard-skeleton__header { height:64px; padding:0 14px; } .astro-dashboard-skeleton__logo { width:125px; height:38px !important; } .astro-dashboard-skeleton__header>div { gap:6px; } .astro-dashboard-skeleton__header>div i { width:30px; height:30px; } .astro-dashboard-skeleton__layout { grid-template-columns:1fr; margin:20px auto; padding:0 14px; } .astro-dashboard-skeleton__sidebar { display:none; } .astro-dashboard-skeleton__profile { min-height:112px; padding:14px; } .astro-dashboard-skeleton__profile>i { flex-basis:64px; width:64px; height:64px; } .astro-dashboard-skeleton__revenue { grid-template-columns:repeat(2,1fr); gap:12px; } .astro-dashboard-skeleton__times { grid-template-columns:1fr; gap:10px; } .astro-dashboard-skeleton__times>i { height:68px; } .astro-dashboard-skeleton__availability { grid-template-columns:1fr; min-height:160px; } .astro-dashboard-skeleton__availability>span:nth-of-type(n+2) { display:none; } }
 .left-icon i {
   color: #FF0000;   /* YouTube Red */
   font-size: 20px;  /* Size adjust kar sakte ho */
@@ -123,62 +191,43 @@
             <div class="astro-revenue-stats">
 
                <div class="astro-revenue-box">
-                   <div class="astro-amount">₹ {{ sprintf("%.2f", $todayAmount) }}</div>
+                   <div class="astro-amount">&#8377; {{ sprintf("%.2f", $todayAmount) }}</div>
                    <div class="astro-label">TODAY</div>
                </div>
 
                <div class="astro-revenue-box">
-                 <div class="astro-amount">₹ {{ sprintf("%.2f", $monthAmountGifts) }}</div>
+                 <div class="astro-amount">&#8377; {{ sprintf("%.2f", $monthAmount) }}</div>
                    <div class="astro-label">LAST 30 DAYS</div>
                </div>
 
                <div class="astro-revenue-box">
-                   <div class="astro-amount">₹ {{ sprintf("%.2f", $totalAmount) }}</div>
+                   <div class="astro-amount">&#8377; {{ sprintf("%.2f", $totalAmount) }}</div>
                    <div class="astro-label">LIFE TIME</div>
                </div>
 
                <div class="astro-revenue-box">
-                   <div class="astro-amount">₹ {{ sprintf("%.2f", $astrologer->wallet) }}</div>
+                   <div class="astro-amount">&#8377; {{ sprintf("%.2f", $astrologer->wallet) }}</div>
                    <div class="astro-label">WALLET BALANCE</div>
                </div>
 
            </div>
 
            @php
-            use Carbon\Carbon;
-             $totalTimeChatConsultations = $chatConsultations
-             ->sum(function($item){
-               $user_start_time = strtotime($item->user_start_time);
-               $user_end_time = strtotime($item->user_end_time);
-               $astrologer_start_time = strtotime($item->astrologer_start_time);
-               $astrologer_end_time = strtotime($item->astrologer_end_time);
-               $start_time = $astrologer_start_time>$user_start_time?$astrologer_start_time:$user_start_time;
-               $end_time = $astrologer_end_time<$user_end_time?$astrologer_end_time:$user_end_time;
-               $time=$end_time-$start_time;
-               return ceil($time/60);
-             });
-             $totalTimeCallConsultations = $callConsultations
-             ->sum(function($item){
-               $user_start_time = strtotime($item->user_start_time);
-               $user_end_time = strtotime($item->user_end_time);
-               $astrologer_start_time = strtotime($item->astrologer_start_time);
-               $astrologer_end_time = strtotime($item->astrologer_end_time);
-               $start_time = $astrologer_start_time>$user_start_time?$astrologer_start_time:$user_start_time;
-               $end_time = $astrologer_end_time<$user_end_time?$astrologer_end_time:$user_end_time;
-               $time=$end_time-$start_time;
-               return ceil($time/60);
-             });
-             $totalTimeVideoConsultations = $videoConsultations
-             ->sum(function($item){
-               $user_start_time = strtotime($item->user_start_time);
-               $user_end_time = strtotime($item->user_end_time);
-               $astrologer_start_time = strtotime($item->astrologer_start_time);
-               $astrologer_end_time = strtotime($item->astrologer_end_time);
-               $start_time = $astrologer_start_time>$user_start_time?$astrologer_start_time:$user_start_time;
-               $end_time = $astrologer_end_time<$user_end_time?$astrologer_end_time:$user_end_time;
-               $time=$end_time-$start_time;
-               return ceil($time/60);
-             });
+             $consultationMinutes = function($items) {
+               return $items->sum(function($item) {
+                 $userStart = $item->user_start_time ? strtotime($item->scheduled_date.' '.$item->user_start_time) : false;
+                 $userEnd = $item->user_end_time ? strtotime($item->scheduled_date.' '.$item->user_end_time) : false;
+                 $astroStart = $item->astrologer_start_time ? strtotime($item->scheduled_date.' '.$item->astrologer_start_time) : false;
+                 $astroEnd = $item->astrologer_end_time ? strtotime($item->scheduled_date.' '.$item->astrologer_end_time) : false;
+                 if (!$userStart || !$userEnd || !$astroStart || !$astroEnd) return 0;
+                 $start = max($userStart, $astroStart);
+                 $end = min($userEnd, $astroEnd);
+                 return $end > $start ? (int) ceil(($end - $start) / 60) : 0;
+               });
+             };
+             $totalTimeChatConsultations = $consultationMinutes($chatConsultations);
+             $totalTimeCallConsultations = $consultationMinutes($callConsultations);
+             $totalTimeVideoConsultations = $consultationMinutes($videoConsultations);
            @endphp
 
            <div class="astro-time-container">
@@ -470,7 +519,7 @@
                 <i class="fab fa-youtube"></i>
                 </span>
               <span class="video-title">Training Video</span>
-              <span class="right-arrow">›</span>
+              <span class="right-arrow">Ã¢â‚¬Âº</span>
           </button>
         </a>
 

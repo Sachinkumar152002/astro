@@ -65,6 +65,9 @@
     @if (request()->is('account/*'))
         <link rel="stylesheet" href="{{ asset('assets/css/account-pages-ui.css') }}?v={{ filemtime(public_path('assets/css/account-pages-ui.css')) }}">
     @endif
+    @if (request()->routeIs('astrologer.dashboard', 'astrologer.profile', 'astrologer.consultations', 'astrologer.earnings', 'astrologer.puja', 'astrologer.booked.puja', 'astrologer.puja.earnings', 'astrologer.notification', 'astrologer.newsletter', 'astrologer.support', 'astrologer.referral.listing', 'astrologer.withdrawal'))
+        <link rel="stylesheet" href="{{ asset('assets/css/astrologer-account.css') }}?v={{ filemtime(public_path('assets/css/astrologer-account.css')) }}">
+    @endif
     @stack('header_script')
 
 
@@ -1187,7 +1190,7 @@
 </head>
 
 <body
-    class="{{ request()->is('panchang') ? 'panchang-route' : '' }}{{ request()->is('horoscopes') ? ' horoscopes-route' : '' }}{{ request()->is('horoscope/*/*/detail') ? ' horoscope-detail-route' : '' }}{{ request()->is('astrologer/login') ? ' astrologer-login-route' : '' }}{{ request()->is('astrologer/register') ? ' astrologer-register-route' : '' }}{{ request()->is('chat-with-astrologers', 'talk-to-astrologers') ? ' chat-astrologers-route' : '' }}{{ request()->is('astrologers/ai') ? ' ai-astrologers-route' : '' }}{{ request()->is('astrologers/*/*') ? ' astrologer-detail-route' : '' }}{{ request()->is('articles', 'articles/*') ? ' articles-route' : '' }}{{ request()->is('collections', 'collections/*', 'reports-collections', 'reports-collections/*', 'pujas-collections', 'pujas-collections/*', 'one-to-one-puja', 'one-to-one-puja/*') ? ' collections-route' : '' }}{{ request()->is('kundali') ? ' kundali-route' : '' }}{{ request()->is('kundali-matching') ? ' kundali-matching-route' : '' }}{{ request()->is('user/register') ? ' user-register-route' : '' }}">
+    class="{{ request()->is('panchang') ? 'panchang-route' : '' }}{{ request()->is('horoscopes') ? ' horoscopes-route' : '' }}{{ request()->is('horoscope/*/*/detail') ? ' horoscope-detail-route' : '' }}{{ request()->is('astrologer/login') ? ' astrologer-login-route' : '' }}{{ request()->is('astrologer/register') ? ' astrologer-register-route' : '' }}{{ request()->is('chat-with-astrologers', 'talk-to-astrologers') ? ' chat-astrologers-route' : '' }}{{ request()->is('astrologers/ai') ? ' ai-astrologers-route' : '' }}{{ request()->is('astrologers/*/*') ? ' astrologer-detail-route' : '' }}{{ request()->is('articles', 'articles/*') ? ' articles-route' : '' }}{{ request()->is('collections', 'collections/*', 'reports-collections', 'reports-collections/*', 'pujas-collections', 'pujas-collections/*', 'one-to-one-puja', 'one-to-one-puja/*') ? ' collections-route' : '' }}{{ request()->is('kundali') ? ' kundali-route' : '' }}{{ request()->is('kundali-matching') ? ' kundali-matching-route' : '' }}{{ request()->is('user/register') ? ' user-register-route' : '' }}{{ request()->routeIs('astrologer.dashboard', 'astrologer.profile', 'astrologer.consultations', 'astrologer.earnings', 'astrologer.puja', 'astrologer.booked.puja', 'astrologer.puja.earnings', 'astrologer.notification', 'astrologer.newsletter', 'astrologer.support', 'astrologer.referral.listing', 'astrologer.withdrawal') ? ' astrologer-account-route' : '' }}">
 
 
     @if (Request::routeIs('home'))
@@ -1313,6 +1316,42 @@
                 @for ($i = 0; $i < 8; $i++)
                     <i></i>
                 @endfor
+            </div>
+        </section>
+    @elseif(request()->is('astrologer/dashboard'))
+        <section class="astrologer-dashboard-skeleton" id="loader-web" aria-label="Loading astrologer dashboard" role="status">
+            <div class="astro-dashboard-skeleton__header">
+                <img class="astro-dashboard-skeleton__logo" src="{{ logo(200) ?? asset('assets/img/logo.svg') }}" alt="{{ config('app.name') }}">
+                <div><i></i><i></i><i></i><b></b></div>
+            </div>
+            <div class="astro-dashboard-skeleton__layout">
+                <aside class="astro-dashboard-skeleton__sidebar">
+                    @for ($i = 0; $i < 9; $i++)<i></i>@endfor
+                </aside>
+                <main class="astro-dashboard-skeleton__main">
+                    <section class="astro-dashboard-skeleton__profile"><i></i><div><b></b><span></span><span></span></div></section>
+                    <section class="astro-dashboard-skeleton__revenue"><i></i><i></i><i></i><i></i></section>
+                    <section class="astro-dashboard-skeleton__times"><i></i><i></i><i></i></section>
+                    <section class="astro-dashboard-skeleton__availability"><b></b><span></span><span></span><span></span></section>
+                </main>
+            </div>
+        </section>
+    @elseif(request()->routeIs('astrologer.profile', 'astrologer.consultations', 'astrologer.earnings', 'astrologer.puja', 'astrologer.booked.puja', 'astrologer.puja.earnings', 'astrologer.notification', 'astrologer.newsletter', 'astrologer.support', 'astrologer.referral.listing', 'astrologer.withdrawal'))
+        <section class="astrologer-account-skeleton" id="loader-web" aria-label="Loading astrologer account page" role="status">
+            <div class="astrologer-account-skeleton__header">
+                <img src="{{ logo(200) ?? asset('assets/img/logo.svg') }}" alt="{{ config('app.name') }}">
+                <span></span><span></span><span></span><b></b>
+            </div>
+            <div class="astrologer-account-skeleton__layout">
+                <aside>@for ($i = 0; $i < 10; $i++)<i></i>@endfor</aside>
+                <main>
+                    <div class="astrologer-account-skeleton__heading"><i></i><b></b><span></span></div>
+                    <div class="astrologer-account-skeleton__tabs">@for ($i = 0; $i < 6; $i++)<i></i>@endfor</div>
+                    <section class="astrologer-account-skeleton__panel">
+                        <b></b><div class="astrologer-account-skeleton__fields">@for ($i = 0; $i < 6; $i++)<i></i>@endfor</div>
+                        <div class="astrologer-account-skeleton__rows">@for ($i = 0; $i < 4; $i++)<span></span>@endfor</div>
+                    </section>
+                </main>
             </div>
         </section>
     @elseif(request()->is('account/dashboard'))
@@ -1486,12 +1525,14 @@
             <div class="contact-page-skeleton__map"></div>
         </section>
     @else
-        <section class="loader" id="loader-web">
-            <div class="preloader_relative">
-                <img src="{{ asset('assets/loader/dot_circle.gif') }}" class="main_preloader">
-                <div id="loader"><img src="{{ asset('assets/loader/dot_circle.gif') }}"></div>
-            </div>
-        </section>
+        @unless(request()->is('astrologer/dashboard'))
+            <section class="loader" id="loader-web">
+                <div class="preloader_relative">
+                    <img src="{{ asset('assets/loader/dot_circle.gif') }}" class="main_preloader">
+                    <div id="loader"><img src="{{ asset('assets/loader/dot_circle.gif') }}"></div>
+                </div>
+            </section>
+        @endunless
     @endif
 
     <div class="">
@@ -2536,7 +2577,7 @@
         }
 
         $(document).ready(function() {
-            if ($('#loader-web').hasClass('account-pages-skeleton') || $('#loader-web').hasClass('account-dashboard-skeleton') || $('#loader-web').hasClass('kundali-report-skeleton') || $('#loader-web').hasClass('home-skeleton') || $('#loader-web').hasClass('panchang-skeleton') || $(
+            if ($('#loader-web').hasClass('account-pages-skeleton') || $('#loader-web').hasClass('account-dashboard-skeleton') || $('#loader-web').hasClass('astrologer-dashboard-skeleton') || $('#loader-web').hasClass('astrologer-account-skeleton') || $('#loader-web').hasClass('kundali-report-skeleton') || $('#loader-web').hasClass('home-skeleton') || $('#loader-web').hasClass('panchang-skeleton') || $(
                     '#loader-web').hasClass('horoscopes-skeleton') || $('#loader-web').hasClass('horoscope-detail-skeleton') || $('#loader-web').hasClass(
                     'chat-astrologers-skeleton') || $('#loader-web').hasClass('collections-skeleton') || $(
                     '#loader-web').hasClass('kundali-skeleton') || $('#loader-web').hasClass(

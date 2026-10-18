@@ -41,10 +41,10 @@
             <ul class="p-0  p-3 pb-0">
 
               <li class="list-group-item mb-3  border-bottom">
-              <a class="fs-6 text text-dark" href="{{route('astrologer.dashboard')}}"><i class="bi bi-grid"></i> My Dashboard</a>
+              <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.dashboard') ? 'active' : '' }}" href="{{route('astrologer.dashboard')}}" {{ request()->routeIs('astrologer.dashboard') ? 'aria-current=page' : '' }}><i class="bi bi-grid"></i> My Dashboard</a>
               </li>
               <li class="list-group-item mb-3  border-bottom pb-2">
-                <a class="fs-6 text text-dark" href="{{route('astrologer.profile')}}">
+                <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.profile') ? 'active' : '' }}" href="{{route('astrologer.profile')}}" {{ request()->routeIs('astrologer.profile') ? 'aria-current=page' : '' }}>
                   <i class="bi bi-person"></i> My profile
                 </a>
               </li>
@@ -54,48 +54,48 @@
                </a>
              </li>--}}
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a class="fs-6 text text-dark" href="{{route('astrologer.consultations')}}"><i class="bi bi-chat-left-text"></i> Consultations</a>
+                <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.consultations') ? 'active' : '' }}" href="{{route('astrologer.consultations')}}" {{ request()->routeIs('astrologer.consultations') ? 'aria-current=page' : '' }}><i class="bi bi-chat-left-text"></i> Consultations</a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a class="fs-6 text text-dark" href="{{route('astrologer.earnings')}}"><i class="bi bi-credit-card"></i>
+                <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.earnings') ? 'active' : '' }}" href="{{route('astrologer.earnings')}}" {{ request()->routeIs('astrologer.earnings') ? 'aria-current=page' : '' }}><i class="bi bi-credit-card"></i>
                   Earnings</a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a class="fs-6 text text-dark" href="{{route('astrologer.puja')}}"><i class="bi bi-calendar-heart"></i> Assigned Puja</a>
+                <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.puja') ? 'active' : '' }}" href="{{route('astrologer.puja')}}" {{ request()->routeIs('astrologer.puja') ? 'aria-current=page' : '' }}><i class="bi bi-calendar-heart"></i> Assigned Puja</a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a class="fs-6 text text-dark" href="{{route('astrologer.booked.puja')}}"><i class="bi bi-calendar-check"></i> Booked Puja</a>
+                <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.booked.puja', 'astrologer.booked.puja.detail') ? 'active' : '' }}" href="{{route('astrologer.booked.puja')}}" {{ request()->routeIs('astrologer.booked.puja', 'astrologer.booked.puja.detail') ? 'aria-current=page' : '' }}><i class="bi bi-calendar-check"></i> Booked Puja</a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a class="fs-6 text text-dark" href="{{route('astrologer.puja.earnings')}}"><i class="bi bi-cash-coin"></i> Puja Earnings</a>
+                <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.puja.earnings') ? 'active' : '' }}" href="{{route('astrologer.puja.earnings')}}" {{ request()->routeIs('astrologer.puja.earnings') ? 'aria-current=page' : '' }}><i class="bi bi-cash-coin"></i> Puja Earnings</a>
               </li>
               @if($astrologer->can_go_live && (request()->has("_token") || true))
                 <li class="list-group-item mb-3 border-bottom pb-2">
-                  <a class="fs-6 text text-dark" href="{{route('astrologer.live.index')}}"><i class="bi bi-chat-left-text"></i> Live</a>
+                  <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.live.index') ? 'active' : '' }}" href="{{route('astrologer.live.index')}}" {{ request()->routeIs('astrologer.live.index') ? 'aria-current=page' : '' }}><i class="bi bi-chat-left-text"></i> Live</a>
                 </li>
               @endif
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a href="{{route('astrologer.notification')}}" class="fs-6 text text-dark">
+                <a href="{{route('astrologer.notification')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.notification') ? 'active' : '' }}" {{ request()->routeIs('astrologer.notification') ? 'aria-current=page' : '' }}>
                 <i class="bi bi-bell"></i> Notification
                 </a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a href="{{route('astrologer.newsletter')}}" class="fs-6 text text-dark">
+                <a href="{{route('astrologer.newsletter')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.newsletter', 'astrologer.newsletter.status') ? 'active' : '' }}" {{ request()->routeIs('astrologer.newsletter', 'astrologer.newsletter.status') ? 'aria-current=page' : '' }}>
                 <i class="bi bi-newspaper"></i> Newsletter
                 </a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a href="{{route('astrologer.support')}}" class="fs-6 text text-dark">
+                <a href="{{route('astrologer.support')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.support') ? 'active' : '' }}" {{ request()->routeIs('astrologer.support') ? 'aria-current=page' : '' }}>
                 <i class="bi bi-headset"></i>  Support
                 </a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a href="{{route('astrologer.referral.listing')}}" class="fs-6 text text-dark">
+                <a href="{{route('astrologer.referral.listing')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.referral.listing') ? 'active' : '' }}" {{ request()->routeIs('astrologer.referral.listing') ? 'aria-current=page' : '' }}>
                 <i class="bi bi-people"></i>  Referral code
                 </a>
               </li>
               <li class="list-group-item mb-3 border-bottom pb-2">
-                <a href="{{route('astrologer.withdrawal')}}" class="fs-6 text text-dark">
+                <a href="{{route('astrologer.withdrawal')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.withdrawal') ? 'active' : '' }}" {{ request()->routeIs('astrologer.withdrawal') ? 'aria-current=page' : '' }}>
                 <i class="bi bi-cash-stack"></i> Withdrawal
                 </a>
               </li>
@@ -163,10 +163,10 @@
                         <ul class="p-0 pb-0">
 
                           <li class="list-group-item mb-3  border-bottom">
-                          <a class="fs-6 text text-dark" href="{{route('astrologer.dashboard')}}"><i class="bi bi-grid"></i> My Dashboard</a>
+                          <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.dashboard') ? 'active' : '' }}" href="{{route('astrologer.dashboard')}}"><i class="bi bi-grid"></i> My Dashboard</a>
                           </li>
                           <li class="list-group-item mb-3  border-bottom pb-2">
-                            <a class="fs-6 text text-dark" href="{{route('astrologer.profile')}}"><i class="bi bi-person"></i> My
+                            <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.profile') ? 'active' : '' }}" href="{{route('astrologer.profile')}}"><i class="bi bi-person"></i> My
                               profile</a>
                           </li>
                           {{--<li class="list-group-item mb-3 border-bottom pb-2">
@@ -174,43 +174,43 @@
                              Available Status</a>
                           </li>--}}
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a class="fs-6 text text-dark" href="{{route('astrologer.earnings')}}"><i class="bi bi-credit-card"></i>
+                            <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.earnings') ? 'active' : '' }}" href="{{route('astrologer.earnings')}}"><i class="bi bi-credit-card"></i>
                               Earnings</a>
                           </li>
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a class="fs-6 text text-dark" href="{{route('astrologer.puja')}}"><i class="bi bi-calendar-heart"></i> Assigned Puja</a>
+                            <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.puja') ? 'active' : '' }}" href="{{route('astrologer.puja')}}"><i class="bi bi-calendar-heart"></i> Assigned Puja</a>
                           </li>
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a class="fs-6 text text-dark" href="{{route('astrologer.booked.puja')}}"><i class="bi bi-calendar-check"></i> Booked Puja</a>
+                            <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.booked.puja', 'astrologer.booked.puja.detail') ? 'active' : '' }}" href="{{route('astrologer.booked.puja')}}"><i class="bi bi-calendar-check"></i> Booked Puja</a>
                           </li>
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a class="fs-6 text text-dark" href="{{route('astrologer.puja.earnings')}}"><i class="bi bi-cash-coin"></i> Puja Earnings</a>
+                            <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.puja.earnings') ? 'active' : '' }}" href="{{route('astrologer.puja.earnings')}}"><i class="bi bi-cash-coin"></i> Puja Earnings</a>
                           </li>
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a class="fs-6 text text-dark" href="{{route('astrologer.consultations')}}"><i class="bi bi-chat-left-text"></i> Consultations</a>
+                            <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.consultations') ? 'active' : '' }}" href="{{route('astrologer.consultations')}}"><i class="bi bi-chat-left-text"></i> Consultations</a>
                           </li>
                           @if($astrologer->can_go_live && request()->has("_token"))
                             <li class="list-group-item mb-3 border-bottom pb-2">
-                              <a class="fs-6 text text-dark" href="{{route('astrologer.live.index')}}"><i class="bi bi-chat-left-text"></i> Live</a>
+                              <a class="fs-6 text text-dark {{ request()->routeIs('astrologer.live.index') ? 'active' : '' }}" href="{{route('astrologer.live.index')}}"><i class="bi bi-chat-left-text"></i> Live</a>
                             </li>
                           @endif
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a href="{{route('astrologer.notification')}}" class="fs-6 text text-dark">
+                            <a href="{{route('astrologer.notification')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.notification') ? 'active' : '' }}">
                             <i class="bi bi-bell"></i> Notification
                             </a>
                           </li>
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a href="{{route('astrologer.newsletter')}}" class="fs-6 text text-dark">
+                            <a href="{{route('astrologer.newsletter')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.newsletter', 'astrologer.newsletter.status') ? 'active' : '' }}">
                             <i class="bi bi-newspaper"></i> Newsletter
                             </a>
                           </li>
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a href="{{route('astrologer.support')}}" class="fs-6 text text-dark">
+                            <a href="{{route('astrologer.support')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.support') ? 'active' : '' }}">
                             <i class="bi bi-headset"></i>  Support
                             </a>
                           </li>
                           <li class="list-group-item mb-3 border-bottom pb-2">
-                            <a href="{{route('astrologer.referral.listing')}}" class="fs-6 text text-dark">
+                            <a href="{{route('astrologer.referral.listing')}}" class="fs-6 text text-dark {{ request()->routeIs('astrologer.referral.listing') ? 'active' : '' }}">
                             <i class="bi bi-people"></i> Register user and astrologer using referral code
                             </a>
                           </li>
